@@ -1,0 +1,68 @@
+chart {
+antiAliasingText: true;
+legendVisible : true;
+legendPosition : NORTH;
+interactors: 'ZOOM,DATA_PICKER';
+}
+dataset[name='ATLAS'] {
+renderingType : POLYLINE;
+strokeColor : GREEN;
+stroke : stroke(2);
+yAxisIndex:0;
+}
+dataset[name='ALICE'] {
+renderingType : POLYLINE;
+strokeColor : MAGENTA;
+stroke : stroke(2);
+yAxisIndex: 0;
+}
+dataset[name='CMS'] {
+renderingType : POLYLINE;
+strokeColor : BLACK;
+stroke : stroke(2);
+yAxisIndex:0;
+}
+dataset[name='LHCb'] {
+renderingType : POLYLINE;
+strokeColor : CYAN;
+stroke : stroke(2);
+yAxisIndex:0;
+}
+dataset[name='I(B1)'] {
+renderingType : POLYLINE;
+strokeColor : BLUE;
+stroke : stroke(2);
+yAxisIndex:1;
+}
+dataset[name='I(B2)'] {
+renderingType : POLYLINE;
+strokeColor : RED;
+stroke : stroke(2);
+yAxisIndex:2;
+}
+scale[axis=Y][axisIndex='0'] {
+titleAlignment: CENTER;
+title: "Luminosity";
+}
+scale[axis='Y'][axisIndex='1'] {
+titleAlignment: CENTER;
+title: "Intensity (B1)";
+titleColor: BLUE;
+foregroundColor: BLUE;
+}
+scale[axis='Y'][axisIndex='2'] {
+titleAlignment: CENTER;
+title: "Intensity (B2)";
+titleColor: RED;
+foregroundColor: RED;
+}
+axis[axis=Y][axisIndex='0']{
+min: 0;
+max: 6;}
+axis[axis=Y][axisIndex='1']{
+min: -110;
+max: -40;}
+axis[axis=Y][axisIndex='2']{
+min: 40;
+max: 110;
+}

@@ -1,0 +1,78 @@
+chart {
+  antiAliasingText: true;
+  renderingType: 'BAR';
+  interactors: 'DATA_PICKER, ZOOM';
+  legendVisible: true;
+  legendTitle: "My Legend";
+  legendPosition: floating;
+}
+
+chartArea {
+  fillColor: white;
+  background: grey;
+}
+
+dataset[index='0'] {
+/*  renderingType: 'BAR'; */
+  strokeColor: rgba(0, 255, 0, 101);
+  fillColor: rgba(0, 255, 0, 101);
+/*  markerType: CIRCLE; */
+/*  markerSize: 6; */
+  yAxisIndex: 0;
+}
+
+dataset[index='1'] {
+/*  renderingType: 'BAR'; */
+  strokeColor: rgba(0, 0, 255, 101);
+  fillColor: rgba(0, 0, 255, 101);
+/*  markerType: CROSS; */
+/*  markerSize: 4; */
+  yAxisIndex: 0;
+}
+
+dataset[name='right'] {
+/*  renderingType: 'BAR'; */
+  strokeColor: rgba(255, 0, 0, 101);
+  fillColor: rgba(255, 0, 0, 101);
+/*  markerType: CROSS; */
+/*  markerSize: 4; */
+  yAxisIndex: 1;
+}
+
+scale {
+  foregroundColor: ORANGE;
+  tickLayout: CROSS; 
+  majorTickSize: 10;
+  titleColor: rgb(255, 0, 0);
+  titleFont: font('Dialog', 'BOLD | ITALIC', 16);
+  stroke: stroke(1, 'CAP_ROUND', 'JOIN_ROUND', 1, '1.5;1', 1);
+}
+
+scale[axis=X] {
+  title: 'X coordinates';
+  foregroundColor: BLUE;
+  labelRotation: 45;
+ }
+
+scale[axis='Y'][axisIndex='0'] {
+  titleAlignment: LEFT;
+  title: 'Left values';
+  foregroundColor: RED;
+}
+
+scale[axis='Y'][axisIndex='1'] {
+  titleAlignment: RIGHT;
+  title: 'Right values';
+  foregroundColor: GREEN;
+}
+
+axis[axis=Y][axisIndex='0'] {
+  min: -2500;
+  max: 2500;
+}
+
+axis[axis=Y][axisIndex='1'] {
+  min: -25;
+  max: 25;
+}
+

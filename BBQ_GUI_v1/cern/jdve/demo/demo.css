@@ -1,0 +1,49 @@
+scale {
+  foregroundColor: ORANGE;
+  tickLayout: CROSS; 
+  majorTickSize: 10;
+  titleColor: rbg(255, 0, 0);
+  titleFont: font('Dialog', 'BOLD | ITALIC', 16);
+  stroke: stroke(1, 'CAP_ROUND', 'JOIN_ROUND', 1, '1.5;1', 1);
+}
+
+scale[axis=X] {
+  title: 'X coordinates';
+  foregroundColor: BLUE;
+  labelRotation: 45;
+ }
+
+scale[axis='Y'] {
+  titleAlignment: LEFT;
+  title: 'Y values';
+  foregroundColor: RED;
+  
+}
+
+chart {
+  antiAliasingText: true;
+  renderingType: 'POLYLINE';
+  interactors: 'DATA_PICKER, ZOOM';
+  legendVisible: true;
+  legendTitle: "My Legend";
+  legendPosition: floating;
+}
+
+axis[axis=Y] {
+  min: -30;
+  max: 30;
+}
+
+dataset[index='0'] {
+  renderingType: 'SCATTER';
+  fillColor: ORANGE;
+  markerType: CIRCLE;
+  markerSize: 6;
+}
+
+dataset[index='1'] {
+  renderingType: 'POLYLINE_WITH_MARKERS';
+  strokeColor: #FF0000;
+  markerType: CROSS;
+  markerSize: 4;
+}

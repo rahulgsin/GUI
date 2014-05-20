@@ -1,0 +1,444 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> JDataViewer </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<h4>The following points shortly describe the most important elements of the JDataViewer package.</h4>
+
+<H3>1. Data model</H3>
+<P>
+In the data model there are two main interfaces that are used to represent data: {@link cern.jdve.data.DataSet} and 
+{@link cern.jdve.data.DataSource}. 
+<P>
+<code>DataSet</code> is used to keep data for a single series (single plot). <code>DataSet</code> operates on primitive <code>double</code> type.<BR>
+<code>DataSource</code> is used to keep a set of <code>DataSet</code>s  - when we want to have several plots on the same chart. 
+These two interfaces have their default implementations - {@link cern.jdve.data.DefaultDataSet} and {@link cern.jdve.data.DefaultDataSource}. 
+<P>
+The <code>DefaultDataSet</code> operates on X coordinates and Y coordinates of data points. However X coordinates are optional - in this case <code>DefaultDataSet</code> will generate default X coordinates that are equivalent to the data point indices. 
+<P>
+<H3>2. Renderers</H3>
+<P>
+Renderers (instances of {@link cern.jdve.ChartRenderer} class) are responsible for rendering (drawing) process of data. There are several types of renderers and each draws data in a specific way, thus we have {@link cern.jdve.renderer.BarChartRenderer}, {@link cern.jdve.renderer.PolylineChartRenderer}, etc� 
+To draw the data - an instance of <code>DataSource</code> interface must be bound to the renderer. This can be done through {@link cern.jdve.ChartRenderer#setDataSource(DataSource)} method (or in a simple case with only one series {@link cern.jdve.ChartRenderer#setDataSet(DataSet)}). 
+<P>
+As a default, renderers draw data from data sets using default (predefined) styles (instances of {@link cern.jdve.Style} class). These default styles are created using default colors which are obtained from the <code>Chart</code> class ({@link cern.jdve.Chart#getDefaultColors()}). These styles can be changed using {@link cern.jdve.ChartRenderer#setStyles(Style[])} or {@link cern.jdve.ChartRenderer#setStyle(int, Style)} methods. Index of each style corresponds to indices of data sets within data source that is bound to this renderer.
+<P>
+<H3>3. Interactors</H3>
+<P>
+An interactor (instance of {@link cern.jdve.ChartInteractor}) is a component (non-graphical) that can be used to interact with chart. Interaction means here handling and processing events coming from mouse or keyboard. This version of JDataViewer contains several interactors.  
+<P>
+<H3>4. Scales</H3>
+<P>
+The chart contains two scales (instances of {@link cern.jdve.Scale} class) for X and Y axis. Both are accessible through {@link cern.jdve.Chart#getXScale()} and {@link cern.jdve.Chart#getYScale()} methods. Scale component allows customizing several features (look at the JavaDoc of {@link cern.jdve.Scale} class).
+<P>
+<H3>5. Grid</H3>
+<P>
+Grid is a graphical component drawing vertical or horizontal lines (depending if it is X or Y grid) in the plotting area. For details see description of {@link cern.jdve.Grid} class
+<P>
+<H3>6. The <code>Chart</code> class</H3>
+<P>
+The {@link cern.jdve.Chart} is the central class of JDataViewer package. It coordinates the drawing process of the data (using added renderers), grids, scales and legend. It also manages axis and interactors.
+Most of these elements can be added, retrieved and changed using appropriate methods of this class. 
+<P>
+Some of these elements (e.g. grids or scales) cannot be removed from the chart. To get rid of them we simply need to make them invisible (calling <code>setVisible(false)</code> method on such component). 
+<P>
+The {@link cern.jdve.Chart} class contains an internal class {@link cern.jdve.Chart.Area} which is the actual component on which the chart is painted. <BR>
+<P>
+<H4>Chart and renderers</H4>
+<P>
+Chart contains a collection of renderers. When the chart needs to be repainted it goes through this collection and for each renderer calls {@link cern.jdve.ChartRenderer#draw(Graphics2D)} method. Renderers are called in the same order as they were added to the chart thus sometimes the order may be important - e.g. when we first add <code>PolylineChartRenderer</code> and then <code>BarChartRenderer</code> - the polyline plot may be, in some cases, partly covered by bars.
+<P>
+In general, to create a chart we need to:
+<OL>
+	<LI>Create data sets
+	<LI>Create data source using created data sets
+	<LI>Create a <code>ChartRenderer</code>
+	<LI>Bind data source to this renderer (using {@link cern.jdve.ChartRenderer#setDataSource(DataSource)}) method
+	<LI>Add renderer to chart (using {@link cern.jdve.Chart#addRenderer(ChartRenderer)}) method
+	<LI>Repeat steps 1-5 for each type of renderer
+</OL>
+However in many cases this scenario can be simplified:
+<UL>
+	<LI>If we want to use the renderer to plot only one data set we can use directly method {@link cern.jdve.ChartRenderer#setDataSet(DataSet)} omitting step 2
+	<LI>If we want to have a chart with only one type of plots (e.g. only polyline plots) - we can skip steps 3-5, setting data source directly to the chart (using {@link cern.jdve.Chart#setDataSource(DataSource)}); if we want to have only one plot on the chart we can use {@link cern.jdve.Chart#setDataSet(DataSet)} method. If one of these two methods is used - chart automatically creates and adds to itself the default renderer (which is an instance of <code>PolylineChartRenderer</code>), binding to it the specified data source. This default renderer can be changed using method {@link cern.jdve.Chart#setRenderingType(int)} and passing appropriate type (e.g. {@link cern.jdve.ChartRenderer#BAR}).
+</UL>
+<p>
+
+
+<B>Note: Please, do not use (if not really necessary) classes from package <code>cern.jdve.utils</code> and class <code>cern.jdve.CoordinateSystem</code> - they may slightly change in the next version.</b>
+
+<H3>7. CSS Styling</H3>
+The {@link cern.jdve.Chart} class supports styling using CSS files. See the {@link cern.jdve.Chart#setStyleSheets(String[])} method for details. 
+The CSS styling supports at the moment 6 differents elements (selectors): <B>chart, chartArea, scale, grid, axis and legend</B>. 
+
+<br>
+The <B>scale, grid</B> and <B>axis</B> elements may depend on the axis (X or Y). To specify style for selected we use
+a conditional selector with argument <B>axis</B> set to <B>X</B> or <B>Y</B> e.g.<BR><BR>
+
+scale[axis='X'] {<BR>
+&nbsp;&nbsp;title: 'X coordinates';<BR>
+}<BR>
+<BR>
+axis[axis=Y] {<BR>
+&nbsp;&nbsp;min: 0;<BR>
+&nbsp;&nbsp;max: 10;<BR>
+}
+<BR><BR>
+
+If no <B>axis</B> contition is specified - these elements apply to both: X and Y axis.  <BR><BR>
+grid {<BR>
+&nbsp;&nbsp;majorColor: #FC123F;<BR>
+&nbsp;&nbsp;majorStroke: stroke(2); <BR>
+}<BR><BR>
+
+Note that properties defined for a specific axis override properties defined for both axis i.e. properties defined by 
+selector <B>scale[axis='X']</B> override these defined by <B>scale</B> selector.
+
+<BR><BR>
+The <B>'dataset'</B> selector requires a condition attribute: <B>name</B> or <B>index</B> of the data set e.g.: <BR><BR>
+dataset[index='0'] {<BR>
+&nbsp;&nbsp;renderingType: 'POLYLINE_WITH_MARKERS';<BR>
+}<BR><BR>
+dataset[name='MyDataSet'] {<BR>
+&nbsp;&nbsp;renderingType: 'BAR';<BR>
+}<BR><BR>
+
+<H4>7.1 List of selectors and properties</H4>
+<table width="600" border="2">
+<colgroup width=150 >
+	<col>
+	<col>
+	<col width=300>
+</colgroup>
+	<tr><th> Property name </th> <th> Property type </th> <th> Possible values </th></tr>
+	<tr><td colspan="3"><font color="blue"><b>chart</b></font></td></tr>	
+	<tr><td> interactors </td><td> String </td><td> ZOOM, PAN, DATA_PICKER </td></tr>									
+	<tr><td> renderintType </td><td> String </td><td> BAR, SCATTER, AREA, POLYLINE, 'POLYLINE_WITH_MARKERS', IMPULSE, CONTOUR, STAIRS </td></tr> 
+	<tr><td> doubleBuffered </td><td>boolean</td><td>true, false </td></tr>
+	<tr><td> antiAliasing </td><td>boolean</td><td>true, false </td></tr>
+	<tr><td> antiAliasingText </td><td>boolean</td><td>true, false </td></tr>
+	<tr><td> legendTitle </td><td>String</td><td>e.g. 'Legend'</td></tr>
+	<tr><td> legendVisible </td><td>boolean</td><td>true, false</td></tr>
+	<tr><td> legendPosition </td><td>String</td><td>SOUTH, WEST, EAST, NORTH, FLOATING</td></tr>
+
+	<tr><td colspan="3"><font color="blue"><b>chartArea</b></font></td></tr>
+	<tr><td> insets </td><td> String </td><td> <A HREF="#insets">INSETS</A></td></tr>					
+	<tr><td> margins </td><td> String </td><td> <A HREF="#insets">MARGINS</A> </td></tr>
+	<tr><td> stroke </td><td> Stroke </td><td><A HREF="#strokes">STROKE</A></td></tr>
+	<tr><td> strokeColor </td><td> Color </td><td><A HREF="#colors">COLOR</A></td></tr>
+	<tr><td> fillColor </td><td> Color </td><td><A HREF="#colors">COLOR</A> </td></tr>
+	<tr><td> strokeOn </td><td> boolean </td><td> true, false </td></tr>
+	<tr><td> fillOn </td><td> boolean </td><td> true, false </td></tr>	
+	<tr><td> opaque </td><td> boolean </td><td> true, false </td></tr>	
+	<tr><td> background </td><td> Color </td><td><A HREF="#colors">COLOR</A> </td></tr>
+
+	<tr><td colspan="3"><font color="blue"><b>dataset</b></font></td></tr>
+	<tr><td> renderingType </td><td> String </td><td> BAR, SCATTER, AREA, POLYLINE, 'POLYLINE_WITH_MARKERS', IMPULSE, CONTOUR, STAIRS</td></tr>
+	<tr><td> strokeColor </td><td> Color </td><td><A HREF="#colors">COLOR</A> </td></tr>
+	<tr><td> fillColor </td><td> Color </td><td><A HREF="#colors">COLOR</A> </td></tr>
+	<tr><td> strokeOn </td><td> boolean </td><td> true, false </td></tr>
+	<tr><td> fillOn </td><td> boolean </td><td> true, false </td></tr>	
+	<tr><td> stroke </td><td> Stroke </td><td><A HREF="#strokes">STROKE</A></td></tr>
+	<tr><td> marker </td><td> String </td><td> SQUARE, CIRCLE, DIAMOND, TRIANGLE, PLUS, CROSS</td></tr>
+	<tr><td> markerSize </td><td> int </td><td> int value (in pixels)</td></tr>
+
+	<tr><td colspan="3"><font color="blue"><b>scale</b></font></td></tr>
+	<tr><td> title </td><td> String </td><td> string value </td></tr> 	
+	<tr><td> titleAlignement </td><td> String </td><td> LEFT, CENTER, RIGHT </td></tr> 	
+	<tr><td> titleColor </td><td> Color </td><td><A HREF="#colors">COLOR</A></td></tr> 	
+	<tr><td> titleVisible </td><td> boolean </td><td> true, false </td></tr> 	
+	<tr><td> titleFont </td><td> Font </td><td><A HREF="#fonts">FONT</A></td></tr> 	
+	<tr><td> labelColor </td><td> Color </td><td><A HREF="#colors">COLOR</A></td></tr> 	
+	<tr><td> labelFont </td><td> Font </td><td><A HREF="#fonts">FONT</A></td></tr> 	
+	<tr><td> labelRotation </td><td> double </td><td>double value</td></tr> 	
+	<tr><td> labelOffset </td><td> int </td><td>int value in pixels</td></tr> 	
+	<tr><td> foregroundColor </td><td> Color </td><td> <A HREF="#colors">COLOR</A> </td></tr> 	
+	<tr><td> stroke </td><td> Stroke </td><td><A HREF="#strokes">STROKE</A></td></tr> 
+	<tr><td> majorStep </td><td> int, float </td><td> int value, float value </td></tr> 
+	<tr><td> minorStep </td><td> int, float </td><td> int value, float value </td></tr> 
+	<tr><td> tickLayout </td><td> int </td><td> INSIDE, OUTSIDE, CROSS </td></tr> 	
+	<tr><td> majorTickSize </td><td> int </td><td> int value </td></tr> 	
+	<tr><td> minorTickSize </td><td> int </td><td> int value </td></tr> 	
+	<tr><td> majorTickVisible </td><td> boolean </td><td> true, false </td></tr> 
+	<tr><td> minorTickVisible </td><td> boolean </td><td> true, false</td></tr> 	
+	<tr><td> visible </td><td> boolean </td><td> true, false </td></tr> 	
+	<tr><td> category </td><td> boolean </td><td> true, false </td></tr> 
+	<tr><td> logarithmic </td><td> float </td><td> logarithm base </td></tr> 
+	
+	<tr><td colspan="3"><font color="blue"><b> grid</b></font></td></tr>
+	<tr><td> drawOrder </td><td> String </td><td>'DRAW_BELOW', 'DRAW_ABOVE'</td></tr>
+	<tr><td> majorColor </td><td> Color </td><td><A HREF="#colors">COLOR</A></td></tr>																
+	<tr><td> minorColor </td><td> Color </td><td><A HREF="#colors">COLOR</A></td></tr>	
+	<tr><td> majorStroke </td><td> Stroke </td><td><A HREF="#strokes">STROKE</A></td></tr>	
+	<tr><td> minorStroke </td><td> Stroke </td><td><A HREF="#strokes">STROKE</A></td></tr>	
+	<tr><td> majorVisible </td><td> boolean </td><td> true, false </td></tr>	
+	<tr><td> minorVisible </td><td> boolean </td><td> true, false </td></tr>	
+	<tr><td> visible </td><td> boolean </td><td> true, false </td></tr>		
+	
+	<tr><td colspan="3"><font color="blue"><b> axis</b></font></td></tr>
+	<tr><td> automin </td><td> boolean </td><td> true, false </td></tr>
+	<tr><td> automax </td><td> boolean </td><td> true, false </td></tr>
+	<tr><td> min </td><td> int, float </td><td> int value, float value </td></tr>
+	<tr><td> max </td><td> int, float </td><td> int value, float value </td></tr>
+	
+	<tr><td colspan="3"><font color="blue"><b> legend</b></font></td></tr>
+	<tr><td> title </td><td> String </td><td> String value </td></tr>								
+	<tr><td> position </td><td> String </td><td>SOUTH, WEST, EAST, NORTH, FLOATING </td></tr>
+	<tr><td> visible </td><td> boolean </td><td>true, false </td></tr>
+</table>
+
+
+<H4 id="colors">7.1 Defining a color</H4>
+<P>
+There are 3 ways to define a color: 
+<UL>
+	<LI>Use a name of predefined color. The following colors are currently recognized: 
+	<B>RED, BLUE, GREEN, BLACK, CYAN, DARKGREY, GREY, LIGHTGREY, MAGENTA, ORANGE, PINK, YELLOW, WHITE</B></LI>
+	<LI>Use <B>rgb</B> function passing 3 integers from 0 to 255 representing Red, Green and Blue color parts e.g. <B>rgb(128, 255, 64)</B></LI>
+	<LI>Use hexadecimal representation of the color e.g. <B>#7FFF3F</B> where 7F represents Red, FF represents Green and 3F represents Blue</LI>
+</UL>
+<H4 id="strokes">7.2 Defining a stroke</H4>
+<P>
+To define a stroke the <B>stroke</B> function should be used. 
+The function gets either 1 or 6 parameters which correspond to two constructors of BasicStroke class: 
+<A HREF="http://java.sun.com/j2se/1.4.2/docs/api/java/awt/BasicStroke.html#BasicStroke(float)">BasicStroke(float width)</A> and 
+<A HREF="http://java.sun.com/j2se/1.4.2/docs/api/java/awt/BasicStroke.html#BasicStroke(float, int, int, float, float[], float)">BasicStroke(float width, int cap, int join, float miterlimit, float[] dash, float dash_phase)</A>.
+
+Parameters can have the following values:<BR><BR>
+<TABLE width="600" border="2">
+<TR> 
+	<TH>Parameter</TH>
+	<TH>Type</TH>
+	<TH>Possible/Exemple values</TH>
+</TR>
+<TR>
+	<TD>width</TD>
+	<TD>float</TD>
+	<TD>float value</TD>
+</TR>
+<TR>
+	<TD>cap</TD>
+	<TD>String</TD>
+	<TD>one of: 'CAP_BUTT', 'CAP_ROUND', 'CAP_SQUARE'</TD>
+</TR>
+<TR>
+	<TD>join</TD>
+	<TD>String</TD>
+	<TD>one of: 'JOIN_BEVEL', 'JOIN_MITER', 'JOIN_ROUND'</TD>
+</TR>
+<TR>
+	<TD>miterlimit</TD>
+	<TD>float</TD>
+	<TD>float value</TD>
+</TR>
+<TR>
+	<TD>dash</TD>
+	<TD>array of floats</TD>
+	<TD>a string with semicolor-separated float values e.g.: '1.5;2.5;1'</TD>
+</TR>
+<TR>
+	<TD>dash_phase</TD>
+	<TD>float</TD>
+	<TD>float value</TD>
+</TR>
+</TABLE>
+<BR>
+Examples of properly defined stroke: <B>stroke(2, 'CAP_ROUND', 'JOIN_ROUND', 1, '1.5;1', 1)</B>
+
+<H4 id="fonts">7.3 Defining a font</H4>
+To define a font the <B>font</B> function should be used. The function gets 3 arguments which correspond to the Font class constructor: 
+<A HREF="http://java.sun.com/j2se/1.4.2/docs/api/java/awt/Font.html#Font(java.lang.String, int, int)">Font(String name, int style, int size)</A>. 
+Parameters can have the following values:<BR><BR>
+<TABLE width="600" border="2">
+<TR> 
+	<TH>Parameter</TH>
+	<TH>Type</TH>
+	<TH>Possible/Exemple values</TH>
+</TR>
+<TR>
+	<TD>name</TD>
+	<TD>String</TD>
+	<TD>Font family name e.g. 'Dialog', 'Arial'</TD>
+</TR>
+<TR>
+	<TD>style</TD>
+	<TD>String</TD>
+	<TD>One or combination of the following: BOLD, ITALIC, PLAIN. e.g. BOLD, 'BOLD | ITALIC'</TD>
+</TR>
+<TR>
+	<TD>size</TD>
+	<TD>int</TD>
+	<TD>integer value > 6</TD>
+</TR>
+</TABLE>
+<BR>
+Examples of properly defined fonts: <B>font('Dialog', 'BOLD | ITALIC', 16), font('Arial', 'BOLD', 24)</B>
+
+<H4 id="insets">7.4 Insets and margins</H4>
+To define insets or margins one should pass a string containing 4 integers corresponding to the arguments of Insets class constructor: 
+<A HREF="http://java.sun.com/j2se/1.4.2/docs/api/java/awt/Insets.html#Insets(int, int, int, int)">Insets(int top, int left, int bottom, int right)</A>.
+<BR>
+Example: '2, 1, 2, 1'
+<!--
+<H3> 7. Css </H3>
+The <code>Chart</code> and <code>StyleSheets</code> classes define several methods to control the styling. The <code>StyleSheet</code> class is responsible for parsing the css file 
+and collecting all the important data. When the css file is parsed <code>Chart</code> class can apply changes using <code>StyleSheetCSSManager</code>. Here is an example 
+of the typical code involved in applying style sheets to a chart: 
+<br> <br>
+<code style="margin-left:8em">
+ StyleSheet[] sheets = {new StyleSheet("example.css"}; <br>
+</code>
+<code style="margin-left:8em"> 
+ chart.setStyleSheets(sheets); <br>
+</code>
+<br>
+The <code>chart.setStyleSheets</code> method expects an array of StyleSheets objects. If an array consists of more than one object, all the objects are combined 
+into one using <code> styleSheet.add </code> method. Add method simply adds each StyleSheet object to the first one, overwriting existing elements. 
+After combining of all the objects a method <code>setStyleSheet</code> from StyleSheetManager is invoked. <code>setStyleSheet</code> method uses several other methods to 
+applyStyles for each element: <br>
+<UL>	
+	<LI> applyStyleForDataSet from DataSetManager class 
+	<LI> applyStyleForScale from ScaleManager class
+	<LI> applyStyleForGrid from GridManager class
+	<LI> applyStyleForAxis from AxisManager class
+	<LI> applyStyleForLegend from LegendManager class	
+</UL>
+Dataset selector must be followed by [index=""] or [name=""] in order to identify the dataset. Selectors: scale, grid, axis can be followed 
+by [axis="X"] or [axis="Y"] what means that either axis X or Y is described. If one of these selectors is not followed by anything than the 
+described style is applied for both axis. Legend selector should not be followed by anything. In order to add a condition to a certain dataset 
+a combination of dataset and point selectors should be used. Here is an example saying that a condition "y<10" is added to dataset with index = 0:
+<br> <br>
+<code style="margin-left:8em">
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dataset[index="0"] points[condition="y<10"]
+</code>
+<br> <br>
+Instead of "index", "name" can be used to identify dataset. We can use four kinds of conditions: x, y, index and label. With x, y and index we can 
+use following operators: =, < and >. With label only "=" operator can be used.
+<br> <br>
+Each selector is followed by a list of properties:
+<br> <br>
+
+<table width="600" border="2">
+<colgroup width=150 align=center>
+	<col>
+	<col>
+	<col width=300>
+</colgroup>
+	<tr><th> Property name </th> <th> Property type </th> <th> Possible values </th></tr>
+	<tr><td colspan="3"><font color="blue"><b> dataset selector:</b></font></td></tr>
+	<tr><td> index </td><td> int </td><td> int value </td></tr> 
+	<tr><td> name </td><td> String </td><td> String value </td></tr>
+	<tr><td> type </td><td> String </td><td> BAR, SCATTER, AREA, LINE, IMPULSE, CONTOUR, STAIRS</td></tr>
+	<tr><td> strokeColor </td><td> Color </td><td> RED, BLUE, GREEN, BLACK, CYAN, DARKGREY, GREY, LIGHTGREY, MAGENTA, ORANGE, PINK, YELLOW, 
+												   WHITE ,hexadecimal number (example: #500050), 3 or four numbers separated by "," </td></tr>
+	<tr><td> fillColor </td><td> Color </td><td> RED, BLUE, GREEN, BLACK, CYAN, DARKGREY, GREY, LIGHTGREY, MAGENTA, ORANGE, PINK, YELLOW, 
+												 WHITE, hexadecimal number (example: #500050), 3 or 4 numbers separated by "," </td></tr>
+	<tr><td> stroke </td><td> Stroke </td><td> Stroke </td></tr>
+	<tr><td> markerType </td><td> String </td><td> SQUARE, CIRCLE, DIAMOND, TRIANGLE</td></tr>
+	<tr><td> markerSize </td><td> int </td><td> int value </td></tr>
+	
+	<tr><td colspan="3"><font color="blue"><b> scale selector:</b></font></td></tr>
+	<tr><td> title </td><td> String </td><td> string value </td></tr> 	
+	<tr><td> titleAlignement </td><td> String </td><td> LEFT, CENTER, RIGHT </td></tr> 	
+	<tr><td> foreground </td><td> Color </td><td> RED, BLUE, GREEN, BLACK, CYAN, DARKGREY, GREY, LIGHTGREY, MAGENTA, ORANGE, PINK, YELLOW, 
+												  WHITE, hexadecimal number (example: #500050), 3 or 4 numbers separated by "," </td></tr> 	
+	<tr><td> tickLayout </td><td> int </td><td> 1, 2, 3 </td></tr> 	
+	<tr><td> majorTickSize </td><td> int </td><td> int value </td></tr> 	
+	<tr><td> minorTickSize </td><td> int </td><td> int value </td></tr> 	
+	<tr><td> majorTickVisible </td><td> boolean </td><td> true, false </td></tr> 
+	<tr><td> minorTickVisible </td><td> boolean </td><td> true, false</td></tr> 	
+	<tr><td> titleVisible </td><td> boolean </td><td> true, false </td></tr> 	
+	<tr><td> visible </td><td> boolean </td><td> true, false </td></tr> 	
+	<tr><td> titleColor </td><td> Color </td><td> RED, BLUE, GREEN, BLACK, CYAN, DARKGREY, GREY, LIGHTGREY, MAGENTA, ORANGE, PINK, YELLOW, 
+												  WHITE, hexadecimal number (example: #500050), 3 or 4 numbers separated by "," </td></tr> 	
+	<tr><td> labelRotation </td><td> int, float </td><td> int value, float value </td></tr> 	
+	<tr><td> titleFont </td><td> Font </td><td> Font </td></tr> 	
+	<tr><td> stroke </td><td> Stroke </td><td> Stroke </td></tr> 
+	<tr><td> category </td><td> boolean </td><td> true, false </td></tr> 
+	<tr><td> majorStep </td><td> int, float </td><td> int value, float value </td></tr> 
+	<tr><td> minorStep </td><td> int, float </td><td> int value, float value </td></tr> 
+	
+	<tr><td colspan="3"><font color="blue"><b> grid selector:</b></font></td></tr>
+	<tr><td> drawOrder </td><td> String </td><td> DRAW_BELOW, DRAW_ABOVE </td></tr>
+	<tr><td> majorColor </td><td> Color </td><td> RED, BLUE, GREEN, BLACK, CYAN, DARKGREY, GREY, LIGHTGREY, MAGENTA, ORANGE, PINK, YELLOW, 
+												  WHITE, hexadecimal number (example: #500050), 3 or four numbers separated by "," </td></tr>																
+	<tr><td> minorColor </td><td> Color </td><td> RED, BLUE, GREEN, BLACK, CYAN, DARKGREY, GREY, LIGHTGREY, MAGENTA, ORANGE, PINK, YELLOW, 
+												  WHITE, hexadecimal number (example: #500050), 3 or 4 numbers separated by "," </td></tr>	
+	<tr><td> majorStroke </td><td> Stroke </td><td> Stroke </td></tr>	
+	<tr><td> minorStroke </td><td> Stroke </td><td> Stroke </td></tr>	
+	<tr><td> majorVisible </td><td> boolean </td><td> true, false </td></tr>	
+	<tr><td> minorVisible </td><td> boolean </td><td> true, false </td></tr>	
+	<tr><td> visible </td><td> boolean </td><td> true, false </td></tr>		
+	
+	<tr><td colspan="3"><font color="blue"><b> axis selector:</b></font></td></tr>
+	<tr><td> automin </td><td> boolean </td><td> true, false </td></tr>
+	<tr><td> automax </td><td> boolean </td><td> true, false </td></tr>
+	<tr><td> min </td><td> int, float </td><td> int value, float value </td></tr>
+	<tr><td> max </td><td> int, float </td><td> int value, float value </td></tr>
+	
+	<tr><td colspan="3"><font color="blue"><b> legend selector:</b></font></td></tr>
+	<tr><td> title </td><td> String </td><td> String value </td></tr>								
+	<tr><td> position </td><td> String </td><td> String value </td></tr>
+	
+	<tr><td colspan="3"><font color="blue"><b> dataset point selector:</b></font></td></tr>
+	<tr><td> stroke </td><td> Stroke </td><td> Stroke </td></tr>
+	<tr><td> strokeColor </td><td> Color </td><td> RED, BLUE, GREEN, BLACK, CYAN, DARKGREY, GREY, LIGHTGREY, MAGENTA, ORANGE, PINK, YELLOW, 
+												   WHITE, hexadecimal number (example: #500050), 3 or 4 numbers separated by ","  </td></tr>
+	<tr><td> fillColor </td><td> Color </td><td> RED, BLUE, GREEN, BLACK, CYAN, DARKGREY, GREY, LIGHTGREY, MAGENTA, ORANGE, PINK, YELLOW, 
+												   WHITE, hexadecimal number (example: #500050), 3 or 4 numbers separated by ","  </td></tr>
+	<tr><td> strokeOn </td><td> boolean </td><td> true, false </td></tr>
+	<tr><td> fillOn </td><td> boolean </td><td> true, false </td></tr>	
+	<tr><td colspan="3"><font color="blue"><b> chart selector:</b></font></td></tr>	
+	<tr><td> interactors </td><td> String </td><td> one or more String values separated by ",". ZOOM, PAN, ADD_POINTS, CHANGE_POINTS, REMOVE_POINTS,
+													ALING_POINTS, DATA_PICKER <br>(example: "ZOOM , ADD_POINTS") </td></tr>									
+	<tr><td> renderintType </td><td> String </td><td> BAR, SCATTER, AREA, LINE, IMPULSE, CONTOUR, STAIRS </td></tr> 
+	<tr><td> background </td><td> Color </td><td> RED, BLUE, GREEN, BLACK, CYAN, DARKGREY, GREY, LIGHTGREY, MAGENTA, ORANGE, PINK, YELLOW, 
+												   WHITE, hexadecimal number (example: #500050), 3 or 4 numbers separated by ","  </td></tr>
+	<tr><td colspan="3"><font color="blue"><b> chartArea selector:</b></font></td></tr>
+	<tr><td> insets </td><td> String </td><td> 4 numbers separated by "," <br> (example: "2 , 2 , 2 , 2")</td></tr>					
+	<tr><td> margins </td><td> String </td><td> 4 numbers separated by "," <br> (example: "2 , 2 , 2 , 2") </td></tr>
+	<tr><td> stroke </td><td> Stroke </td><td> Stroke </td></tr>
+	<tr><td> strokeColor </td><td> Color </td><td> RED, BLUE, GREEN, BLACK, CYAN, DARKGREY, GREY, LIGHTGREY, MAGENTA, ORANGE, PINK, YELLOW, 
+												   WHITE, hexadecimal number (example: #500050), 3 or 4 numbers separated by ","  </td></tr>
+	<tr><td> fillColor </td><td> Color </td><td> RED, BLUE, GREEN, BLACK, CYAN, DARKGREY, GREY, LIGHTGREY, MAGENTA, ORANGE, PINK, YELLOW, 
+												   WHITE, hexadecimal number (example: #500050), 3 or 4 numbers separated by ","  </td></tr>
+	<tr><td> strokeOn </td><td> boolean </td><td> true, false </td></tr>
+	<tr><td> fillOn </td><td> boolean </td><td> true, false </td></tr>	
+</table>
+
+<br><br>
+Every enumeration containing "_" must be put as String. 
+<br>
+Example: "DRAW_BELOW"
+<br> <br>
+<b><font size=5>Font</font></b>
+<br> <br>
+In order to create Font we have to pass a string of three parameters separated by ",". <br> <br>
+Parameters: <br> <br>
+name - simply the font name <br>
+style - the style constant for the Font: BOLD, ITALIC or PLAIN <br>
+size - the point size of the Font <br> <br>
+Example: "Courier New, ITALIC, 12"
+<br> <br> 
+<b><font size=5>Stroke</font></b>
+<br> <br>
+In order to create Stroke we have to pass a number indicating line width or a string of six parameters separated by ",". <br> <br>
+Parameters: <br> <br>
+width - the pen width <br>
+end caps - the decoration applied to the ends of unclosed subpaths and dash segments: CAP_BUTT, CAP_ROUND, CAP_SQUARE <br>
+line joins - the decoration applied at the intersection of two path segments and at the intersection of the endpoints of a subpath: JOIN_BEVEL, 
+				JOIN_ROUND, JOIN_MITER <br>
+mitter limit - the limit to trim a line join that has a JOIN_MITTER decoration. This parameter is a table of float values. To indicate that it 
+				is a table all numbers must be separated by ";" (example: 1;3;5) <br>
+Dash patterns - the definition of how to make a dash pattern between opaque and transparent sections <br> <br>
+Example: "1,CAP_ROUND,JOIN_ROUND,2,1;3;5,5" 
+
+-->
+</BODY>
+</HTML>

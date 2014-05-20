@@ -1,0 +1,1776 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.8.2
+Implementation-Vendor: CERN
+Implementation-Title: jdataviewer
+Implementation-Version: 20111116
+Specification-Vendor: CERN
+Created-By: 1.6.0_22-b04 (Sun Microsystems Inc.)
+Specification-Title: jdataviewer
+Specification-Version: 1.5.4
+
+Name: cern/jdve/table/JDVETable$PopupTrigger$2.class
+SHA1-Digest: cphJuIqPk6wHvIm/qFqRJ2UlI5c=
+
+Name: cern/jdve/UndoRedoManager$DefaultDataSetSnapshotFactory.class
+SHA1-Digest: WTaAqR9J5q/h40MOSeeeHRO4cN4=
+
+Name: cern/jdve/interactor/DataPickerInteractor$CrossPanel.class
+SHA1-Digest: DKalCyuhIGkRjigcd2AMjnnYQtw=
+
+Name: cern/jdve/data/DefaultErrorDataSet.class
+SHA1-Digest: teighMH+38uvMqNjTtDvsfeNIV0=
+
+Name: cern/jdve/viewer/icons/maximize.png
+SHA1-Digest: Vshm9fB3SNWpZPiXdIq+8VmEVb8=
+
+Name: cern/jdve/selectors/FILL_PATTERN_HATCHCROSS1.gif
+SHA1-Digest: f0zDB+pi3UjtbzfaS6r2Jym1Wjo=
+
+Name: cern/jdve/viewer/icons/view.png
+SHA1-Digest: +DnSffM+rKAZCjz9TOJNaLXIoNg=
+
+Name: cern/jdve/interactor/MovingAverageSmoothingInteractor$MovingAver
+ ateSmoothAction.class
+SHA1-Digest: 2Qy3YtRV1BA2DXDkm+45SeSpDfk=
+
+Name: cern/jdve/utils/EpsGraphics2D.class
+SHA1-Digest: g+spyn9WG+aELF6jRT8ZLVh32cI=
+
+Name: cern/jdve/renderer/BarChartRenderer$BarsCache.class
+SHA1-Digest: QRUaLbt1KeBkUiZeKpqyAN/dX64=
+
+Name: cern/jdve/table/JDVETableRenderer.class
+SHA1-Digest: 9nyZx/LcLzoH/qN/x9scFT4nGAQ=
+
+Name: cern/jdve/selectors/FlatSlider$FlatSliderUI.class
+SHA1-Digest: n+lCJNR8EaPQZnJSLj3aD4QO6Lw=
+
+Name: cern/jdve/data/AbstractErrorDataSet$1.class
+SHA1-Digest: NjWzDAIU9TdQsPVlyU3NGB/srfI=
+
+Name: cern/jdve/StyleSheet$ChartCSS.class
+SHA1-Digest: 5VEp28n8HhxiPdld7Z0sI1jnzuM=
+
+Name: cern/jdve/interactor/CursorInteractor$Cursor.class
+SHA1-Digest: nTI1c6fE8p/UWaZOmQ2sWDw038k=
+
+Name: cern/jdve/Legend$Header$2.class
+SHA1-Digest: 86bDOUvJJyTCgPgbYBaXrnQVL4c=
+
+Name: cern/jdve/graphic/DefaultRenderingHint.class
+SHA1-Digest: CuIAdU9EWqiaGJjbIuWusZzlhqA=
+
+Name: cern/jdve/DefaultDataRangePolicy.class
+SHA1-Digest: bYRGWff8Hk+xn2C9Zu4a/3zpEu8=
+
+Name: cern/jdve/renderer/ImpulsesChartRenderer.class
+SHA1-Digest: GN3X5LI/CEpcEWaZAFSL6FzhP6Q=
+
+Name: cern/jdve/interactor/CursorInteractor$CursorValueDisplayMode.cla
+ ss
+SHA1-Digest: 25ID9g4DpIh7zUlDgEabU2yupiA=
+
+Name: cern/jdve/viewer/icons/contour.png
+SHA1-Digest: cLUme/pOAccWOcIhxNLV+jGRNoI=
+
+Name: cern/jdve/selectors/StyleEditor$StrokeEditor$11.class
+SHA1-Digest: jNMjDBv8S8EMd3N/zJ34TECmEyE=
+
+Name: cern/jdve/renderer/ErrorDataSetRenderer$1.class
+SHA1-Digest: kKDNHcl9Wny4ZG6bYypyNZqSlS4=
+
+Name: cern/jdve/demo/CustomContourDemo.class
+SHA1-Digest: sgZml0h5x8NYxEBQpXvCYKcpjzA=
+
+Name: cern/jdve/ParserCSS$1.class
+SHA1-Digest: iAC11VuvoVRpeoq2JMcykvAExJI=
+
+Name: cern/jdve/selectors/StyleEditor$StrokeEditor$2.class
+SHA1-Digest: JRFAPUvdH4E6bnLd/bAU7B4V25o=
+
+Name: cern/jdve/utils/FlagsUtils.class
+SHA1-Digest: hutl8ZvJMYBJrjjpUMSIvLRiUz8=
+
+Name: cern/jdve/table/DataSourceTableModel$TableDataSetListener$1.clas
+ s
+SHA1-Digest: +E7EmXpSkq2A81vc6sSju10sFb8=
+
+Name: cern/jdve/UndoRedoManager$3.class
+SHA1-Digest: t+f8HFN9Xi+s9cDDhx2e5xgS64E=
+
+Name: cern/jdve/StepsDefinition.class
+SHA1-Digest: lCe4x1654QQg/yG0NckwNhSfJB8=
+
+Name: cern/jdve/renderer/BarChartRenderer$BarsVerticalPosition.class
+SHA1-Digest: gVpMQ0KFBhIT70dZMaFq40+3alM=
+
+Name: cern/jdve/ValueFormat.class
+SHA1-Digest: IT6XtxhNkhKHKcNfhMP/++ylFBY=
+
+Name: cern/jdve/utils/ToolBarButton$1.class
+SHA1-Digest: cnraNjP/jU7PB1/wqZVuY6Es8E0=
+
+Name: cern/jdve/utils/DoubleArray.class
+SHA1-Digest: 7OogVSjJrJlzpmccwXf0M8JkVz8=
+
+Name: cern/jdve/utils/Arrays$Swapper.class
+SHA1-Digest: Af3aRXycOiZDe5I/okKCDyMUO+c=
+
+Name: cern/jdve/viewer/ActionManager$1.class
+SHA1-Digest: aSeNtPavO6YfSCC2j3gFEbPKZ8Q=
+
+Name: cern/jdve/demo/StairsDemo.class
+SHA1-Digest: 7ZzOtHxcIWL8eaakAaFezoN2ZQk=
+
+Name: cern/jdve/graphic/MarkerFactory$CircleMarker.class
+SHA1-Digest: TI7Rgnt8RT6MQvMp1ZVLfywUdto=
+
+Name: cern/jdve/table/TablePrintable.class
+SHA1-Digest: e4t62OZjQ1t6LoOYnxAeiwFgpM8=
+
+Name: cern/jdve/demo/BBQ_spectrum_hor.dat
+SHA1-Digest: 01+/qqP/+gqh5fSrluIFyQ5e+CU=
+
+Name: cern/jdve/StyleSheet$ScaleCSS.class
+SHA1-Digest: rGUZZqQ3wWeAyVqaWIffaD3nyQ4=
+
+Name: cern/jdve/interactor/ZoomInteractor$ZoomInteractionEvent.class
+SHA1-Digest: 2+2/GhaQQXXm/66qfSJopMqjqSE=
+
+Name: cern/jdve/selectors/StyleEditor$StrokeEditor$6.class
+SHA1-Digest: LOvIUkZqkepwCtT0lS1RIvXZnj4=
+
+Name: cern/jdve/interactor/ChangePointInteractor$ChangePointsDialog$Ca
+ ncelAction.class
+SHA1-Digest: VjU7W3L3I8OPOEssejGgSiq4OTc=
+
+Name: cern/jdve/utils/Exporter$ImagePreview.class
+SHA1-Digest: +wPpF2WGLkYgVoMdfSpoG/aU5Ao=
+
+Name: cern/jdve/table/DataSourceTableModel$TableDataSourceListener$1.c
+ lass
+SHA1-Digest: JBHEEl99xABYXESDA8xqnasUocY=
+
+Name: cern/jdve/Style$FillPattern.class
+SHA1-Digest: y4j6SlQVCNDtnYvvYiVREOeombU=
+
+Name: cern/jdve/graphic/MarkerFactory.class
+SHA1-Digest: 71cAOsy9AfIFIX2NZYbA6i78WUA=
+
+Name: cern/jdve/renderer/BarChartRenderer$1.class
+SHA1-Digest: 4c4cbXuU/IHE9XCprxdr4xolmLg=
+
+Name: cern/jdve/UndoRedoManager$DataSetSnapshotFactory.class
+SHA1-Digest: H+/Yc/WFn+dJETSRSP9qhpjN0JQ=
+
+Name: cern/jdve/Scale.class
+SHA1-Digest: UW/Pd1/bvYeKOL4dSlXrXjScLrg=
+
+Name: cern/jdve/viewer/DVToolbar$1.class
+SHA1-Digest: hNMo7gQuzRR7DcawrtV9SlA0SDQ=
+
+Name: cern/jdve/LabelRenderer.class
+SHA1-Digest: 0Z0lRKdsOyPpYZDFk5AaViMxay8=
+
+Name: cern/jdve/InteractorManager.class
+SHA1-Digest: hQLi1DvdiETkXlIm4T30W4JPG5Q=
+
+Name: cern/jdve/viewer/DVInternalFrameUI.class
+SHA1-Digest: xj0Da2a5JxkHCEvABpVw2H5Al8E=
+
+Name: cern/jdve/selectors/2D-JOIN_BEVEL.gif
+SHA1-Digest: pNeWuXfBysEGJMqy7mrEH6LnHPA=
+
+Name: cern/jdve/ChartRenderer.class
+SHA1-Digest: k/KOfCygHuOntO3O1Y6o0ZbJsFg=
+
+Name: cern/jdve/selectors/GradientSlider.class
+SHA1-Digest: Xdk7DEdCck71MyUwYq5Od5tb+mk=
+
+Name: cern/jdve/table/GroupableTableHeaderUI.class
+SHA1-Digest: p0h7a2uWypCd4aA1UHE8gAyyMuw=
+
+Name: cern/jdve/interactor/HighlightInteractor.class
+SHA1-Digest: SLFfJK1d9x8RJGEYbvk//DJLrwo=
+
+Name: cern/jdve/renderer/BooleanChartRenderer.class
+SHA1-Digest: cbIzWR6lHaqc/tW1ALL1z7sE1/o=
+
+Name: cern/jdve/viewer/ActionManager$AbstractActionExt.class
+SHA1-Digest: vW1vr8wJo4LWjiZ9gCPDO/wlGe8=
+
+Name: cern/jdve/demo/LogDemo.class
+SHA1-Digest: StkdrzYhOchEtgQsKajohpf9+Vk=
+
+Name: cern/jdve/selectors/StyleEditor$MarkerEditor.class
+SHA1-Digest: H7Pfa/Am5IGxqXBKGR2s4ATPNjk=
+
+Name: cern/jdve/selectors/StyleEditor$StrokeEditor$3.class
+SHA1-Digest: ouduLNo3DhrB1JXK8cCZjH+dhJA=
+
+Name: cern/jdve/demo/EditDemo$6.class
+SHA1-Digest: erUwIIMtamjn2IewsMfL6pGpk4c=
+
+Name: cern/jdve/demo/HistoryFadingDemo$1.class
+SHA1-Digest: iVVpDUNKeA2fYal5ZjOrolx7TH0=
+
+Name: cern/jdve/viewer/event/DataViewerEvent.class
+SHA1-Digest: V+QV0sHInkHUaNlVxoDiq6AWh/Y=
+
+Name: cern/jdve/Grid.class
+SHA1-Digest: eobUZJZBQI14b1eAiock3Q/zI50=
+
+Name: cern/jdve/interactor/zoomIn.gif
+SHA1-Digest: WXwnuiiooT5DTxoKfPeB453cPbs=
+
+Name: cern/jdve/Legend$Header$1.class
+SHA1-Digest: chx+Ud5fVD5WOKrFZMs0KgsFd90=
+
+Name: cern/jdve/demo/CSSDemo.class
+SHA1-Digest: BX2o/416eSM0V7QIDDkL1IQk5TA=
+
+Name: cern/jdve/viewer/ActionManager$TargetableAction.class
+SHA1-Digest: uBaWFGuikA9SX1JoN79WyV7v7Qk=
+
+Name: cern/jdve/viewer/ActionManager$InternalFrameListenerExt.class
+SHA1-Digest: u2UC+tP+nI9cHfdmcoZvX+GD1YQ=
+
+Name: cern/jdve/viewer/icons/legend.gif
+SHA1-Digest: 62YyfDVCfzktCVyYbxgE56eTa4M=
+
+Name: cern/jdve/table/EditPointsDialog$CancelAction.class
+SHA1-Digest: WcgB03nsfJsBGaVNeYux9zDX2mw=
+
+Name: cern/jdve/utils/IOUtils$ImageFormat.class
+SHA1-Digest: O1NrX4UL/rJSyuhxVtlK1JErCjc=
+
+Name: cern/jdve/selectors/GradientSlider$GradientSliderUI.class
+SHA1-Digest: mmAkNm0dNR99XNScNHERfltxroE=
+
+Name: cern/jdve/CoordinateSystem$DisplayRange.class
+SHA1-Digest: ScFsvhKaCG8FKZFgZgvhZfBoJl0=
+
+Name: cern/jdve/interactor/CursorsBoundedChangePointsStrategy$1.class
+SHA1-Digest: vxrte8r5M8YiOPT1TfmJ9hv0bCg=
+
+Name: cern/jdve/interactor/CursorInteractor$CursorInteractionEventExt.
+ class
+SHA1-Digest: lckYLpn5Sk8w2ZdWwRC1PDcCLNs=
+
+Name: cern/jdve/renderer/ContourChartRenderer.class
+SHA1-Digest: qSEZb4O59SXjbuJ1UoJAUiBBVZY=
+
+Name: cern/jdve/DataRangePolicy.class
+SHA1-Digest: h0a4YUxw0LqpqCffSCFCKhdBETY=
+
+Name: cern/jdve/interactor/ZoomInteractor$2.class
+SHA1-Digest: ENWohaLCB8qlQDEYmoEBhdTFfFY=
+
+Name: cern/jdve/scale/DefaultStepsDefinition.class
+SHA1-Digest: X38y9D9iiroxWVDtGjbOpcPX/jk=
+
+Name: cern/jdve/table/DataSourceTableModel$TableDataSourceListener.cla
+ ss
+SHA1-Digest: e76BjjmFcNg8nfOfvI4p7cxFIKw=
+
+Name: cern/jdve/demo/CustomContourDemo$1.class
+SHA1-Digest: afhdo3s8MNjF/VGhyR5eX/t94Z0=
+
+Name: cern/jdve/event/AxisEvent.class
+SHA1-Digest: 0vWGkq/5e8DZ8Oc4ttBIotKnOeI=
+
+Name: cern/jdve/data/DataSetError$1.class
+SHA1-Digest: 3LevFwAG2VXQdMW1fPl3HDj+w1Q=
+
+Name: cern/jdve/viewer/DVToolbar.class
+SHA1-Digest: ntinKTO0klPmVaZiVpdT22vWECY=
+
+Name: cern/jdve/data/HistogramDataSet.class
+SHA1-Digest: fAAfdWIO6ogioAn/kfxH9kEWd9s=
+
+Name: cern/jdve/Chart$Area.class
+SHA1-Digest: GkTsV0RvcljpW0u+NMSemgjoQC8=
+
+Name: cern/jdve/demo/MountainDemo.class
+SHA1-Digest: DZp35/yTT1ZAPxZyGD/b1ZwfDgo=
+
+Name: cern/jdve/interactor/ChangePointInteractor$7.class
+SHA1-Digest: m5x6XBaT4NcWUAR1h9Q4SHc1TgQ=
+
+Name: cern/jdve/viewer/icons/impulses.png
+SHA1-Digest: OeI3r1B7UuNO4RkKXct166uxvAg=
+
+Name: cern/jdve/graphic/DataAnnotation.class
+SHA1-Digest: JP56t2Z+AkrCjSKlHca20DExHVQ=
+
+Name: cern/jdve/interactor/ChangePointInteractor$3.class
+SHA1-Digest: sbSe5pPbDKcr9DJgFG7IYs8yeVA=
+
+Name: cern/jdve/selectors/FILL_PATTERN_HATCH30.gif
+SHA1-Digest: DYENSkBIHIS3R0cUjRoryaLN09s=
+
+Name: cern/jdve/table/EditPointsDialog.class
+SHA1-Digest: RPidPKJmvqXS988ug0I9tMP2f2o=
+
+Name: cern/jdve/table/JDVETable$PopupTrigger$5.class
+SHA1-Digest: mQg5KeIk28JbE2INE3lpZz/ncU4=
+
+Name: cern/jdve/StyleSheet$GridCSS.class
+SHA1-Digest: BI8UIF1cdpPl3CMNZTzSND+HAIk=
+
+Name: cern/jdve/interactor/ChangePointInteractor.class
+SHA1-Digest: QaILYlKbCCc5y3CwIM/iHl9XpYU=
+
+Name: cern/jdve/viewer/icons/boolean.png
+SHA1-Digest: PQCx9etgXKdQ4UmUcZIdn36eEpo=
+
+Name: cern/jdve/data/DataSource.class
+SHA1-Digest: okTL8vUY/keWKi+Va6qojAQpAeE=
+
+Name: cern/jdve/table/EditPointsDialog$OKAction.class
+SHA1-Digest: K4VfhVlHGYERDqWNfXtrKT5gLdk=
+
+Name: cern/jdve/interactor/FactorPointsInteractor$FactorAction.class
+SHA1-Digest: aCBA2vRCnYQ/TbgstAB/puwrJhg=
+
+Name: cern/jdve/graphic/ColorPalette.class
+SHA1-Digest: unl201Z3v6UuQrvSHhDEUuPA0CU=
+
+Name: cern/jdve/package.html
+SHA1-Digest: 3/pGe2wJZtHeoiCP4CuJCtX8QJk=
+
+Name: cern/jdve/ParserCSS$ChartCSSHandler.class
+SHA1-Digest: ITHfq2QA1i48a9cR4edT3e99uNE=
+
+Name: cern/jdve/interactor/CursorInteractor$Cursor$CursorLine.class
+SHA1-Digest: RzLlt4c5GL4xl7eKCOcoGf0DCK8=
+
+Name: cern/jdve/Chart$AxisListenerImpl.class
+SHA1-Digest: BPM7Tb49nNQr8B1IYUBJFAZXnEk=
+
+Name: cern/jdve/interactor/DataPickerInteractor.class
+SHA1-Digest: LyuvTfqCleb76PKrI8MruHAnrqE=
+
+Name: cern/jdve/interactor/ScrollInteractor.class
+SHA1-Digest: ETnHJrSAVosfzXDLG4QS/ZYkr8c=
+
+Name: cern/jdve/demo/CSSDemo2.class
+SHA1-Digest: WTRNeGQtSf8O2mi2QO54WZ5xnw4=
+
+Name: cern/jdve/table/JDVETable$1.class
+SHA1-Digest: DuiL6MSCXImOJmnxCrmRb+SV6Kg=
+
+Name: cern/jdve/table/EditPointsDialog$1.class
+SHA1-Digest: ItipV+fqIv5QFlrBiOfutjay8Ts=
+
+Name: cern/jdve/data/MountainDataSource$MountainDataSet.class
+SHA1-Digest: RaYDEWyZ1X2c5phCRQ6qccvY/Ew=
+
+Name: cern/jdve/selectors/2D-JOIN_MITER.gif
+SHA1-Digest: 9eJRcBXlEMQVQlZ10MbbzpRGFDo=
+
+Name: cern/jdve/viewer/Explorer$CheckBoxNodeEditor.class
+SHA1-Digest: lxC4xBanMxnHIuHpuLvw8D+Q0/A=
+
+Name: cern/jdve/selectors/2D-CAP_SQUARE.gif
+SHA1-Digest: fHh/2YCdwCj6UElDQrQsuL4oaH0=
+
+Name: cern/jdve/interactor/MovingAverageSmoothingInteractor.class
+SHA1-Digest: oP2oCnqr6vLymHWiLfTY7mrXjsw=
+
+Name: cern/jdve/interactor/edit.gif
+SHA1-Digest: h98wPT9BIL+W/cCXSYnALEz8Hag=
+
+Name: cern/jdve/demo/Page1ChartRenderer.class
+SHA1-Digest: pnunlS105X7LuUIrJ/xs84G2PzU=
+
+Name: cern/jdve/selectors/TableLayout.class
+SHA1-Digest: WQIYOjCzdaYFGQBHDXkLgsN9Fe4=
+
+Name: cern/jdve/viewer/DataViewer$DVComponentListener.class
+SHA1-Digest: H5CWNLsbGoCg/vqBMb4n65Hs3wg=
+
+Name: cern/jdve/demo/DataViewerDemo.class
+SHA1-Digest: ot/eGPqeUePJBb5qdA06SZ4fqv8=
+
+Name: cern/jdve/data/DataSet.class
+SHA1-Digest: VGMi3wArqcn5fdXuZI8iZ4Y505U=
+
+Name: cern/jdve/viewer/DVToolbar$MenuItemExt.class
+SHA1-Digest: zBlvTmqNuNq8A0/QRhne+PPG7dk=
+
+Name: cern/jdve/utils/DataWindow.class
+SHA1-Digest: TQNMzr9/S/Xi9NBxKuSYZpo2z8g=
+
+Name: cern/jdve/selectors/FILL_PATTERN_HATCH.gif
+SHA1-Digest: pRGadorrmupHMeKhZq8iI/XUL1E=
+
+Name: cern/jdve/selectors/StyleEditor$MarkerEditor$MarkerComboBoxRende
+ rer.class
+SHA1-Digest: YEsnQjEntBGUPwmi2/Ma/kKeHYo=
+
+Name: cern/jdve/utils/Log.class
+SHA1-Digest: KJpRTp1Hsx/svNJu+DxgC9NC8xE=
+
+Name: cern/jdve/Chart$2.class
+SHA1-Digest: AyuEHRsmPJvFTnFhulDb9fx0ZgY=
+
+Name: cern/jdve/Axis$AxisSynchronizer.class
+SHA1-Digest: k69XxDJfprhi3RuPQAs7iwDTTRw=
+
+Name: cern/jdve/interactor/CursorInteractor$CursorSynchronizer.class
+SHA1-Digest: VVxlaN0+6WH/11ipq1cz03/H1FM=
+
+Name: cern/jdve/demo/EditDemo$5.class
+SHA1-Digest: amvKecjS63wMIbDaflJAW9RQ1cw=
+
+Name: cern/jdve/EditionManager.class
+SHA1-Digest: yMG94FyYIc3E0p7qZ1GusL5LpNQ=
+
+Name: cern/jdve/table/ColumnGroup.class
+SHA1-Digest: uMyXw5vMLwBaXn90bMB6vbv89J0=
+
+Name: cern/jdve/ChartRenderer$FalseSelectionHint.class
+SHA1-Digest: zSf9gnn36R45tTTieWbh3wZuKUg=
+
+Name: cern/jdve/interactor/ChangePointInteractor$ToggleButtonTest.clas
+ s
+SHA1-Digest: WP8TlFw/VpS/xiIejqeeaZLdZao=
+
+Name: cern/jdve/viewer/DataView$DataModelListener.class
+SHA1-Digest: st8RF6PfTsqlmW1uqmB4bwOy1HY=
+
+Name: cern/jdve/graphic/RenderingHint.class
+SHA1-Digest: pKTvRttR4B/jWVDmF0iLqlu1uXw=
+
+Name: cern/jdve/renderer/StairsChartRenderer.class
+SHA1-Digest: vvxqrRpuE7XLwy2DgQV1SQzrLqE=
+
+Name: cern/jdve/demo/AdvancedInteractorDemo.class
+SHA1-Digest: ZQ3a0CVyTugxCeLKGVQVdvXnXlk=
+
+Name: cern/jdve/interactor/ChangePointInteractor$5.class
+SHA1-Digest: Y0uE4YKqYue2Qya1h6vd8yUcSQk=
+
+Name: cern/jdve/interactor/zoomHorizontal.gif
+SHA1-Digest: CJawKwdo/EAEdBJw7EFxAktabbc=
+
+Name: cern/jdve/interactor/ZoomInteractor$ZoomListener.class
+SHA1-Digest: mg/vcKNZB1MXOX/28SRBv5G67xw=
+
+Name: cern/jdve/selectors/TableLayoutConstants.class
+SHA1-Digest: ef7EZPQlLq+uQgi75b+YzCB2EQc=
+
+Name: cern/jdve/UndoRedoManager$DefaultDataSetSnapshot.class
+SHA1-Digest: Hrm/Xqjj2fmrxl+QgiKy7Qm/2MY=
+
+Name: cern/jdve/interactor/zoom.gif
+SHA1-Digest: bDyF/wdayZaFouHkllSrCXmOPks=
+
+Name: cern/jdve/demo/CategoryImageDemo$1.class
+SHA1-Digest: 8fzYw6xX4pFD7cChJk8aYSamDUw=
+
+Name: cern/jdve/interactor/ZoomInteractor$3.class
+SHA1-Digest: 29DbM058Tz3SQevznxRdNcln5v8=
+
+Name: cern/jdve/interactor/ChangePointInteractor$4.class
+SHA1-Digest: oX0bOwXn1yVS8zue3geVXFcEaro=
+
+Name: cern/jdve/scale/ImageCategoryStepsDefinition.class
+SHA1-Digest: idTMkK/lur89FJ6zFOKNMWUtdH0=
+
+Name: cern/jdve/utils/DoublePoints.class
+SHA1-Digest: jerFUWzdWB4dnaEjc9v+SZK7Gk8=
+
+Name: cern/jdve/Chart$PlotAreaComponentListener.class
+SHA1-Digest: QWX855oJXOXKRz48tYGLptYcH8Y=
+
+Name: cern/jdve/selectors/FILL_PATTERN_HATCHCROSS2.gif
+SHA1-Digest: MiUJdZxrL4vx9c6Zv6JRsFsoRUw=
+
+Name: cern/jdve/selectors/FlatSlider.class
+SHA1-Digest: h2xDqy1Wzsw9Zc1ht/2+R7u2vq4=
+
+Name: cern/jdve/utils/ToolBarButton$Arrow$1.class
+SHA1-Digest: r0RW0TF+PWOuJg3S5FjSc9Jm8IQ=
+
+Name: cern/jdve/interactor/flat.gif
+SHA1-Digest: 70aM0asyaGbmnGVcCTp5/RirKQQ=
+
+Name: cern/jdve/viewer/DVToolbar$ToggleButtonExt.class
+SHA1-Digest: 9Y2vay2keIr9a9rcBQdBMq/cXDY=
+
+Name: cern/jdve/interactor/smooth.gif
+SHA1-Digest: m7TFbxPTn/GCcoVhD+CFee9clI0=
+
+Name: cern/jdve/selectors/StyleEditor$1.class
+SHA1-Digest: bzLmiNQbpXprHH++GUffX6743W4=
+
+Name: cern/jdve/renderer/Rainbow.class
+SHA1-Digest: nhXWtlhv4n2t6sQE0B/eDQNXGKc=
+
+Name: cern/jdve/utils/GraphicsUtils.class
+SHA1-Digest: p4oeZrRf3lJW5T+DdZjwnaey6xE=
+
+Name: cern/jdve/demo/CustomDataSetDemo$MyByteDataSet.class
+SHA1-Digest: 3dNImLozpfE5cB6c3Hq0hSgPT88=
+
+Name: cern/jdve/demo/BooleanDemo.class
+SHA1-Digest: 79UO9KsuAUC3rACtULq7jdVVJTo=
+
+Name: cern/jdve/demo/HistoryFadingDemo.class
+SHA1-Digest: xucHedJCzBomOt2RcWwSlu/fQsQ=
+
+Name: cern/jdve/SelectionHint.class
+SHA1-Digest: COVm+oAQUOO2OoD6jOO0VPxTt9A=
+
+Name: cern/jdve/interactor/FlattenPointsInteractor$1.class
+SHA1-Digest: F6ZoUWE5PmKya5Y8MlDW7ZPl/ZE=
+
+Name: cern/jdve/demo/EditDemo.class
+SHA1-Digest: endDjZGcK0u+oMbtnK/FHV6o9k8=
+
+Name: cern/jdve/table/GroupableTableHeader$1.class
+SHA1-Digest: ffbnRHFclIUUSs19+kRycrjm+6Y=
+
+Name: cern/jdve/data/DefaultDataSet.class
+SHA1-Digest: 1pzAMA/zBYEN3KFG8uuGxX5MjYc=
+
+Name: cern/jdve/data/TimeWindowDataSet$1.class
+SHA1-Digest: Be5RKusmOZLfFMTMUZecCIz3D+k=
+
+Name: cern/jdve/selectors/HSBColorChooser$6.class
+SHA1-Digest: 9tdxx/C+KRFQ2jr6FS7UikA+ehw=
+
+Name: cern/jdve/Legend.class
+SHA1-Digest: j0f7gnXqupXXRUcGZR2QX+h9CNw=
+
+Name: cern/jdve/interactor/RemovePointInteractor$1.class
+SHA1-Digest: BnhjMWGm2CifN/LZ2aLYjl8p+sE=
+
+Name: cern/jdve/selectors/StyleEditor$StrokeEditor$4.class
+SHA1-Digest: sQd5KXbHs6gkFz3NZQDOG/I7gBg=
+
+Name: cern/jdve/data/FunctionDataSet.class
+SHA1-Digest: whg6Q7nGXKqcfHBDWX/K7c4LrzM=
+
+Name: cern/jdve/demo/demo_fixeddisp.css
+SHA1-Digest: cGuMKhm/OKUVv4g4iSnHrzghBRo=
+
+Name: cern/jdve/selectors/StyleEditor$ColorEditor$1.class
+SHA1-Digest: 0cfSUXbFJDklLEr4kKIa2m6f9x4=
+
+Name: cern/jdve/viewer/icons/showselected.png
+SHA1-Digest: HforQa8TZ+ORXpb2ZRkMeyJ3uwo=
+
+Name: cern/jdve/viewer/icons/dategraph.png
+SHA1-Digest: 7i1xw6vJGjdtTWPJMMJBj432orY=
+
+Name: cern/jdve/LegendItem.class
+SHA1-Digest: skn5ofuPd1UAq/yd3oGQdYtLlP8=
+
+Name: cern/jdve/utils/Arrays$TwoArraysSwapper.class
+SHA1-Digest: mn9OOMkk+NnuJ/eiJaBAyb7LhTM=
+
+Name: cern/jdve/interactor/changeY.gif
+SHA1-Digest: CjmQijLRetr5u/vdJxZDMksB0m8=
+
+Name: cern/jdve/selectors/HSBColorChooser$5.class
+SHA1-Digest: WBwvFz0Uxh88o6ZCIQrnXhQiQVk=
+
+Name: cern/jdve/ChartRenderer$DataSourceListenerImpl.class
+SHA1-Digest: qtfzjl+caJ38LGww1y2CM6i09f8=
+
+Name: cern/jdve/interactor/redo.gif
+SHA1-Digest: SieonbrXL3Nc8elhblOeuZxPXko=
+
+Name: cern/jdve/interactor/zoomBox.gif
+SHA1-Digest: 1vylieQCRfZCNxFAnTwJxXXFnnk=
+
+Name: cern/jdve/data/EditionHint.class
+SHA1-Digest: F+h7K5d89qS+5Y6/yu8NpqIVRtc=
+
+Name: cern/jdve/demo/DecorationsAnnotationsDemo.class
+SHA1-Digest: Vf9B0CFUZQdYxtVf4c2fP6W+j5o=
+
+Name: cern/jdve/Chart$PropertychangeHandler.class
+SHA1-Digest: M7RTcv5iW5Ejhyp7caRP/JfAxlo=
+
+Name: cern/jdve/viewer/DVInternalFrameUI$InternalFrameTitlePane.class
+SHA1-Digest: m6iFBkbkFZA8DFY3ZMuzKNqy41I=
+
+Name: cern/jdve/selectors/TableLayoutConstraints.class
+SHA1-Digest: fsdFs7+egfuYTOmbE1RD6aJ34d4=
+
+Name: cern/jdve/event/DataSetPointsSelectionEvent.class
+SHA1-Digest: Y2hofB5/X4ODM5WCzo4ey304lxU=
+
+Name: cern/jdve/selectors/2D-JOIN_ROUND.gif
+SHA1-Digest: M1Fnf9iYHLF782/2MjMy0mhCxRc=
+
+Name: cern/jdve/table/PrintingDialog$2.class
+SHA1-Digest: IqnqsO//xOHeVcQVDMonyjSTF0Q=
+
+Name: cern/jdve/event/PointsSelectionListener.class
+SHA1-Digest: Q86obfx16MeDewhxS3jsCK267z4=
+
+Name: cern/jdve/viewer/icons/print.png
+SHA1-Digest: Va18uB8cPRp5xyswb0H+bzyEYA0=
+
+Name: cern/jdve/DataPointsObjectsManager.class
+SHA1-Digest: LhGSA3aXUHh5MykWOH4CnErTxvU=
+
+Name: cern/jdve/selectors/StyleEditor.class
+SHA1-Digest: PiuCUsnIGg6m5n5vmCPMWQZKjos=
+
+Name: cern/jdve/viewer/Actions.class
+SHA1-Digest: WIn5xJqPa59VrSWz5zTslof20EU=
+
+Name: cern/jdve/viewer/icons/area.png
+SHA1-Digest: I9rfgRdm29dSRg5bOSLzy6e8f5I=
+
+Name: cern/jdve/viewer/DataViewer$DataViewerActionPerformer.class
+SHA1-Digest: +LAofpMdyFBIgDtyWECzKCmTY4E=
+
+Name: cern/jdve/demo/BooleanDemo$ChartPanel.class
+SHA1-Digest: zlZF85WCxa5c7APylxdt90LjGCc=
+
+Name: cern/jdve/data/EditableInBoundsEditionHint.class
+SHA1-Digest: oQEBC/XPR/7gDcA+lHNczHe6CYM=
+
+Name: cern/jdve/data/DataSetError.class
+SHA1-Digest: vciHuQxQ+x5xvdjDuFja0jnM+do=
+
+Name: cern/jdve/StyleSheet$DataSetPointsCSS.class
+SHA1-Digest: 9bqlD2+DR7FS2nurQ9uO7fWf8iU=
+
+Name: cern/jdve/graphic/MarkerFactory$TriangleMarker.class
+SHA1-Digest: fVSOT+r86ehJhm/qP3gPccgtryc=
+
+Name: cern/jdve/viewer/icons/showall.png
+SHA1-Digest: 7Q5DgHAOl3z9ED6tOYNWUgcYzH8=
+
+Name: cern/jdve/data/TimeWindowDataSet.class
+SHA1-Digest: q3DT/fY2SMpWa/dfQllTKXAF80Q=
+
+Name: cern/jdve/table/ColumnGroup$1.class
+SHA1-Digest: 2HsUyCtD5zUw7xyw3fsxNNMoUTc=
+
+Name: cern/jdve/table/DoubleEditor.class
+SHA1-Digest: /q7PC3ZSv5MveMaNRfwBgetC2II=
+
+Name: cern/jdve/PointsSelectionModel.class
+SHA1-Digest: 53zaJLRreyMEvPNzskEbaiAv3pk=
+
+Name: cern/jdve/data/DefaultDataSource.class
+SHA1-Digest: 2gEnx87xZpTTLg6SPDyh6bQKEBI=
+
+Name: cern/jdve/Axis.class
+SHA1-Digest: 2dWhvHfdh3YqhgkgGCsrMJeEiOE=
+
+Name: cern/jdve/interactor/ChangePointsStrategy.class
+SHA1-Digest: GlIBYe3VdeSoKbG46BPiEHxBJ4w=
+
+Name: cern/jdve/renderer/BarChartRenderer$Bar.class
+SHA1-Digest: LzIwVqNXW+nN5X45uU6zZ4Z/fh4=
+
+Name: cern/jdve/renderer/ContourChartRenderer$1.class
+SHA1-Digest: dTW4eTzgZ9bOrtBM/XSMb4yS4CA=
+
+Name: cern/jdve/graphic/AbstractMarker.class
+SHA1-Digest: iXQ7Mv51wwv6yEfc5gMp0MDrKnQ=
+
+Name: cern/jdve/utils/Exporter$ImagePreview$JPreview.class
+SHA1-Digest: ZoeLuBhik04Te0oQU9wA592hoKM=
+
+Name: cern/jdve/selectors/StyleEditor$MarkerEditor$3.class
+SHA1-Digest: r8wGkT2zSbcv7cbSP3as8otWWv0=
+
+Name: cern/jdve/viewer/ActionManager.class
+SHA1-Digest: YY38vC1cE6lylPsdkov+LSiwYTs=
+
+Name: cern/jdve/interactor/alignPoints.gif
+SHA1-Digest: OMAlCXQS9IAWEjsGOKa3+NfuOn0=
+
+Name: cern/jdve/table/PrintingDialog$1.class
+SHA1-Digest: L5KcLACcxvfLN8OELPx7APMLBSY=
+
+Name: cern/jdve/viewer/DVToolbar$PopupButton.class
+SHA1-Digest: zoG+xUE+nu7TNfPmsLKX8OPaTNs=
+
+Name: cern/jdve/interactor/AlignPointsInteractor$1.class
+SHA1-Digest: aBFhs5CJOit9tj1OFsuRJQx7w48=
+
+Name: cern/jdve/selectors/2D-CAP_BUTT.gif
+SHA1-Digest: qg2M7YlR+bcP9DNyUvl0bpduyxo=
+
+Name: cern/jdve/viewer/ActionPerformer.class
+SHA1-Digest: 4cTrFgUsF+slAN9558RsSIayS1c=
+
+Name: cern/jdve/graphic/MarkerFactory$SquareMarker.class
+SHA1-Digest: XmHLsls+8RZkAs9/vGELhB/sO/s=
+
+Name: cern/jdve/viewer/event/DataViewerListener.class
+SHA1-Digest: pn7pwwnd/q0mHTGGpim9qCqZkVw=
+
+Name: cern/jdve/viewer/icons/dataset.png
+SHA1-Digest: 2L60qHauD9UnXtYN+UAaLRW+0mw=
+
+Name: cern/jdve/utils/PropertyUtils.class
+SHA1-Digest: jhegKQXPWjJN8VBYcVv9UlAAc9Q=
+
+Name: cern/jdve/interactor/EditInteractor$DisplayPointsComparator.clas
+ s
+SHA1-Digest: 2T0x4SeyF2I0V6twA/ra0aJabbw=
+
+Name: cern/jdve/demo/DataViewerDemo$RandomDataModifier.class
+SHA1-Digest: wgzGJuL2gbcM/n+NTheayyfLylM=
+
+Name: cern/jdve/Chart$PointsSelectionHandler.class
+SHA1-Digest: CdX8AEuDASg3iOXPmaLI/HQIvyk=
+
+Name: cern/jdve/event/DataSetEvent.class
+SHA1-Digest: dpkF2EL4BPJlgy1ZW9NIbQEWAjM=
+
+Name: cern/jdve/demo/ErrorDataSetDemo$MyErrorDataSet.class
+SHA1-Digest: W0LAwd6v0ROWCOmWcLRZrb/7/v4=
+
+Name: cern/jdve/interactor/ChangePointInteractor$ChangePointsAction.cl
+ ass
+SHA1-Digest: zTDhLipJsB7Q0+wtfUBDUXQlges=
+
+Name: cern/jdve/ParserCSS$ConversionToTypeException.class
+SHA1-Digest: bUpQmK4RxcT2dq2y17DOnpJd01k=
+
+Name: cern/jdve/demo/EditDemo$1.class
+SHA1-Digest: O3unuobHejjI824dRDijDLId80Q=
+
+Name: cern/jdve/demo/EditDemo$2.class
+SHA1-Digest: MZXtn3DnHhLlt9Z5QsHMZCvnzvo=
+
+Name: cern/jdve/Chart$DefaultColorsManager.class
+SHA1-Digest: XTJfE6B2XrZJl+ulhTAMyQf+1gQ=
+
+Name: cern/jdve/interactor/ChangePointInteractor$ChangePointsDialog$3.
+ class
+SHA1-Digest: rDMJKx3j54VXELBfZoRmnFjltD4=
+
+Name: cern/jdve/event/ScaleEvent.class
+SHA1-Digest: x3z2zlGbGixdmFuOS9cGxdkzFY0=
+
+Name: cern/jdve/utils/DataPoint.class
+SHA1-Digest: BxYr8cZdPAuS1h/StHjXHPNqXeo=
+
+Name: cern/jdve/selectors/SelectorUtilities.class
+SHA1-Digest: 5Wckfd7JLa9gFnTTX4IE8k9Rgsg=
+
+Name: cern/jdve/ChartRenderer$LegendItemExt.class
+SHA1-Digest: QO3LZ+X4vc6yMNqr3BUu8WLZ+CA=
+
+Name: cern/jdve/selectors/DataSetStyleEditor$1.class
+SHA1-Digest: 4tb4HAU4Cl52sCfJgvxJ3ObqCLA=
+
+Name: cern/jdve/viewer/icons/viewi.png
+SHA1-Digest: orwQ9Jj5sOLZW3MxxQ47DsGAuv4=
+
+Name: cern/jdve/interactor/AlignPointsInteractor.class
+SHA1-Digest: agsN7uJDl9G0Aohbj2crLFP04aQ=
+
+Name: cern/jdve/viewer/Explorer$ExplorerHeader.class
+SHA1-Digest: 6FlulQ/++es7I3Bx+bmcEVp/jAI=
+
+Name: cern/jdve/ChartInteractor.class
+SHA1-Digest: Gw62qaJ5OX95jCAncI/gsd71C/o=
+
+Name: cern/jdve/table/JDVETable$PopupTrigger$4.class
+SHA1-Digest: oe3TXm31ofWFTi4LZDY5Tyli2a8=
+
+Name: META-INF/INDEX.LIST
+SHA1-Digest: Oa68APM40IFmTTbqvEEyxymxajE=
+
+Name: cern/jdve/Scale$AxisListenerImpl.class
+SHA1-Digest: g0RQ5aAHedrf82anD+D3oEAZejE=
+
+Name: cern/jdve/demo/AdvancedInteractorDemo$StatusPopUp.class
+SHA1-Digest: cFDg5TvI5LZCQH3IKVBmy9HkEK0=
+
+Name: cern/jdve/scale/CategoryStepsDefinition.class
+SHA1-Digest: FKB6bv0KNN6fYYQ5PfUb02Iz9fg=
+
+Name: cern/jdve/interactor/AddPointInteractor.class
+SHA1-Digest: /9fhjxjUidwnsPfbk8SPNtE/1Qo=
+
+Name: cern/jdve/demo/demo_multiax.css
+SHA1-Digest: W5Nzfb48y/auvD38ptxPpcyacCE=
+
+Name: cern/jdve/UndoRedoManager$2.class
+SHA1-Digest: ZpwKCr5esq3vESm2QvaHX/P0Kmo=
+
+Name: cern/jdve/demo/BooleanDemo$1.class
+SHA1-Digest: XHKDziEIjvzBYHu4SwKlXK/c4Bg=
+
+Name: cern/jdve/interactor/zoomOut.gif
+SHA1-Digest: YeHMHZ6GACJ7GNbjRhoiUuI64HU=
+
+Name: cern/jdve/demo/ErrorDataSetDemo$UpdateTask.class
+SHA1-Digest: cbo3RE+Tdkj2KxTuz+bsap6hweE=
+
+Name: cern/jdve/interactor/undo.gif
+SHA1-Digest: BTGClOslQF2Gm5lIu+NY98rbVjY=
+
+Name: cern/jdve/demo/StairsDemo$SinusDataSet.class
+SHA1-Digest: AnISDxUZAHXuPosE30wHSolAUPg=
+
+Name: cern/jdve/ParserCSS.class
+SHA1-Digest: Z00T74jRCFU29G3rbMVXzFcules=
+
+Name: cern/jdve/demo/RealTimeDemo.class
+SHA1-Digest: l7VU3o+XuX0yNoV4/cSSINGKmjQ=
+
+Name: cern/jdve/renderer/ErrorDataSetRenderer.class
+SHA1-Digest: 3JoDVmjLg7gC1X6nP7CwcGVjKjk=
+
+Name: cern/jdve/graphic/ValueRangeRenderingHint.class
+SHA1-Digest: aDvbGOBmiF6VxWHCVayf4d3Vgvc=
+
+Name: cern/jdve/utils/Arrays.class
+SHA1-Digest: ny5LiVAfDPtuU0Uv9advRseIrtk=
+
+Name: cern/jdve/utils/IntArray.class
+SHA1-Digest: KXBH1UHRSA16pOVDompAUnVDcsU=
+
+Name: cern/jdve/interactor/CursorInteractor$Cursor$CursorPointer.class
+SHA1-Digest: HMA5xUGB94TgQWZv9NPmZ6vn8QM=
+
+Name: cern/jdve/viewer/Explorer$1.class
+SHA1-Digest: BYB2urQh7ZJ6eUtNXs4HLGJ1+lU=
+
+Name: cern/jdve/selectors/StyleEditor$StrokeEditor$9.class
+SHA1-Digest: 4AreX+wXeJw97Q/B9nGPwSY93+Q=
+
+Name: cern/jdve/demo/Page1Demo$UpdateTask.class
+SHA1-Digest: InshVaZ5gMCnpcDcyBcqTZ83jCU=
+
+Name: cern/jdve/selectors/SingleFiledLayout.class
+SHA1-Digest: 8Mh1ILaqGMOggfkw/Gp4EzauAnY=
+
+Name: cern/jdve/interactor/SmoothChangePointsStrategy.class
+SHA1-Digest: mZ+THmw2es31NB+FmhYV9t0JpAc=
+
+Name: cern/jdve/viewer/icons/table.png
+SHA1-Digest: 8wu3jPRFPuoC2lxcSVWwYrAWB94=
+
+Name: cern/jdve/interactor/ChangePointInteractor$1.class
+SHA1-Digest: fLVTGsWcvMxqGsxNRZPakLTRbi0=
+
+Name: cern/jdve/viewer/DataView.class
+SHA1-Digest: ZVnDLSz7dxjijUggQzehQ1KFeRQ=
+
+Name: cern/jdve/viewer/Explorer$DataViewNode.class
+SHA1-Digest: lBmLqQExTomOCDB5LfpjUh76sXA=
+
+Name: cern/jdve/data/ExcMarginalPointsEditionHint.class
+SHA1-Digest: LqzjItEd/SV4pQnM58VB3krePws=
+
+Name: cern/jdve/event/ChartInteractionListener.class
+SHA1-Digest: AG77LKBbnEsVBELrUVqfV9GOf4c=
+
+Name: cern/jdve/viewer/icons/iconify.png
+SHA1-Digest: PTPKjNPQvWQNJP5UZ68ZUEgiqv4=
+
+Name: cern/jdve/viewer/ActionManager$BoundAction.class
+SHA1-Digest: GcxjSG5AFqPgQfrTX4F9PJCxPvs=
+
+Name: cern/jdve/interactor/factor.gif
+SHA1-Digest: JqKKq3SPtTSCIrn7BHI8IrpgZlM=
+
+Name: cern/jdve/selectors/FILL_PATTERN_HATCH45.gif
+SHA1-Digest: GqEaC3HTVA93/BKGLipfxDvt4rc=
+
+Name: cern/jdve/utils/ButtonGroup$1.class
+SHA1-Digest: CBqg34CZBXQhA4QsUl8GCU9RNDo=
+
+Name: cern/jdve/table/GroupableTableHeader.class
+SHA1-Digest: KAAeap9w6dHubmUCzhdgCNi5eRU=
+
+Name: cern/jdve/selectors/FlatSlider$FlatSliderUI$MessageWindow.class
+SHA1-Digest: uHLrk2FETqxJUKWikZ9/tmLXlcA=
+
+Name: cern/jdve/event/LegendEvent.class
+SHA1-Digest: Tx3K9/u9Gw0GlD7yagz+5bm8DaE=
+
+Name: cern/jdve/selectors/2D-CAP_ROUND.gif
+SHA1-Digest: jk4wc5FohbYky8EGGAtHHrZcsMo=
+
+Name: cern/jdve/Chart.class
+SHA1-Digest: zkklbDrpDsr3XPmLFCDSLqtnmNM=
+
+Name: cern/jdve/ChartInteractor$InteractorSelectionHint.class
+SHA1-Digest: ZEQlLt4YVMrcV8BY7hjxr1Dop5s=
+
+Name: cern/jdve/AxisTransformer.class
+SHA1-Digest: DRLGZyKHrkVpXhLmE3Z6jWTiAuQ=
+
+Name: cern/jdve/Axis$SyncAxisEvent.class
+SHA1-Digest: OLuI05ZLUIom/oDxCM9P3r1zQbc=
+
+Name: cern/jdve/viewer/event/DVEvent.class
+SHA1-Digest: awTdn2ehcCLpCm8s2wMH2AUsGbg=
+
+Name: cern/jdve/data/IntervalDataSet.class
+SHA1-Digest: IrOzrCZtqQQOT2eIp44CEM6RNYg=
+
+Name: cern/jdve/viewer/DVToolbar$DVSeparator.class
+SHA1-Digest: g6MDCTyL+xonZR2yfz1XgyQ5uDc=
+
+Name: cern/jdve/selectors/StyleEditor$MarkerEditor$2.class
+SHA1-Digest: tZqdVk8Gtp0lLI94AD/vgA381Ak=
+
+Name: cern/jdve/table/JDVETable$PopupTrigger.class
+SHA1-Digest: qoWt/wfjFvUh5AxFTQ1P1wDOZus=
+
+Name: cern/jdve/Scale$ScalePosition.class
+SHA1-Digest: n5h26oEW7vLVSsbaQcwWukwzSgU=
+
+Name: cern/jdve/StylesManager.class
+SHA1-Digest: nkjJcTbo10BTmPmoe1gODLpDLqU=
+
+Name: cern/jdve/interactor/PanInteractor.class
+SHA1-Digest: dsw3fJEzrMRU8T7a7mLOgRvt3As=
+
+Name: cern/jdve/event/PointsSelectionEvent.class
+SHA1-Digest: uaRSgPmF6atJZyFEWUWjFCyN/kY=
+
+Name: cern/jdve/table/PrintingDialog$4.class
+SHA1-Digest: hnuGUkBnFCsAT4x8rIdnyvr2ugo=
+
+Name: cern/jdve/demo/AdvancedInteractorDemo$StatusPopUp$2.class
+SHA1-Digest: yRydaZ0q+mPf6+1cxoNYoBKThh4=
+
+Name: cern/jdve/interactor/Thumbs.db
+SHA1-Digest: b2bj1WPfZJKKRlK87VbWqenLx3Y=
+
+Name: cern/jdve/selectors/DataSetStyleEditor.class
+SHA1-Digest: m88tkBYR6dFbPZTXOKfW8/qIANI=
+
+Name: cern/jdve/selectors/StyleEditor$StrokeEditor$10.class
+SHA1-Digest: A6RXZJlazlmui20Bj8/PhyaTxrY=
+
+Name: cern/jdve/interactor/CursorInteractor$AreaListener.class
+SHA1-Digest: pc+UcLT1cFIIxNR/ggIAefN0vo4=
+
+Name: cern/jdve/table/EditPointsDialog$3.class
+SHA1-Digest: 8qIOzvcXJeHodUOqf5P7yqMwPCs=
+
+Name: cern/jdve/graphic/Marker.class
+SHA1-Digest: bQfCtqE5GYFX/v1i4XMw8uLhheE=
+
+Name: cern/jdve/ChartDecoration.class
+SHA1-Digest: gqLPK8hAT7vcplJSB3K4OFMyP+A=
+
+Name: cern/jdve/interactor/DefaultChangePointsStrategy.class
+SHA1-Digest: Mcd6aOmI0ZM+TaHWkqmlZHKhV00=
+
+Name: cern/jdve/interactor/ChangePointInteractor$2.class
+SHA1-Digest: w5z6tL34By4BddyFmzvf+ab5DnM=
+
+Name: cern/jdve/viewer/Explorer$RootNode.class
+SHA1-Digest: gstnzG/PBLrdGsfrBUN1jB8Ag7k=
+
+Name: cern/jdve/interactor/ZoomInteractor$1.class
+SHA1-Digest: hgfxB9npRFXx9tTqrhKHEhZeNiM=
+
+Name: cern/jdve/selectors/HSBColorChooser$2.class
+SHA1-Digest: Op1wYL+HT6+WPYjw4jyswajWEz4=
+
+Name: cern/jdve/interactor/FactorPointsInteractor.class
+SHA1-Digest: p1xaPxiL+lu7+Op/LkH2+XxMrDw=
+
+Name: cern/jdve/utils/EpsGraphics2D$EpsDocument.class
+SHA1-Digest: O04aIww6wEah1RUu7S/7iRnbWDQ=
+
+Name: cern/jdve/viewer/icons/explorer.png
+SHA1-Digest: DBxCiqdY++be+MzoUgnLYnSBFn0=
+
+Name: cern/jdve/selectors/StyleEditor$ColorEditor.class
+SHA1-Digest: FnKH3q55btyKNcBLa7uRpTRy8dg=
+
+Name: cern/jdve/demo/CustomContourDemo$3.class
+SHA1-Digest: V3LkuNE2PSgYN/aIqH0XS24JCLo=
+
+Name: cern/jdve/interactor/EditHelperListener.class
+SHA1-Digest: u8K2hUOBaBe7Da/AE9LTw+4Y3bw=
+
+Name: cern/jdve/interactor/ChangePointInteractor$Shift.class
+SHA1-Digest: 2649mV3IwD4A+vO/H8RpFNqqkXo=
+
+Name: cern/jdve/interactor/DataRangePickerInteractor.class
+SHA1-Digest: U1APw2SKNM06DqDtJOzjcEs3fY4=
+
+Name: cern/jdve/CoordinateSystem.class
+SHA1-Digest: CSrwF8nu5PBfDINrMayAmz26oXg=
+
+Name: cern/jdve/viewer/DataView$DataModelListener$1.class
+SHA1-Digest: lwkFcvvV8spJ5pelxsoKXtzYD7k=
+
+Name: cern/jdve/StyleSheet$LegendCSS.class
+SHA1-Digest: HslT5RM/fBzk8Y5WV4p8VsjKM6U=
+
+Name: cern/jdve/interactor/ChangePointInteractor$6.class
+SHA1-Digest: PLTy7WTj4qvDD/56lcONfyZZh4M=
+
+Name: cern/jdve/selectors/StyleEditor$StrokeEditor$5.class
+SHA1-Digest: XFlul8B62/TqWFfoURnMxt+eKvc=
+
+Name: cern/jdve/interactor/PanInteractor$1.class
+SHA1-Digest: TKLenWTzzRjKLcNAZZ1fLRXswak=
+
+Name: cern/jdve/utils/Exporter.class
+SHA1-Digest: tJDUkkrkJVU4cJL2ts5mKLrt/uw=
+
+Name: cern/jdve/viewer/DataViewer.class
+SHA1-Digest: GyXcFv9Rh2KjXCdE2cPosUYTxog=
+
+Name: cern/jdve/event/AxisListener.class
+SHA1-Digest: mSuKDKRwr4G48DRbQY4m/Wdh2Tc=
+
+Name: cern/jdve/interactor/CursorInteractor$Cursor$CursorMouseListener
+ .class
+SHA1-Digest: w9AJ9LJI0eVpG7oupUHu2Jepzg0=
+
+Name: cern/jdve/renderer/PolylineChartRenderer.class
+SHA1-Digest: KWDIlWxbM3J9a3ItZEjb0og0Yoo=
+
+Name: cern/jdve/table/DataSourceTableModel$TableDataSetListener.class
+SHA1-Digest: f/FUsD1OfylhlEBJScd/ljVxHHg=
+
+Name: cern/jdve/demo/MultiPlotDemo.class
+SHA1-Digest: JU3K/lKGGT8+mUw1HQA70d8rhkk=
+
+Name: cern/jdve/demo/CustomContourDemo$2.class
+SHA1-Digest: 75suzAI9YvBKc+filhzPOCOz8Ok=
+
+Name: cern/jdve/selectors/FILL_PATTERN_HATCH60.gif
+SHA1-Digest: eJEMy0ct8qt76WRqMGxm5WHHlb4=
+
+Name: cern/jdve/EditionManager$DataSetItem.class
+SHA1-Digest: yxYUGdDRDYJtznyFcD1imId3yd0=
+
+Name: cern/jdve/StyleSheet$AxisCSS.class
+SHA1-Digest: RoLI7cgRhPBaPyzt3Ik1sq2T7PM=
+
+Name: cern/jdve/ChartPrintable.class
+SHA1-Digest: mfgMWqUlZy26iEzlhvbUWwzGbLk=
+
+Name: cern/jdve/viewer/DataViewer$CurrentViewListener.class
+SHA1-Digest: UWwUh0MMsA8TujZXwjgvgQ+KAFU=
+
+Name: cern/jdve/Chart$1.class
+SHA1-Digest: B7Y1hhNQmPwtQgzA1w7+l0D2ABk=
+
+Name: cern/jdve/Legend$ItemsPanel.class
+SHA1-Digest: xnUXsHmbLrkZLQN9SRcSfOmckeE=
+
+Name: cern/jdve/graphic/AbstractColorPalette.class
+SHA1-Digest: 9T2ihAQ9jKNGezWZjf/rs1KL344=
+
+Name: cern/jdve/Legend$LegendLayout.class
+SHA1-Digest: /8P85jKgI63R4UTFKpYmIqoM+P8=
+
+Name: cern/jdve/renderer/DiffAreaChartRenderer.class
+SHA1-Digest: B7Vws6k7XUeCXxtCj+6ybcmrZgY=
+
+Name: cern/jdve/renderer/DiffAreaChartRenderer$DiffChartLegendItem.cla
+ ss
+SHA1-Digest: Dg0pP31UJ586nsME1O4hu5J69LM=
+
+Name: cern/jdve/data/BooleanDataSource.class
+SHA1-Digest: perfAeYKSHQ+Q7un+fQYL2cXy84=
+
+Name: cern/jdve/renderer/ErrorDataSetRenderer$ErrorStyle.class
+SHA1-Digest: KeccIkwOeU7fYApKo77EguQsxiQ=
+
+Name: cern/jdve/table/PrintingDialog$3.class
+SHA1-Digest: JMZ0bIdrzx5d8KZnpPy1oP4+X+Q=
+
+Name: cern/jdve/table/DataSetColumns.class
+SHA1-Digest: b0lMjHBXV5boLZScGgvGa5Ska0M=
+
+Name: cern/jdve/interactor/ChangePointInteractor$DragPane.class
+SHA1-Digest: Oo57UPV7XAwoHQ2h9iSIaOO7zjo=
+
+Name: cern/jdve/CoordinateSystem$Coefficient.class
+SHA1-Digest: ujVqGGun54ZTvRtBTlxfxxJgnMc=
+
+Name: cern/jdve/interactor/ChangePointInteractor$ChangePointsDialog.cl
+ ass
+SHA1-Digest: FchS2MUhL+JJX0zWZbKgvpK9KEE=
+
+Name: cern/jdve/interactor/ZoomInteractor.class
+SHA1-Digest: ekERMPA2ORn+SZ6TsxPrn72iKdY=
+
+Name: cern/jdve/selectors/StyleEditor$MarkerEditor$1.class
+SHA1-Digest: t1q6ZTG8SF8MzORGaCKvy4I8L6o=
+
+Name: cern/jdve/interactor/hand.gif
+SHA1-Digest: SRKtzzoU+RpBd1+eBxSSZ0S//Oc=
+
+Name: cern/jdve/demo/CategoryImageDemo.class
+SHA1-Digest: M5SPeW7FVMZB/9yzAlBLtAxah5A=
+
+Name: cern/jdve/table/JDVETable.class
+SHA1-Digest: OXj+GsDK33Sv5R5CqfNXXaDzLl0=
+
+Name: cern/jdve/demo/RealTimeDemo$2.class
+SHA1-Digest: 8W1Fo5wvr5uH5qSGXanYtAfyeGQ=
+
+Name: cern/jdve/event/DataSourceEvent.class
+SHA1-Digest: Aik2TKJq8/NJiFKK2PkySUtDcU4=
+
+Name: cern/jdve/data/MountainDataSourceContour.class
+SHA1-Digest: S5XnKqPxlVyqhy06miBcx1S9ZK8=
+
+Name: cern/jdve/viewer/icons/explorerRoot.png
+SHA1-Digest: eAsLyFQtatPUjKjBjXDDAzbHxgY=
+
+Name: cern/jdve/demo/ErrorDataSetDemo.class
+SHA1-Digest: IfesDNSEeI9Un5T0BuWDgV2JIbM=
+
+Name: cern/jdve/demo/AdvancedInteractorDemo$1.class
+SHA1-Digest: ERtCorHple8jqCxsn8/9SdleDA8=
+
+Name: cern/jdve/StyleSheet$ObjectCSS.class
+SHA1-Digest: OEG8H8WA5IW1nQuBTzZr9ulkDMI=
+
+Name: cern/jdve/interactor/ChangePointInteractor$ChangePointsDialog$1.
+ class
+SHA1-Digest: y8hE6C9jngTOLqx1neLm7V+AarA=
+
+Name: cern/jdve/demo/EditDemo$7.class
+SHA1-Digest: fW6ZjPlgZRtcgVDE1yF6cavIWns=
+
+Name: cern/jdve/selectors/FlatSliderBoundedRangeModel.class
+SHA1-Digest: ESHkWqxOYA+W58TKOxacPBvik2o=
+
+Name: cern/jdve/EditionManager$3.class
+SHA1-Digest: JR/178IhBqWUyZV/MCLRMGtkQlQ=
+
+Name: cern/jdve/utils/ToolBarButton$PopupListener.class
+SHA1-Digest: DopG+aleiuYUy1G8tm3R0PYSmIg=
+
+Name: cern/jdve/event/LegendListener.class
+SHA1-Digest: qHCxpTLd/dp6XWfDZqeNMsgjWNo=
+
+Name: cern/jdve/EditionManager$1.class
+SHA1-Digest: lJmSQzbyvlTB4UIOv9mtd3v2tLk=
+
+Name: cern/jdve/demo/AdvancedInteractorDemo$2.class
+SHA1-Digest: iRbQHrpsYOOr/rDc6naOEbrRYBA=
+
+Name: cern/jdve/data/MountainDataSourceContour$MountainDataSet3D.class
+SHA1-Digest: PH+nVQOdV/ijJRhXTpbKqvvn98c=
+
+Name: cern/jdve/selectors/StyleEditor$StrokeEditor$13.class
+SHA1-Digest: dA4Vxh/c5dTs+KH8Cm9vPcIhvjc=
+
+Name: cern/jdve/interactor/AlignPointsInteractor$AlignAction.class
+SHA1-Digest: 1vh0hDRepZ/1pmHZkOcv5Gg9vFo=
+
+Name: cern/jdve/Style.class
+SHA1-Digest: UZumRTmpiV9YaAwASONtuPhdjDo=
+
+Name: cern/jdve/utils/IOUtils.class
+SHA1-Digest: iLNDiHyBhxMpaaJNkN7n4nsy8bU=
+
+Name: cern/jdve/BeanUtils.class
+SHA1-Digest: NAd0yecltLqVF4mw99uj+VSd7+o=
+
+Name: cern/jdve/viewer/Explorer$DVViewNode.class
+SHA1-Digest: KiyG4ZHRVpJzbQ/BSVj7SWsYQp0=
+
+Name: cern/jdve/interactor/CursorInteractor$CursorCoordinatesPane.clas
+ s
+SHA1-Digest: eeUVXP66gcphIEN0K82RRSPqXhY=
+
+Name: cern/jdve/demo/RealTimeDemo$UpdateTask.class
+SHA1-Digest: hG0WsSb9PLGYPgCAXArLkehbgJY=
+
+Name: cern/jdve/viewer/Explorer.class
+SHA1-Digest: 29mdisWdSr5dK08USyZAv81IVkw=
+
+Name: cern/jdve/selectors/FILL_PATTERN_HATCH90.gif
+SHA1-Digest: BkrDbrp4yZisrergeQVt6W9CQh4=
+
+Name: cern/jdve/interactor/AddPointInteractor$1.class
+SHA1-Digest: Cn7njlFEJHq0CqTLDZdAYqC3N2c=
+
+Name: cern/jdve/interactor/MovingAverageSmoothingInteractor$1.class
+SHA1-Digest: 7Lgdr3+/l+rrDOrsaWwokXbfZYo=
+
+Name: cern/jdve/event/HighlightInteractionEvent.class
+SHA1-Digest: RZTnUm9J+gkoIb69cBEC5Leztbs=
+
+Name: cern/jdve/utils/DisplayPoint3D.class
+SHA1-Digest: +Qz5g7ehLC+7w/ZOvegD7DE3x1M=
+
+Name: cern/jdve/data/DefaultDataSet3D.class
+SHA1-Digest: ZORbnIGzZXJOxSb2mdKOWfdlk90=
+
+Name: cern/jdve/demo/WSDemo.class
+SHA1-Digest: 3b93RDAJnnHqxwLfQ3QiWHsPYBA=
+
+Name: cern/jdve/utils/DoublePoint.class
+SHA1-Digest: 3Bs+LG22EoWu/0mJTPL2oRR1dKI=
+
+Name: cern/jdve/table/DataSourceTableModel.class
+SHA1-Digest: GUDKkgiHZ8Hh4DOcy4h8PmPEg0E=
+
+Name: cern/jdve/viewer/event/DVViewListener.class
+SHA1-Digest: 1gqbbgqFIaISsan8iRl5p76TCqk=
+
+Name: cern/jdve/graphic/MarkerFactory$1.class
+SHA1-Digest: DXYlBXyf0t7ALhVWxkwarwiu+8s=
+
+Name: cern/jdve/table/DataSourceTableModel$1.class
+SHA1-Digest: 8/zQecICvrVWunrke2FsgzNd9iA=
+
+Name: cern/jdve/UndoRedoManager$UndoRedoEntry.class
+SHA1-Digest: 2LomCr2Y+uzGOljBfjcUoswL5p4=
+
+Name: cern/jdve/interactor/RemovePointInteractor.class
+SHA1-Digest: KqjIheBKJ7Wuhu7dr7jrch1CHDI=
+
+Name: cern/jdve/viewer/icons/Thumbs.db
+SHA1-Digest: MGc0fCUIXcgfu7oCI01OmWkecCM=
+
+Name: cern/jdve/utils/TextMetrics.class
+SHA1-Digest: cc4F2GsQRPCnytwFrGt3ckdYd2Q=
+
+Name: cern/jdve/Legend$Header.class
+SHA1-Digest: 7Wd3itsbiOsCJ5zJS6flNj32Uzc=
+
+Name: cern/jdve/interactor/addPoint.gif
+SHA1-Digest: yoxjmqMtVphUpFQAd45TKQuy8gU=
+
+Name: cern/jdve/interactor/rescale.gif
+SHA1-Digest: cp++kMci8BJPkRQx2EAaSaI7N6g=
+
+Name: cern/jdve/viewer/icons/tileg.png
+SHA1-Digest: p6J/+RVdrm1y7Jf3htkRPzClV04=
+
+Name: cern/jdve/selectors/StyleEditor$StrokeEditor$12.class
+SHA1-Digest: iT2hzc0vvrb9vKWbflU2dSbxu6w=
+
+Name: cern/jdve/interactor/ZoomInteractor$ZoomPopupListener.class
+SHA1-Digest: NXiGeJ9FuX3MFRU7aLgZH44sTek=
+
+Name: cern/jdve/renderer/AreaChartRenderer.class
+SHA1-Digest: 567DMkjEatzGsjPjggt5bGT4ON8=
+
+Name: cern/jdve/data/ShiftingDataSet.class
+SHA1-Digest: tG3m/SZiOFtQ5NYg+4SyY6s5ZgM=
+
+Name: cern/jdve/Scale$1.class
+SHA1-Digest: kppPQaIuWYpxy8Do4Gy00j7U62I=
+
+Name: cern/jdve/viewer/DVToolbar$ViewMenuItem.class
+SHA1-Digest: KmQhLHWxugR+s5LYFm+IAOT1cXg=
+
+Name: cern/jdve/demo/AdvancedInteractorDemo$StatusPopUp$2$1.class
+SHA1-Digest: ROkKyx/pHlEBw4awX5dL+ztJLyQ=
+
+Name: cern/jdve/selectors/HSBColorChooser$1.class
+SHA1-Digest: IxzuurHcepPBwNcHAMdRJ2+rnLI=
+
+Name: cern/jdve/graphic/ChartAnnotation.class
+SHA1-Digest: zHzX4S6Sd/0sJttl0biK++lYPSM=
+
+Name: cern/jdve/data/TimeWindowDataSet$PointXValueComparator.class
+SHA1-Digest: lI5UEWVfEqZ0qj6X9XeZDCjit8w=
+
+Name: cern/jdve/demo/RealTimeDemo$1.class
+SHA1-Digest: k5iNwDc0A1fbLTJ6LPGmLCLSc3I=
+
+Name: cern/jdve/Cache.class
+SHA1-Digest: OsVoTf6EysgoQwruS2nEXFWXEa0=
+
+Name: cern/jdve/demo/WSDemo$GaussianDataSet.class
+SHA1-Digest: /u2cdV39sgP2J8ot7gHcSxWhHc0=
+
+Name: cern/jdve/viewer/icons/stairs.png
+SHA1-Digest: quzIroha3KcF1CdOlL+Itloefrs=
+
+Name: cern/jdve/selectors/FILL_PATTERN_HATCH0.gif
+SHA1-Digest: NkKb7WBzC5UM5FbmvExis/l4xRM=
+
+Name: cern/jdve/demo/BooleanDemo$ChartPanel$PlotsTableModel.class
+SHA1-Digest: 04eK+E2t3DZMD+BaOS/RQ+dzg2A=
+
+Name: cern/jdve/Style$1.class
+SHA1-Digest: 98q50uUm7IZXyltpV1JNY3cyIBk=
+
+Name: cern/jdve/demo/MultiAxisDemo.class
+SHA1-Digest: EuKpBosPmJECVfXbGawsz2aUa9Y=
+
+Name: cern/jdve/selectors/TableLayout$Entry.class
+SHA1-Digest: dL6BrdM1PbUkhazo2bxZ+iE8OiE=
+
+Name: cern/jdve/demo/RealTimeDemo$1$1.class
+SHA1-Digest: okG89vEGt+Sa3LpAwXDftezNwJQ=
+
+Name: cern/jdve/event/ChartInteractionEvent.class
+SHA1-Digest: ha3LwbrrN8aoBVsvP4kaGq7szeI=
+
+Name: cern/jdve/utils/IndexWindow.class
+SHA1-Digest: NES8xZcoM58kf4vqxAC/KyxwlCc=
+
+Name: cern/jdve/ChartRenderer$DataSetListenerImpl.class
+SHA1-Digest: fawU1apYR0fKqQutsIkih2pBy10=
+
+Name: cern/jdve/StyleSheet$AxisDependentCSSObject.class
+SHA1-Digest: ZgGaB3ZHDIwHUku18Z+c8f7KE1E=
+
+Name: cern/jdve/demo/RealTimeDemo$3.class
+SHA1-Digest: 8SzAoxo+tF2GvKjDERUPWP2wl04=
+
+Name: cern/jdve/table/PrintingDialog.class
+SHA1-Digest: 1sLG7A4YSPqrVbD+3z+eaQAb7Zo=
+
+Name: cern/jdve/StyleSheet$ChartAreaCSS.class
+SHA1-Digest: 3vUVum9tn5cJovvuNs/cXMIsDdE=
+
+Name: cern/jdve/table/GroupableTableHeader$TestUI.class
+SHA1-Digest: 1NJI9lPB+zd5WU/VHmE5h2iy7KM=
+
+Name: cern/jdve/demo/InteractorDemo.class
+SHA1-Digest: 0fhZYsxlex+xRxqeR9leF/wtgLc=
+
+Name: cern/jdve/demo/BooleanDemo$ChartPanel$1.class
+SHA1-Digest: YBZfeYACbkco0NgPF6rPowvskBs=
+
+Name: cern/jdve/graphic/MarkerFactory$CrossMarker.class
+SHA1-Digest: LY1aqs8URC4SiauaxRZOH0r5ies=
+
+Name: cern/jdve/demo/CustomDataSetDemo.class
+SHA1-Digest: FSx5V0MgoNQS1erkaydVtIE0K7I=
+
+Name: cern/jdve/demo/image.txt
+SHA1-Digest: hVsNyXnxbOQgHAGYZIlgvAMmruU=
+
+Name: cern/jdve/selectors/HSBColorChooser$3.class
+SHA1-Digest: Cohl+rQgFyT/ZIENg1eKYKLpZxw=
+
+Name: cern/jdve/data/AbstractDataSet.class
+SHA1-Digest: mZLV1l7ckzwMXVFZEYvZZDPG6Gg=
+
+Name: cern/jdve/interactor/ChangePointInteractor$ChangePointsDialog$2.
+ class
+SHA1-Digest: UoLRKZIZ7iX/XzE02spKV0gFLtU=
+
+Name: cern/jdve/table/PrintingDialog$5.class
+SHA1-Digest: oAQp1/y3KkJdr/kP7wdYgIQON1s=
+
+Name: cern/jdve/graphic/DataIndicator.class
+SHA1-Digest: py0zypWuI8hURYtWeC2DylK0vjQ=
+
+Name: cern/jdve/renderer/ContourChartRenderer$AxisListenerImpl.class
+SHA1-Digest: rP8nCmiPjsV9M9uRBT4str1KHVo=
+
+Name: cern/jdve/ChartAreaLayout.class
+SHA1-Digest: u5TxzVBBX9FHVg5THNKt8Xzo2Io=
+
+Name: cern/jdve/interactor/arrow.gif
+SHA1-Digest: T55jgQlob35yEcpvoWv5D4arNns=
+
+Name: cern/jdve/demo/Page1Demo.class
+SHA1-Digest: NZdIJi3AW0UH1AD6D97AZX4J2Zo=
+
+Name: cern/jdve/renderer/HiLoRenderer.class
+SHA1-Digest: 3BmK3M+Tt9lMal7KdcCin/GO/yQ=
+
+Name: cern/jdve/viewer/DataViewer$1.class
+SHA1-Digest: DZCgPcNN9Ug+gwcAPJYBTOLJQVA=
+
+Name: cern/jdve/selectors/StyleEditor$StrokeEditor$1.class
+SHA1-Digest: kp8Q6FJjh5XwcEOvErbjaskqE04=
+
+Name: cern/jdve/utils/ToolBarButton.class
+SHA1-Digest: MODFVMAmaPYOyhjB4I1kzyN9fzI=
+
+Name: cern/jdve/interactor/CoordinatesPane.class
+SHA1-Digest: Fd1fiMv7dxGnM1dMftWnrs5yeZw=
+
+Name: cern/jdve/utils/DataRange.class
+SHA1-Digest: i0UlrQqDOUqKHxMOVVFlj07x0AU=
+
+Name: cern/jdve/interactor/CursorInteractor$AxisListenerImpl.class
+SHA1-Digest: q+Q3tjSwex5VKjuSa5zeSBfBJXk=
+
+Name: cern/jdve/demo/EditDemo$3.class
+SHA1-Digest: 2qDSCQ6NCmkzrfRDw+tSnDUjx7k=
+
+Name: cern/jdve/Chart$PlotAreaContainerListener.class
+SHA1-Digest: NcpO0AfCvv2nCyRm6UYFIXUAWRo=
+
+Name: cern/jdve/UndoRedoManager$UndoRedoEntry$1.class
+SHA1-Digest: 4ndtTbupLxJ4+HK0ooWWi2HLCBA=
+
+Name: cern/jdve/data/AbstractDataSource.class
+SHA1-Digest: fkrG/DMgm5vyLyPs1sUByylGORo=
+
+Name: cern/jdve/Legend$1.class
+SHA1-Digest: PXhMUMOKGpZAV7pACQjpXR2g0hM=
+
+Name: cern/jdve/viewer/DVToolbar$PopupButton$PopupTrigger.class
+SHA1-Digest: NBDjVHvneQHcPfqROrYia2lx4+c=
+
+Name: cern/jdve/utils/IOUtils$1.class
+SHA1-Digest: tVOIWrVbIbGqCnUgwyFvLM2nwVU=
+
+Name: cern/jdve/event/ScaleListener.class
+SHA1-Digest: oUAVn0xTYlG0rLsYAOnt9N9TckQ=
+
+Name: cern/jdve/utils/IndexRange.class
+SHA1-Digest: 0gSFQyNXaZZxOe3eQMZfQC11/UE=
+
+Name: cern/jdve/interactor/CursorInteractor.class
+SHA1-Digest: 5aTdBXhQWU0OBRYAA04Ga/5HUjs=
+
+Name: cern/jdve/interactor/EditInteractor.class
+SHA1-Digest: FrUaYzAkMnt38rOmUpJETE8PBFk=
+
+Name: cern/jdve/selectors/StyleEditor$StrokeEditor$ComboBoxRenderer.cl
+ ass
+SHA1-Digest: Ao0kGYqdye3RJujhP9030nalCm4=
+
+Name: cern/jdve/graphic/MarkerFactory$PlusMarker.class
+SHA1-Digest: PgX3/vtJkdVfmJBSbCjFytkwJAc=
+
+Name: cern/jdve/utils/Exporter$DVFileFilter.class
+SHA1-Digest: 2xJ0x/D2T2gKLObj0gMwc1zGr5M=
+
+Name: cern/jdve/graphic/GrayscalePalette.class
+SHA1-Digest: EnrKd3j78fmeHkNIlU1nK20s4Vs=
+
+Name: cern/jdve/utils/GraphicsUtils$CohenSutherland.class
+SHA1-Digest: UP5CimGXgWbq6giby7Y7E+s159Y=
+
+Name: cern/jdve/interactor/RemovePointInteractor$RemoveAction.class
+SHA1-Digest: kHz4TzP8/SVIJA+PDgXvhJCskr8=
+
+Name: cern/jdve/CoordinateSystem$1.class
+SHA1-Digest: cI4ZpQ2xiHbPOJT0mJDrQjDA18M=
+
+Name: cern/jdve/interactor/FlattenPointsInteractor.class
+SHA1-Digest: rufTfQ13yFMlOmDvDaHwU+AXW9Y=
+
+Name: cern/jdve/interactor/changeX.gif
+SHA1-Digest: NgsQfMqQdiyrALXZD8U2HDuHoCg=
+
+Name: cern/jdve/data/AbstractDataSet3D.class
+SHA1-Digest: t0TYAtz9+hJZDvLtK/X3mFGYCgE=
+
+Name: cern/jdve/scale/LogarithmicStepsDefinition.class
+SHA1-Digest: FI6ntiz00utmGIDjMqRxU1/4Jzk=
+
+Name: cern/jdve/selectors/HSBColorChooser.class
+SHA1-Digest: EiJ/ch5NsfdH7u96TeV5vEFszUc=
+
+Name: cern/jdve/demo/ContourDemo$1.class
+SHA1-Digest: S1ceBNsmiiojc969OXlxtHBAwQQ=
+
+Name: cern/jdve/event/CursorInteractionEvent.class
+SHA1-Digest: nCjv1RHByQv5yVn2FyJ9Nv/WHnM=
+
+Name: cern/jdve/demo/EditDemo$8.class
+SHA1-Digest: /cTbtFyxVebn0OBwXgxIldt8nMk=
+
+Name: cern/jdve/selectors/StyleEditor$StrokeEditor.class
+SHA1-Digest: iDI2DqLj7oDfRWURa0gTs3ncXj8=
+
+Name: cern/jdve/UndoRedoManager.class
+SHA1-Digest: KehfBBU6bwEIAS1flVXA4Pl/OK4=
+
+Name: cern/jdve/interactor/changeY_smooth.gif
+SHA1-Digest: AhzJpH0c5Lgbc9//INOI2hu5/gw=
+
+Name: cern/jdve/viewer/Explorer$DataSetNode.class
+SHA1-Digest: eHAWrEpBVwGoXBX/tcy5VeTpL98=
+
+Name: cern/jdve/interactor/FlattenPointsInteractor$FlattenAction.class
+SHA1-Digest: AaYA+78a5bmq0P5z6ODOG7i0bBg=
+
+Name: cern/jdve/viewer/icons/defaultView.png
+SHA1-Digest: iXdEXs2XNsmZxwMs20Ano7wX3Ek=
+
+Name: cern/jdve/demo/DecorationsAnnotationsDemo$1.class
+SHA1-Digest: jw09AefZCw1/bi9IUof0uGDcxvI=
+
+Name: cern/jdve/ParserCSS$CSSErrorHandler.class
+SHA1-Digest: jXPHa8DBBonpBZwsD5U8KkTfujE=
+
+Name: cern/jdve/renderer/BarChartRenderer.class
+SHA1-Digest: wZ/PDnIRh/VlNMMQEYqdASU6vEY=
+
+Name: cern/jdve/demo/AdvancedInteractorDemo$StatusPopUp$1.class
+SHA1-Digest: wnWpwqCNCvETk5QLWPghi4JNcAg=
+
+Name: cern/jdve/demo/BarChartDemo.class
+SHA1-Digest: EcXhApJCGKWxfjHWsJQ02FPhrWo=
+
+Name: cern/jdve/table/JDVETable$PopupTrigger$1.class
+SHA1-Digest: 3/ykpp2tk30gjlpqx9Q7bwCz1Uo=
+
+Name: cern/jdve/data/BooleanDataSet.class
+SHA1-Digest: IGW0hW/8feYnOHUePz0jKxbSkEA=
+
+Name: cern/jdve/selectors/StyleEditor$StrokeEditor$7.class
+SHA1-Digest: ToUyA/XNdPoNVBqFQm6Tj3xOFrU=
+
+Name: cern/jdve/utils/ToolBarButton$Arrow.class
+SHA1-Digest: v1W7QWHas6Duao0B0yVjMDeQspQ=
+
+Name: cern/jdve/viewer/icons/scatter.png
+SHA1-Digest: cZZfxwOk40RSfQR0XoKlDMJTZz4=
+
+Name: cern/jdve/data/DefaultIntervalDataSet.class
+SHA1-Digest: v8DHMlw5aZncu3LoQcUUAg32dA8=
+
+Name: cern/jdve/Chart$3.class
+SHA1-Digest: rJd7MhDGcNmFODqgnQOv1sihozY=
+
+Name: cern/jdve/ChartRenderer$1.class
+SHA1-Digest: HrxBd/R0yc9DlKYukA1GUP1mxjA=
+
+Name: cern/jdve/interactor/zoomVertical.gif
+SHA1-Digest: 5f3NcXgeTiMWejVSjNym3BNvYhY=
+
+Name: cern/jdve/event/DataSetListener.class
+SHA1-Digest: WwFcR7wXHGu7AhQADwhFXg7LBmA=
+
+Name: cern/jdve/demo/DecorationsAnnotationsDemo$GaussianDataSet.class
+SHA1-Digest: wZoo8oY3RYlbm1/4ZtwRb5M6PWA=
+
+Name: cern/jdve/selectors/HSBColorChooser$4.class
+SHA1-Digest: btqRfmHvhhlKIXAyQ6cih8SLOeQ=
+
+Name: cern/jdve/UndoRedoManager$DataSetSnapshot.class
+SHA1-Digest: btJBTTBn0E47TU9UiWd6g2h1940=
+
+Name: cern/jdve/selectors/StyleEditor$StrokeEditor$8.class
+SHA1-Digest: m7PGrc+Z/N7dHmtqdSc54odivDI=
+
+Name: cern/jdve/DefaultPointsSelectionModel.class
+SHA1-Digest: jvqkbQJtqmDQxmmz6Gcwb9IizOM=
+
+Name: cern/jdve/demo/EditDemo$4.class
+SHA1-Digest: VHuE8n56mkMwPrO6lUSLkU2SkwY=
+
+Name: cern/jdve/table/JDVETable$1$1.class
+SHA1-Digest: jRIBHTlzWoRZBUz1DUG+p0emFZI=
+
+Name: cern/jdve/demo/TimeDemo.class
+SHA1-Digest: xZot+KuhgSA9fvBnMMRKH6dETpQ=
+
+Name: cern/jdve/interactor/FactorPointsInteractor$1.class
+SHA1-Digest: MRMQx+YWy9PPykCUSp9d64WK5F0=
+
+Name: cern/jdve/selectors/StyleEditor$StrokeEditor$14.class
+SHA1-Digest: OdrWVv3RC5JxWaFJ8azMeSyLraI=
+
+Name: cern/jdve/selectors/FILL_PATTERN_SOLID.gif
+SHA1-Digest: iB8Q3Gyb0BNkt+kyWi+29qHE790=
+
+Name: cern/jdve/utils/DisplayPoint.class
+SHA1-Digest: 1zLZ5S9eXxdROwVQbP3gEYMFgcM=
+
+Name: cern/jdve/interactor/SelectedAreaInteractor.class
+SHA1-Digest: E3R/k90uAM4gUY5R+8XZY8jScRU=
+
+Name: cern/jdve/ChartDataPicker.class
+SHA1-Digest: 6IjF9xo0cvoI8Y52TuebTgYACdY=
+
+Name: cern/jdve/viewer/icons/polyline.png
+SHA1-Digest: fkMMT8VPh/PQ112rbgHbuP79tLY=
+
+Name: cern/jdve/graphic/RainbowPalette.class
+SHA1-Digest: j8+QxEKE0RiAZW6xSAbJAcRJlHE=
+
+Name: cern/jdve/demo/MountainDemo$1.class
+SHA1-Digest: ylLYnwzC5B1LjbYg8SMKVYruo5M=
+
+Name: cern/jdve/data/DefaultEditionHint.class
+SHA1-Digest: tYiJSDvZXcujQy5RuW67VWYdX/U=
+
+Name: cern/jdve/interactor/changeXY.gif
+SHA1-Digest: xXnQ+eIiQF02SUsUL+WpjpNWAtA=
+
+Name: cern/jdve/viewer/icons/polyline_with_markers.png
+SHA1-Digest: F+Y+SbMBtkyjTLxiQK1j1vbTmkw=
+
+Name: cern/jdve/demo/data/RandomDataGenerator.class
+SHA1-Digest: AmFMPU4N7w8lPG7HoJ9IHETVGuk=
+
+Name: cern/jdve/viewer/icons/tilev.png
+SHA1-Digest: VBB5mX8J3c5d0zNqGLklDsW/Vcs=
+
+Name: cern/jdve/demo/SelectVectorInteractor.class
+SHA1-Digest: CyNBfnVm2wQzERm81wfLNCeGOHc=
+
+Name: cern/jdve/EditionManager$2.class
+SHA1-Digest: qjzZP6s8zmXVtu02hr1321sevRs=
+
+Name: cern/jdve/selectors/StyleEditor$Previewer.class
+SHA1-Digest: BJ0LqY6GTaY4nyy3nu4LgOYhnwQ=
+
+Name: cern/jdve/StyleSheet.class
+SHA1-Digest: syfsDrsHphP5dY3FMthp+KW3JEU=
+
+Name: cern/jdve/viewer/DVView.class
+SHA1-Digest: lWPY8oZVUoW12smjtkJYDziVMG0=
+
+Name: cern/jdve/data/HistogramDataSet$1.class
+SHA1-Digest: iUxx4B5j1KDHGxOwAMRBrQAkm3g=
+
+Name: cern/jdve/interactor/ChangePointInteractor$ChangePointsDialog$OK
+ Action.class
+SHA1-Digest: tjNh5zrP0dqx1y/y6+8w6ZQh7M8=
+
+Name: cern/jdve/data/DataSet3D.class
+SHA1-Digest: UOQDGkawvh89C/H2ODVRHUhw6mU=
+
+Name: cern/jdve/data/YXDataSet.class
+SHA1-Digest: 0UuZBZleQ6zxVA5sH9fEJltePDk=
+
+Name: cern/jdve/demo/Page1Demo$1.class
+SHA1-Digest: 3ztgOj0BVnD6V3nElrGVXcYFqzA=
+
+Name: cern/jdve/interactor/CursorInteractor$1.class
+SHA1-Digest: hpSCgEmWP5xfM7RfemCy/q+8cbY=
+
+Name: cern/jdve/demo/SimpleDemo.class
+SHA1-Digest: zQ/xLFsUTedCC0Ih197OUqCl+Tw=
+
+Name: cern/jdve/utils/ButtonGroup$ButtonsSwitcher.class
+SHA1-Digest: D9tB90qqbV1JC3tz1pEhj6iUQjM=
+
+Name: cern/jdve/renderer/ScatterChartRenderer.class
+SHA1-Digest: sRKYvE0J5MSuv0SwvKVJqKefOMI=
+
+Name: cern/jdve/interactor/saveState.gif
+SHA1-Digest: L9LZaPY40SwOCnzW/ZlFCZhvbBk=
+
+Name: cern/jdve/Scale$ScaleSynchronizer.class
+SHA1-Digest: Ns785sDilSdruzX2B9eF1PgxkE8=
+
+Name: cern/jdve/demo/ContourDemo.class
+SHA1-Digest: tga07GZbjgq3z0SsfEFUK7Pzacs=
+
+Name: cern/jdve/data/MountainDataSource.class
+SHA1-Digest: tpSNRwfhkbrM32cIK6wqd9mytqo=
+
+Name: cern/jdve/table/EditPointsDialog$2.class
+SHA1-Digest: q/dwdrPsYli8oDsGz4glNwo33ag=
+
+Name: cern/jdve/utils/AssertUtils.class
+SHA1-Digest: 4JH2WJBr3LChCn0PmYmCoG8s87o=
+
+Name: cern/jdve/event/DataSourceListener.class
+SHA1-Digest: wZlQirocqf2fKJQdbPlJg2pGcPY=
+
+Name: cern/jdve/viewer/DVLayout.class
+SHA1-Digest: SqY1HGRWYtGq7q5TVj0vPa6JL6w=
+
+Name: cern/jdve/interactor/CursorsBoundedChangePointsStrategy.class
+SHA1-Digest: 3ejM4SWyyFDGEpq7UbC/lBU2Hhc=
+
+Name: cern/jdve/viewer/icons/export.gif
+SHA1-Digest: LQPT2QoQELD7YcZiJV2Viw4nKYo=
+
+Name: cern/jdve/demo/AdvancedInteractorDemo$StatusPopUp$2$2.class
+SHA1-Digest: tRTEkjcaWiy818E29u1IgFzJQlk=
+
+Name: cern/jdve/graphic/MarkerFactory$DiamondMarker.class
+SHA1-Digest: 8fECMUhCbJ3hmMlpReTrn+wPG6Y=
+
+Name: cern/jdve/scale/TimeStepsDefinition.class
+SHA1-Digest: S1NAaWS2Z7y40Wwf4zE3pfUilmM=
+
+Name: cern/jdve/viewer/IconsManager.class
+SHA1-Digest: DNjK0pkNJvP2eoo+l3TlRGhQbcI=
+
+Name: cern/jdve/viewer/Explorer$DVNodeRenderer.class
+SHA1-Digest: 6CRVGFRUxRQmM0tjMXkhuXVHRBI=
+
+Name: cern/jdve/table/PrintingDialog$6.class
+SHA1-Digest: 26+3EAVo0KNir4CncYnGuEnvSqc=
+
+Name: cern/jdve/demo/HiLoDemo.class
+SHA1-Digest: 0PVNMif96wjEUoaWOXaDD9jiB8c=
+
+Name: cern/jdve/utils/ButtonGroup.class
+SHA1-Digest: D1FJC9Rsyd6Yq3eaRuVtM/LTYp4=
+
+Name: cern/jdve/StyleSheet$DataSetCSS.class
+SHA1-Digest: KOit3CuL5g1ZQO3O8kEN3gvcinQ=
+
+Name: cern/jdve/UndoRedoManager$UndoRedoDataSetListener.class
+SHA1-Digest: Hg6f6YAHbIf89T3UySdJGgHeiDc=
+
+Name: cern/jdve/utils/DisplayPoints.class
+SHA1-Digest: zvFr5X7wZ6QVjLIfPB1uZIsNFRU=
+
+Name: cern/jdve/viewer/icons/tileh.png
+SHA1-Digest: s+8+QU9QZL3sR9v/EL3Q4RYuj2s=
+
+Name: cern/jdve/table/JDVETable$PopupTrigger$3.class
+SHA1-Digest: 1n+/sZP3kKv3xZFUjqR8RN3ze/o=
+
+Name: cern/jdve/DefaultChartDataPicker.class
+SHA1-Digest: edDptrVU4b5NzdDXCES57KDdWYY=
+
+Name: cern/jdve/data/DataSetError$ErrorType.class
+SHA1-Digest: pVwvFpM+GhnrbKhgV6PDLy/HHf0=
+
+Name: cern/jdve/graphic/DefaultDataAnnotation.class
+SHA1-Digest: YxtXsPAiUPq4+R8AIJhp5tuD4iE=
+
+Name: cern/jdve/demo/ErrorDataSetDemo$1.class
+SHA1-Digest: dnW3U6j7q72/awA8P6BGObucO8w=
+
+Name: cern/jdve/demo/demo.css
+SHA1-Digest: hEa2HEqmoZtUpYvjqp3HZAqtaMg=
+
+Name: cern/jdve/data/AbstractErrorDataSet.class
+SHA1-Digest: y4y0WRc1ivA8XSvzaim9AcMeXEY=
+
+Name: cern/jdve/viewer/Explorer$DVNode.class
+SHA1-Digest: k20b9zagpdSypEGRdg/DUmHxy4Q=
+
+Name: cern/jdve/viewer/icons/bars.png
+SHA1-Digest: re1MXJuHIIAZAl6oQAvoINjeGK4=
+
+Name: cern/jdve/interactor/removePoint.gif
+SHA1-Digest: ORJe0sG1BDPf20zkd9DI+HUjfk8=
+
+Name: cern/jdve/UndoRedoManager$1.class
+SHA1-Digest: AruJEB3JENM+igEdmlQAhppwL7w=
+
+Name: cern/jdve/graphic/CustomPalette.class
+SHA1-Digest: AEtmgd37OyE4St9NRJLO5oapPP0=
+
+Name: cern/jdve/viewer/event/DVViewEvent.class
+SHA1-Digest: Y/VKavxsMuKk7MZVGU3VgzNm1Ls=
+
+Name: cern/jdve/InteractorsToolbar.class
+SHA1-Digest: zOMyirFqd9EJoeolL2MyZOps9gM=
+
+Name: cern/jdve/LogarithmicAxisTransformer.class
+SHA1-Digest: msWLAQiRknf5hOjpBc0hgD1VPNA=
+
+Name: cern/jdve/viewer/Explorer$CheckBoxNodeEditor$1.class
+SHA1-Digest: BoHJgX2VDBMZlJf8NgqnbUEmKWA=
+
+Name: cern/jdve/viewer/DataView$1.class
+SHA1-Digest: +0dJdp2egOWLegthOWf7XPpFsUA=
+

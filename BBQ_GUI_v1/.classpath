@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/java"/>
+	<classpathentry kind="lib" path="lib/accsoft-commons-core.jar"/>
+	<classpathentry kind="lib" path="lib/accsoft-commons-util.jar"/>
+	<classpathentry kind="lib" path="lib/accsoft-gui-frame.jar"/>
+	<classpathentry kind="lib" path="lib/accsoft-security-rba-util.jar"/>
+	<classpathentry kind="lib" path="lib/accsoft-security-rba.jar"/>
+	<classpathentry kind="lib" path="lib/avalon-framework.jar"/>
+	<classpathentry kind="lib" path="lib/cmw-directory-client.jar"/>
+	<classpathentry kind="lib" path="lib/cmw-rda.jar"/>
+	<classpathentry kind="lib" path="lib/cmw-serializer.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="lib/jacorb.jar"/>
+	<classpathentry kind="lib" path="lib/japc-ext-cmwrda.jar"/>
+	<classpathentry kind="lib" path="lib/japc-value.jar"/>
+	<classpathentry kind="lib" path="lib/japc.jar"/>
+	<classpathentry kind="lib" path="lib/jta.jar"/>
+	<classpathentry kind="lib" path="lib/log4j.jar"/>
+	<classpathentry kind="lib" path="lib/logkit.jar"/>
+	<classpathentry kind="lib" path="lib/spring.jar"/>
+	<classpathentry kind="lib" path="lib/swingx.jar"/>
+	<classpathentry kind="lib" path="lib/sdcommon-0.9.0.jar"/>
+	<classpathentry kind="lib" path="lib/jdataviewer-1.5.4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-math-2.2.jar"/>
+	<classpathentry kind="lib" path="lib/swt-debug.jar"/>
+	<classpathentry kind="lib" path="lib/swt.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="swing2swt.jar"/>
+	<classpathentry kind="output" path="build/bin"/>
+</classpath>
