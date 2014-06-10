@@ -1,6 +1,6 @@
 /*****************************************************************************
  *                                                                           *
- * PrimerExample1 - Application                                              *
+ * BBQ GUI_ v1 - Application                                              *
  *                                                                           *
  * modified: 2010-08-02 Harald Braeuning                                     *
  *                                                                           *
