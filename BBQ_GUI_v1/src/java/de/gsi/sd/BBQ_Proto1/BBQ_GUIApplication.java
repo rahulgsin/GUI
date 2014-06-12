@@ -1,6 +1,6 @@
 /*****************************************************************************
  *                                                                           *
- * BBQ GUI - Application                                                     *
+ * BBQ GUI - VME Expert Branch Application                                                     *
  *                                                                           *
  * modified: 2014-05-21 Rahul Singh                                          *
  *                                                                           *
