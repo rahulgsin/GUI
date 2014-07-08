@@ -370,7 +370,7 @@ public class MainPanel extends AbstractMainPanel {
       {
         panel.add(new JLabel("Device:"),new GridBagConstraints(0,srow,1,1,0.0,0.0,GridBagConstraints.WEST,GridBagConstraints.BOTH,insets,0,0));
         deviceField = new JTextField(15);
-        deviceField.setText("TestRsBbqPrototype2");
+        deviceField.setText("BbqS04");
         panel.add(deviceField,new GridBagConstraints(1,srow,1,1,1.0,0.0,GridBagConstraints.WEST,GridBagConstraints.HORIZONTAL,insets,0,0));
         JButton button = new JButton(ACTION_SUBSCRIBE);
         panel.add(button,new GridBagConstraints(2,srow,1,1,0.0,0.0,GridBagConstraints.WEST,GridBagConstraints.BOTH,insets,0,0));

@@ -83,10 +83,10 @@ public class JAPCDataProvider  {
   static private ParameterFactory japcParameterFactory = ParameterFactory.newInstance();
 
   /** Name of the property */
-  static private final String PROPERTY_ACQUISITION = "DataSequenceAcquisition";
+  static private final String PROPERTY_ACQUISITION = "DataAcquisition";
   /** Name of the data field in the property */
-  static private final String FIELD_TIME = "dataSequenceClient";
-  static private final String FIELD_FRE = "dataSpectrumClient";
+  static private final String FIELD_TIME = "timeData";
+  static private final String FIELD_FRE = "freqData";
   FESAData data = new FESAData();
   /**
    * Get the FESA device name, to which this provider is subscribed. 
