@@ -154,6 +154,7 @@ public class MainPanel extends AbstractMainPanel {
   private JTextField modeField;
   private JTextField datalengthField;
   /** Text field for the acquired value */
+  private JTextField acqModeField;
   private JTextField initField;
   private JTextField delayField;
   private JTextField adcsetField1;
@@ -302,6 +303,7 @@ public class MainPanel extends AbstractMainPanel {
   public FESAAcquisitionSettings getFESAAcquisitionSettings()
   {
     FESAAcquisitionSettings s = new FESAAcquisitionSettings();
+    s.setMode(Byte.parseByte(acqModeField.getText()));
     s.setAcquisitionSettings(Short.parseShort(initField.getText()),0);
     s.setAcquisitionSettings(Short.parseShort(datalengthField.getText()),1);
     s.setAcquisitionSettings(Short.parseShort(delayField.getText()),2);
@@ -338,6 +340,7 @@ public class MainPanel extends AbstractMainPanel {
   
   public void setFESAAcquisitionSettings(FESAAcquisitionSettings s)
   {
+	acqModeField.setText(String.valueOf(s.getMode()));
     initField.setText(String.valueOf(s.getAcquisitionSettings(0)));
     datalengthField.setText(String.valueOf(s.getAcquisitionSettings(1)));
     delayField.setText(String.valueOf(s.getAcquisitionSettings(2)));
@@ -428,9 +431,9 @@ public class MainPanel extends AbstractMainPanel {
         }
         {
             panel.add(new JLabel("Acquisition Mode:"),new GridBagConstraints(0,srow,1,1,0.0,0.0,GridBagConstraints.WEST,GridBagConstraints.NONE,insets,0,0));
-            modeField = new JTextField(2);
-            modeField.setText("0");
-            panel.add(modeField,new GridBagConstraints(1,srow,1,1,1.0,0.0,GridBagConstraints.WEST,GridBagConstraints.BOTH,insets,0,0));
+            acqModeField = new JTextField(2);
+            acqModeField.setText("0");
+            panel.add(acqModeField,new GridBagConstraints(1,srow,1,1,1.0,0.0,GridBagConstraints.WEST,GridBagConstraints.BOTH,insets,0,0));
             srow++;
           } 
         {
@@ -494,6 +497,10 @@ public class MainPanel extends AbstractMainPanel {
         adcsetField1 = new JTextField(2);
         adcsetField1.setText("1");
         panel.add(adcsetField1,new GridBagConstraints(1,srow,1,1,1.0,0.0,GridBagConstraints.WEST,GridBagConstraints.BOTH,insets,0,0));
+        panel.add(new JLabel("ADC Mode:"),new GridBagConstraints(2,srow,1,1,0.0,0.0,GridBagConstraints.WEST,GridBagConstraints.NONE,insets,0,0));
+        modeField = new JTextField(2);
+        modeField.setText("0");
+        panel.add(modeField,new GridBagConstraints(3,srow,1,1,1.0,0.0,GridBagConstraints.WEST,GridBagConstraints.BOTH,insets,0,0));
         srow++;
       }
       {
@@ -501,13 +508,10 @@ public class MainPanel extends AbstractMainPanel {
           adcsetField2 = new JTextField(2);
           adcsetField2.setText("1");
           panel.add(adcsetField2,new GridBagConstraints(1,srow,1,1,1.0,0.0,GridBagConstraints.WEST,GridBagConstraints.BOTH,insets,0,0));
-          srow++;
-      }
-      {
-          panel.add(new JLabel("Samples per Shot:"),new GridBagConstraints(0,srow,1,1,0.0,0.0,GridBagConstraints.WEST,GridBagConstraints.NONE,insets,0,0));
+          panel.add(new JLabel("Samples per Shot:"),new GridBagConstraints(2,srow,1,1,0.0,0.0,GridBagConstraints.WEST,GridBagConstraints.NONE,insets,0,0));
           adcsetField3 = new JTextField(2);
           adcsetField3.setText("512");
-          panel.add(adcsetField3,new GridBagConstraints(1,srow,1,1,1.0,0.0,GridBagConstraints.WEST,GridBagConstraints.BOTH,insets,0,0));
+          panel.add(adcsetField3,new GridBagConstraints(3,srow,1,1,1.0,0.0,GridBagConstraints.WEST,GridBagConstraints.BOTH,insets,0,0));
           srow++;
         }
 

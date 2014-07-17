@@ -246,7 +246,7 @@ public class JAPCDataProvider  {
       Array2D data_time = map.getArray2D(FIELD_TIME);
       Array2D data_fre = map.getArray2D(FIELD_FRE);
       /* Create the FESA data object */
-      BBQ_GUIApplication.getLogger().info("Data is mapped");
+      BBQ_GUIApplication.getLogger().info("Data is mapped::JAPCDataProvider");
    //   System.out.println(Arrays.toString(data_time.getDoubleArray2D()));
      // System.out.println(Arrays.toString(data_time.getDoubleRow(10)));
       // System.out.println(Arrays.toString(data_fre.getDoubles()));

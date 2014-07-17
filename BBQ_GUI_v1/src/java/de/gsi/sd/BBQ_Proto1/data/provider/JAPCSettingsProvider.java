@@ -39,74 +39,76 @@ public class JAPCSettingsProvider {
   static private ParameterFactory japcParameterFactory = ParameterFactory.newInstance();
 
   /** Name of the property accessed */
-  static private final String PROPERTY_SETTINGS = "DataWindowSetting";
+ // static private final String PROPERTY_SETTINGS = "DataWindowSetting";
   /** Name of the window field */
-  static private final String FIELD_WINDOW  = "dataWindowLengthClient";
+ //  static private final String FIELD_WINDOW  = "dataWindowLengthClient";
   
-  static private final String PROPERTY_SETTINGS1 = "DataPathSetting";
+  static private final String PROPERTY_SETTINGS1 = "SummaryIOSetting";
   /** Name of the path field */
-  static private final String FIELD_PATH  = "dataPathClient"; 
+  static private final String FIELD_PATH  = "fileBase"; 
   
   static private final String PROPERTY_ADCSETTINGS = "AdcSettings";
   /** Name of the mode field */
-  static private final String FIELD_MODE  = "operationMode"; 
-  /** Name of the adc settings field */
+  static private final String FIELD_ADC_MODE  = "acqMode";
   static private final String FIELD_ADCSETTINGS  = "adcSettings"; 
   
   static private final String PROPERTY_ACQUISITIONSETTINGS = "AcquisitionSettings";
   /** Name of the acquisition settings field */
-  static private final String FIELD_ACQUISITIONSETTINGS  = "acquisitionSettings";
+  static private final String FIELD_MODE  = "operationMode"; 
+  /** Name of the adc settings field */
+  static private final String FIELD_ACQUISITIONSETTINGS  = "acquistionSettings";
   /**
    * Get the FESA settings from the device.
    * @param deviceName the name of the FESA device
    * @return the FESA settings object or null in case of error
    */
-  static public FESASettingsWindow getWindow(String deviceName) 
+  /*static public FESASettingsWindow getWindow(String deviceName) 
   {
-    /* Check for device name */
+     Check for device name 
     if (deviceName == null || deviceName.isEmpty()) 
     {
       BBQ_GUIApplication.getLogger().error("No device specfied!");
       return null;
     }
-    /* Get a URL for a parameter getting the setting property */
+     Get a URL for a parameter getting the setting property 
     ParameterUrl url = new ParameterUrlImpl(deviceName,PROPERTY_SETTINGS);
-    /* Get a cycle selector for not multiplexed device */
+     Get a cycle selector for not multiplexed device 
     Selector selector = ParameterValueFactory.newSelector(null);
     try 
     {
-      /* Get a parameter for the acquisition property */
+       Get a parameter for the acquisition property 
       Parameter p = japcParameterFactory.newParameter(url);
-      /* Get the settings from the FESA class */
+       Get the settings from the FESA class 
       AcquiredParameterValue acquiredValue = p.getValue(selector);
-      /* Get the actual parameter value */
+       Get the actual parameter value 
       ParameterValue value = acquiredValue.getValue(); 
-      /* If the property has more than one field the parameter value will be of
-       * type MAP */
+       If the property has more than one field the parameter value will be of
+       * type MAP 
       if (value.getType().equals(Type.MAP))
       {
-        /* Create new FESA settings object */ 
+         Create new FESA settings object  
         FESASettingsWindow s = new FESASettingsWindow();
-        /* Cast the parameter value to its correct class of type MAP */
+         Cast the parameter value to its correct class of type MAP 
         ImmutableMapParameterValue map = (ImmutableMapParameterValue)value;
-        /* Obtain the value of the field given by FIELD_OFFSET (i.e. "offset") as
-         * a double value and set it in the FESA settings object */
+         Obtain the value of the field given by FIELD_OFFSET (i.e. "offset") as
+         * a double value and set it in the FESA settings object 
         s.setOffset(map.getShort(FIELD_WINDOW));
-        /* Obtain the value of the field given by FIELD_RANGE (i.e. "range") as
-         * a double value and set it in the FESA settings object */
-       /** s.setRange(( map.getString("DataPathSetting")));*/
+         Obtain the value of the field given by FIELD_RANGE (i.e. "range") as
+         * a double value and set it in the FESA settings object 
+       *//** s.setRange(( map.getString("DataPathSetting")));*//*
         return s;
       }
     } 
+    
     catch (Exception e) 
     {
     	BBQ_GUIApplication.getLogger().error("Failed to get data from device "+deviceName,e);
     }
-    /* Error or unhandled parameter type: return null */
+     Error or unhandled parameter type: return null 
     
 
     return null;
-  }
+  }*/
   static public FESASettingsPath getPath(String deviceName) 
   {
     /* Check for device name */
@@ -229,7 +231,7 @@ public class JAPCSettingsProvider {
         ImmutableMapParameterValue map = (ImmutableMapParameterValue)value;
         /* Obtain the value of the field given by FIELD_OFFSET (i.e. "offset") as
          * a double value and set it in the FESA settings object */
-    //    s.setMode(map.getByte(FIELD_MODE));
+        s.setMode(map.getByte(FIELD_ADC_MODE));
         s.setAcquisitionSettings(map.getShorts(FIELD_ACQUISITIONSETTINGS));
   
         return s;
@@ -250,37 +252,37 @@ public class JAPCSettingsProvider {
    * @param deviceName the name of the FESA device
    * @param s the FESA settings to set
    */
-  static public void setWindow(String deviceName, FESASettingsWindow s)
+/*  static public void setWindow(String deviceName, FESASettingsWindow s)
   {
-    /* Check for device name */
+     Check for device name 
     if (deviceName == null || deviceName.isEmpty()) 
     {
     	BBQ_GUIApplication.getLogger().error("No device specfied!");
       return;
     }
-    /* Get a URL for a parameter setting the setting property */
+     Get a URL for a parameter setting the setting property 
     ParameterUrl url = new ParameterUrlImpl(deviceName,PROPERTY_SETTINGS);
-    /* Get a cycle selector for not multiplexed device */
+     Get a cycle selector for not multiplexed device 
     Selector selector = ParameterValueFactory.newSelector(null);
     try
     {
-      /* Get a parameter for the acquisition property */
+       Get a parameter for the acquisition property 
       Parameter p = japcParameterFactory.newParameter(url);
-      /* Create a new parameter value of type MAP */
+       Create a new parameter value of type MAP 
       MapParameterValue map = ParameterValueFactory.newParameterValue();
-      /* Set the value of the field FIELD_OFFSET */
+       Set the value of the field FIELD_OFFSET 
       map.setShort(FIELD_WINDOW,s.getOffset());
-      /* Set the value of the field FIELD_RANGE */
-     /**  map.setString("DataPathSetting",s.getRange());*/
-      /* Set the parameter value in the parameter (i.e. send the data to the
-       * FESA device) */
+       Set the value of the field FIELD_RANGE 
+     *//**  map.setString("DataPathSetting",s.getRange());*//*
+       Set the parameter value in the parameter (i.e. send the data to the
+       * FESA device) 
       p.setValue(selector,map);
     } 
     catch (Exception e) 
     {
     	BBQ_GUIApplication.getLogger().error("Failed to send settings to device "+deviceName,e);
     }
-  }
+  }*/
 
   static public void setPath(String deviceName, FESASettingsPath s)
   {
@@ -333,7 +335,7 @@ public class JAPCSettingsProvider {
       /* Create a new parameter value of type MAP */
       MapParameterValue map = ParameterValueFactory.newParameterValue();
       /* Set the value of the field FIELD_OFFSET */
-      map.setByte(FIELD_MODE,s.getMode());
+      map.setByte(FIELD_ADC_MODE,s.getMode());
       map.setShorts(FIELD_ADCSETTINGS,s.getAdcSettings());
       /* Set the value of the field FIELD_RANGE */
      /**  map.setString("DataPathSetting",s.getRange());*/
@@ -365,7 +367,7 @@ public class JAPCSettingsProvider {
       /* Create a new parameter value of type MAP */
       MapParameterValue map = ParameterValueFactory.newParameterValue();
       /* Set the value of the field FIELD_OFFSET */
-     // map.setByte(FIELD_MODE,s.getMode());
+      map.setByte(FIELD_MODE,s.getMode());
       map.setShorts(FIELD_ACQUISITIONSETTINGS,s.getAcquisitionSettings());
       /* Set the value of the field FIELD_RANGE */
      /**  map.setString("DataPathSetting",s.getRange());*/

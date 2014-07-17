@@ -94,14 +94,14 @@ public class FESAData {
     double[] temp_spectrum = spectrum.getDoubles();
    //System.out.println(Integer.toString(this.channel));
    //System.out.println("from FesaData and channel num");
-   System.out.println(temp_time.length);
+ //  System.out.println("Time Data Length is", temp_time.length);
    //System.out.println(temp_spectrum.length);
     double [] channel_time1 = new double[temp_time.length/num_channels];
     double [] channel_time2 = new double[temp_time.length/num_channels];
     double [] channel_time3 = new double[temp_time.length/num_channels];
     double [] channel_time4 = new double[temp_time.length/num_channels];
     double [] channel_spectrum = new double[temp_spectrum.length/2];
-    System.out.println(temp_spectrum.length/2);
+ // System.out.println("Spectrum length is", temp_spectrum.length/2);
     int i=0;
     int j=0;
     do {
@@ -242,7 +242,7 @@ public class FESAData {
     System.out.println(channel); 
 	  }
 	
-    System.out.println(Arrays.toString(timeData));
+   // System.out.println(Arrays.toString(timeData));
   
    /* data = dataSetMap.get(ADC_CHANNEL_USER1);
     data.getDataSet().setData(adcData[2]);

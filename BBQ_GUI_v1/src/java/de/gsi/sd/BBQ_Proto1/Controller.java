@@ -180,7 +180,7 @@ public class Controller implements ActionListener, JAPCDataProviderListener {
     FESAAdcSettings adcsettings = mainPanel.getFESAAdcSettings();
     FESAAcquisitionSettings acquisitionsettings = mainPanel.getFESAAcquisitionSettings();
     /* Set the settings via the JAPCSettingsProvider */
-    JAPCSettingsProvider.setWindow(deviceName,settingswin);
+ //   JAPCSettingsProvider.setWindow(deviceName,settingswin);
     JAPCSettingsProvider.setPath(deviceName,settingspath);
     JAPCSettingsProvider.setAdcSettings(deviceName,adcsettings);
     JAPCSettingsProvider.setAcquisitionSettings(deviceName,acquisitionsettings);
@@ -199,12 +199,12 @@ public class Controller implements ActionListener, JAPCDataProviderListener {
       return;
     }
     /* Get the FESA settings from the device via the JAPCSettingsProvider */
-    FESASettingsWindow settingswin = JAPCSettingsProvider.getWindow(deviceName);
+  //  FESASettingsWindow settingswin = JAPCSettingsProvider.getWindow(deviceName);
     FESASettingsPath settingspath = JAPCSettingsProvider.getPath(deviceName);
     FESAAdcSettings adcsettings = JAPCSettingsProvider.getAdcSettings(deviceName);
     FESAAcquisitionSettings acquisitionsettings = JAPCSettingsProvider.getAcquisitionSettings(deviceName);
     /* Reflect the new settings in the main panel */
-    mainPanel.setFESASettings(settingswin);
+   // mainPanel.setFESASettings(settingswin);
     mainPanel.setFESASettings(settingspath);
     mainPanel.setFESAAdcSettings(adcsettings);
     mainPanel.setFESAAcquisitionSettings(acquisitionsettings);

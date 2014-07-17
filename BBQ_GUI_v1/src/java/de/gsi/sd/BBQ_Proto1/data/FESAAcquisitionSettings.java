@@ -16,7 +16,7 @@ package de.gsi.sd.BBQ_Proto1.data;
 public class FESAAcquisitionSettings {
 	  
 	  /** ADC mode and settings */
-//	  private byte acquisitionmode;
+	  private byte acquisitionmode;
 	  private short [] acquisitionsettings;
 	  
 
@@ -29,20 +29,20 @@ public class FESAAcquisitionSettings {
 		  acquisitionsettings = new short[5];
 	  }
 	  
-/*public byte getMode() 
+public byte getMode() 
 {
   return acquisitionmode;
 }
-*/
+
 /**
  * Set the ADC mode
  * @param Set the ADC mode
  */
-/*public void setMode(Byte acqmode) 
+public void setMode(Byte acqmode) 
 {
   this.acquisitionmode = acqmode;
 }
-*/
+
 	  
 public double getAcquisitionSettings(int index) 
 {
