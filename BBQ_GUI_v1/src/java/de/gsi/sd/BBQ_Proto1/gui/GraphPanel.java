@@ -315,17 +315,18 @@ public class GraphPanel extends SDPanel implements ChartInteractionListener, Axi
   //  System.out.println(ch.getRenderersCount());
   //  System.out.println(ch.getYAxisCount());
     DataSource src = ch.getDataSource();
-//    if (src == null)
-//    {
-    	System.out.println("First time");
-      src = new DefaultDataSource();
+   if (src == null)
+    {
+     System.out.println("First time");
+    }
+     src = new DefaultDataSource();
       switch (index)
       {
       case 1:
     	  if (type ==0)
     	  {
         src.addDataSet(data.getDataSet(FESAData.CHANNEL_1_TIME).getDataSet());
-    //	  System.out.println("2nd channel"+ Arrays.toString(data.getDataSet(FESAData.CHANNEL_1_TIME).getDataSet().getData()));
+    	 // System.out.println("2nd channel"+ Arrays.toString(data.getDataSet(FESAData.CHANNEL_1_TIME).getDataSet().getData()));
        }
     	  else
         src.addDataSet(data.getDataSet(FESAData.CHANNEL_1_FRE).getDataSet());	  
@@ -334,11 +335,14 @@ public class GraphPanel extends SDPanel implements ChartInteractionListener, Axi
     	  if (type ==0)
     	  {
         src.addDataSet(data.getDataSet(FESAData.CHANNEL_2_TIME).getDataSet());
-    	//  System.out.println("2nd channel"+ Arrays.toString(data.getDataSet(FESAData.CHANNEL_2_TIME).getDataSet().getData()));
+    	 // System.out.println("2nd channel"+ Arrays.toString(data.getDataSet(FESAData.CHANNEL_2_TIME).getDataSet().getData()));
     	  }
           else
-        src.addDataSet(data.getDataSet(FESAData.CHANNEL_1_FRE).getDataSet());	  
-        break;
+          {
+        src.addDataSet(data.getDataSet(FESAData.CHANNEL_2_FRE).getDataSet());
+    	 // System.out.println("2nd channel frequency"+ Arrays.toString(data.getDataSet(FESAData.CHANNEL_2_FRE).getDataSet().getData()));
+          }
+    	  break;
       case 3:
     	  if (type ==0)
         src.addDataSet(data.getDataSet(FESAData.CHANNEL_3_TIME).getDataSet());

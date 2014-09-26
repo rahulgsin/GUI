@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.Set;
 import cern.japc.Array2D;
 import de.gsi.sd.BBQ_Proto1.BBQ_GUIApplication;
+import de.gsi.sd.BBQ_Proto1.data.FESASettingsWindow;
 /*import de.gsi.sd.BBQ_Proto1.data.FCTData.FCTDataSetContainer;
 import de.gsi.sd.BBQ_Proto1.data.filter.FilterDescriptor;*/
 /**
@@ -39,7 +40,7 @@ public class FESAData {
   private Array2D time;  
   private Array2D spectrum;
   private int samplingFrequency;
-  private int num_channels =4;
+  private int num_channels =2; // ONly two channels on this ADC
   private HashMap<String,FESADataSetContainer> dataSetMap = new HashMap<String, FESADataSetContainer>();
   /**
    * Empty constructor
@@ -94,15 +95,25 @@ public class FESAData {
     double[] temp_spectrum = spectrum.getDoubles();
    //System.out.println(Integer.toString(this.channel));
    //System.out.println("from FesaData and channel num");
- //  System.out.println("Time Data Length is", temp_time.length);
-   //System.out.println(temp_spectrum.length);
+    FESASettingsWindow s = new FESASettingsWindow();
+    int fftLength = s.getOffset();
+    System.out.println(temp_time.length);
+    System.out.println(temp_spectrum.length);
     double [] channel_time1 = new double[temp_time.length/num_channels];
     double [] channel_time2 = new double[temp_time.length/num_channels];
-    double [] channel_time3 = new double[temp_time.length/num_channels];
-    double [] channel_time4 = new double[temp_time.length/num_channels];
-    double [] channel_spectrum = new double[temp_spectrum.length/2];
+   // double [] channel_time3 = new double[temp_time.length/num_channels];
+   // double [] channel_time4 = new double[temp_time.length/num_channels];
+    double [] channel_spectrum1 = new double[temp_spectrum.length/2*num_channels];
+    double [] channel_spectrum2 = new double[temp_spectrum.length/2*num_channels];
  // System.out.println("Spectrum length is", temp_spectrum.length/2);
-    int i=0;
+    
+    channel_time1 = Arrays.copyOfRange(temp_time, 0, (temp_time.length/num_channels)-1);
+    channel_time2 = Arrays.copyOfRange(temp_time, (temp_time.length/num_channels), 2*(temp_time.length/num_channels)-1);
+    channel_spectrum1 = Arrays.copyOfRange(temp_spectrum, 0*(temp_spectrum.length/(2*num_channels)), 0*(temp_spectrum.length/(2*num_channels))+(temp_spectrum.length/(2*num_channels))-1);
+    channel_spectrum2 = Arrays.copyOfRange(temp_spectrum, 2*(temp_spectrum.length/(2*num_channels)) ,2*(temp_spectrum.length/(2*num_channels))+(temp_spectrum.length/(2*num_channels))-1);
+    
+    
+  /**  int i=0;
     int j=0;
     do {
         channel_time1[j]=temp_time[i];
@@ -114,12 +125,13 @@ public class FESAData {
         channel_time4[j]=temp_time[i];
         i=i+1;
         j=j+1;
-   } while (i < temp_time.length-1);
+   } while (i < temp_time.length-1); **/
+    
   //  System.out.println(Arrays.toString(channel_time1));
   //  System.out.println(Arrays.toString(channel_time2));
   //  System.out.println(Arrays.toString(channel_time3));
    // System.out.println(Arrays.toString(channel_time4));   
-    i=0;
+  //  i=0;
    // System.out.println(Arrays.toString(channel_time));
   /*  do {
    //     channel_time[j]=temp_time[i];
@@ -132,13 +144,13 @@ public class FESAData {
   //  allocateAdcData(time.length);
     setAdcData(channel_time1, 1);
     setAdcData(channel_time2, 2);
-    setAdcData(channel_time3, 3);
-    setAdcData(channel_time4, 4);
-    setAdcFreData(channel_spectrum, 1);
-    setAdcFreData(channel_spectrum, 2);
-    setAdcFreData(channel_spectrum, 3);
-    setAdcFreData(channel_spectrum, 4);
-    setSamplingFrequency(100000000);
+ //   setAdcData(channel_time3, 3);
+ //   setAdcData(channel_time4, 4);
+    setAdcFreData(channel_spectrum1, 1);
+    setAdcFreData(channel_spectrum2, 2);
+  //  setAdcFreData(channel_spectrum, 3);
+  //  setAdcFreData(channel_spectrum, 4);
+    setSamplingFrequency(800000);
   }
   
   /**
@@ -173,6 +185,8 @@ public class FESAData {
     data4.getDataSet().setFrequency(frequency);
     data1 = dataSetMap.get(CHANNEL_1_FRE);
     data1.getDataSet().setFrequency(frequency);
+    data2 = dataSetMap.get(CHANNEL_2_FRE);
+    data2.getDataSet().setFrequency(frequency);
   }
   
   public int getSamplingFrequency() 
