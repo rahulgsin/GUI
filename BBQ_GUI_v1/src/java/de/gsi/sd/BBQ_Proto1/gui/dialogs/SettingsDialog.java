@@ -9,7 +9,7 @@
 package de.gsi.sd.BBQ_Proto1.gui.dialogs;
 
 import de.gsi.sd.common.controls.localizable.LocalizableButton;
-import de.gsi.sd.BBQ_Proto1.data.FCTSettings;
+import de.gsi.sd.BBQ_Proto1.data.BBQSettings;
 import de.gsi.sd.BBQ_Proto1.gui.SettingsPanel;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -27,7 +27,7 @@ public class SettingsDialog extends JDialog {
   boolean accepted;
   SettingsPanel settingsPanel;
   
-  public SettingsDialog(JFrame frame, FCTSettings settings)
+  public SettingsDialog(JFrame frame, BBQSettings settings)
   {
     super(frame,"FCT Settings",true);
     initComponents();
@@ -41,7 +41,7 @@ public class SettingsDialog extends JDialog {
     return accepted;
   }
 
-  public void getSettings(FCTSettings settings)
+  public void getSettings(BBQSettings settings)
   {
     settingsPanel.get(settings);
   }

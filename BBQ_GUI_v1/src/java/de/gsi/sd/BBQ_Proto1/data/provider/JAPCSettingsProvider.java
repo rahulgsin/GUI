@@ -51,12 +51,20 @@ public class JAPCSettingsProvider {
   /** Name of the mode field */
   static private final String FIELD_ADC_MODE  = "acqMode";
   static private final String FIELD_ADCSETTINGS  = "adcSettings"; 
+ 
   
   static private final String PROPERTY_ACQUISITIONSETTINGS = "AcquisitionSettings";
   /** Name of the acquisition settings field */
   static private final String FIELD_MODE  = "operationMode"; 
   /** Name of the adc settings field */
   static private final String FIELD_ACQUISITIONSETTINGS  = "acquistionSettings";
+  static private final String FIELD_SAMPLELENGTH  = "sampleLengthModel";
+  static private final String FIELD_ACQMODE  = "acqModeModel";
+  static private final String FIELD_PREDELAY  = "preDelay";
+  static private final String FIELD_TRIGGERDELAY  = "triggerDelays";
+  static private final String FIELD_TRIGGEREVENTS  = "triggerEvents";
+  
+  
   /**
    * Get the FESA settings from the device.
    * @param deviceName the name of the FESA device
@@ -233,7 +241,11 @@ public class JAPCSettingsProvider {
          * a double value and set it in the FESA settings object */
         s.setMode(map.getByte(FIELD_ADC_MODE));
         s.setAcquisitionSettings(map.getShorts(FIELD_ACQUISITIONSETTINGS));
-  
+        s.setAcqMode(map.getInt(FIELD_ACQMODE));
+        s.setSampleTime(map.getDouble(FIELD_SAMPLELENGTH));
+        s.setPreDelay(map.getDouble(FIELD_PREDELAY));
+        s.setTriggerDelays(map.getLongs(FIELD_TRIGGERDELAY));
+        s.setTriggerEvents(map.getInts(FIELD_TRIGGEREVENTS));
         return s;
       }
     } 
@@ -337,6 +349,7 @@ public class JAPCSettingsProvider {
       /* Set the value of the field FIELD_OFFSET */
       map.setByte(FIELD_ADC_MODE,s.getMode());
       map.setShorts(FIELD_ADCSETTINGS,s.getAdcSettings());
+      
       /* Set the value of the field FIELD_RANGE */
      /**  map.setString("DataPathSetting",s.getRange());*/
       /* Set the parameter value in the parameter (i.e. send the data to the
@@ -369,6 +382,11 @@ public class JAPCSettingsProvider {
       /* Set the value of the field FIELD_OFFSET */
       map.setByte(FIELD_MODE,s.getMode());
       map.setShorts(FIELD_ACQUISITIONSETTINGS,s.getAcquisitionSettings());
+      map.setInt(FIELD_ACQMODE,s.getAcqMode());
+      map.setDouble(FIELD_SAMPLELENGTH,s.getSampleTime());
+      map.setDouble(FIELD_PREDELAY,s.getPreDelay());
+      map.setLongs(FIELD_TRIGGERDELAY,s.getTriggerDelays());
+      map.setInts(FIELD_TRIGGEREVENTS,s.getTriggerEvents());
       /* Set the value of the field FIELD_RANGE */
      /**  map.setString("DataPathSetting",s.getRange());*/
       /* Set the parameter value in the parameter (i.e. send the data to the

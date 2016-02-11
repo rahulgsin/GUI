@@ -12,6 +12,7 @@ import cern.jdve.Axis;
 import cern.jdve.Chart;
 import cern.jdve.data.DataSet;
 import cern.jdve.data.DataSource;
+import cern.jdve.data.DefaultDataSet3D;
 import cern.jdve.data.DefaultDataSource;
 import cern.jdve.data.MountainDataSource;
 import cern.jdve.event.AxisEvent;
@@ -26,10 +27,11 @@ import de.gsi.sd.common.controls.PrintPages;
 import de.gsi.sd.common.controls.SDPanel;
 import de.gsi.sd.common.controls.Updatable;
 import de.gsi.sd.BBQ_Proto1.data.AbstractDataDoubleSet;
-import de.gsi.sd.BBQ_Proto1.data.FESAData;
+import de.gsi.sd.BBQ_Proto1.data.BBQData;
 //import de.gsi.sd.BBQ_Proto1.data.FCTData.FCTDataSetContainer;
-import de.gsi.sd.BBQ_Proto1.data.FESAData.FESADataSetContainer;
+import de.gsi.sd.BBQ_Proto1.data.BBQData.FESADataSetContainer;
 import de.gsi.sd.BBQ_Proto1.data.TimeDomainDataSet;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics2D;
@@ -46,9 +48,11 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
+
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.border.BevelBorder;
+
 import org.apache.log4j.Logger;
 
 @SuppressWarnings("serial")
@@ -59,12 +63,20 @@ public class GraphPanel extends SDPanel implements ChartInteractionListener, Axi
   static public final int CHART_HF  = 1;
   static public final int CHART_USER1 = 2;
   static public final int CHART_USER2 = 3;
-  static public final int CHART_MAX = 2;
+  static public final int CHART_MAX = 4;
+  static public final int CONTOUR_CHART_MAX = 2;
 
   private ChartPanel[] chart = new ChartPanel[CHART_MAX];
+  private ContourPanel[] contourChart = new ContourPanel[CONTOUR_CHART_MAX];
   private Chart activeChart;
   static private final int FOCUS_BORDER_WIDTH = 2;
-  
+  private double [] z;
+  private double [] xValues;
+  private double [] yValues;
+  private double [] zValues;
+  private double [] xValues1;
+  private double [] yValues1;
+  private double [] zValues1;
   static private Logger logger = Logger.getLogger(GraphPanel.class);
 
   public GraphPanel() 
@@ -73,33 +85,61 @@ public class GraphPanel extends SDPanel implements ChartInteractionListener, Axi
     initComponents();
   }
 
-  public void updateData(FESAData data, int [] channel, int [] type)
+  public void updateData(BBQData data, int [] channel, int [] type)
   {
 	  System.out.println("Data refreshed");
  //  BBQ_GUIApplication.getLogger().info("Updating data in Graphpanel");
-    for (int i=0;i<chart.length;i++)
+    for (int i=0;i<chart.length/2;i++)
     {
       setDataSets(data,chart[i],channel[i],type[i]);
     }
+    
+    for (int i=2;i<chart.length;i++)
+    {
+      setParDataSets(data,chart[i],i);
+    }
+    
+    for (int i=0;i<CONTOUR_CHART_MAX;i++)
+    {
+      setDataSets(data,contourChart[i],channel[i],type[i]);
+    }
  //   addGraph(data,data.CHANNEL_1_TIME);
   }
+  public void updateData(BBQData data, int [] channel, int [] type, int specNumber)
+  {
+//	  System.out.println("Partial Data refreshed");
+ //  BBQ_GUIApplication.getLogger().info("Updating data in Graphpanel");
+    for (int i=2;i<chart.length;i++)
+    {
+      setParDataSets(data,chart[i],i);
+    }
+ //   addGraph(data,data.CHANNEL_1_TIME);
+    
+  }
 
+  
   public void layout(int rows, int cols)
   {
     removeAll();
-    setLayout(new GridLayout(rows,cols));
+    setLayout(new GridLayout(rows+1,cols));
+    contourChart = new ContourPanel[CONTOUR_CHART_MAX];
     chart = new ChartPanel[rows*cols];
     for (int i=0;i<chart.length;i++)
     {
       chart[i] = createChart();
       add(chart[i]);
     }
+    for (int i=0;i<CONTOUR_CHART_MAX;i++)
+    {
+    	contourChart[i] = createContourChart();
+    	add(contourChart[i]);
+    }
     activeChart = chart[0].getChart();
     chart[0].setBorder(BorderFactory.createLineBorder(Color.BLACK,FOCUS_BORDER_WIDTH));
-    fireEvent(FCTGUIEvent.ACTION_DISPLAY_FOCUS,activeChart);
+    fireEvent(BBQGUIEvent.ACTION_DISPLAY_FOCUS,activeChart);
   }
 
-  public void addGraph(FESAData data, String name)
+  public void addGraph(BBQData data, String name)
   {
     if (activeChart == null) return;
     DataSource src = activeChart.getDataSource();
@@ -265,7 +305,7 @@ public class GraphPanel extends SDPanel implements ChartInteractionListener, Axi
   @Override
   public void axisChanged(AxisEvent arg0) 
   {
-    fireEvent(FCTGUIEvent.ACTION_DISPLAY_RANGE,activeChart);
+    fireEvent(BBQGUIEvent.ACTION_DISPLAY_RANGE,activeChart);
   }
 
 
@@ -275,7 +315,7 @@ public class GraphPanel extends SDPanel implements ChartInteractionListener, Axi
   {
     setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
     setPreferredSize(new Dimension(1024,800));
-    layout(CHART_MAX,1);
+    layout(CHART_MAX/2,CHART_MAX/2);
   }
 
   private ChartPanel createChart()
@@ -293,6 +333,13 @@ public class GraphPanel extends SDPanel implements ChartInteractionListener, Axi
     ch.getYAxis().addAxisListener(this);
     return panel;
   }
+  
+  private ContourPanel createContourChart()
+  {
+	  ContourPanel panel = new ContourPanel();
+	  Chart ch = panel.getChart();
+    return panel;
+  }
 
   private void focusChart(MouseEvent e)
   {
@@ -306,10 +353,10 @@ public class GraphPanel extends SDPanel implements ChartInteractionListener, Axi
         activeChart = chart[i].getChart();
       }
     }
-    fireEvent(FCTGUIEvent.ACTION_DISPLAY_FOCUS,activeChart);
+    fireEvent(BBQGUIEvent.ACTION_DISPLAY_FOCUS,activeChart);
   }
 
-  private void setDataSets(FESAData data, ChartPanel panel, int index, int type)
+  private void setDataSets(BBQData data, ChartPanel panel, int index, int type)
   {
     Chart ch = panel.getChart();
   //  System.out.println(ch.getRenderersCount());
@@ -317,7 +364,7 @@ public class GraphPanel extends SDPanel implements ChartInteractionListener, Axi
     DataSource src = ch.getDataSource();
    if (src == null)
     {
-     System.out.println("First time");
+     System.out.println("GraphPanel:: Updatedata First time");
     }
      src = new DefaultDataSource();
       switch (index)
@@ -325,35 +372,35 @@ public class GraphPanel extends SDPanel implements ChartInteractionListener, Axi
       case 1:
     	  if (type ==0)
     	  {
-        src.addDataSet(data.getDataSet(FESAData.CHANNEL_1_TIME).getDataSet());
+        src.addDataSet(data.getDataSet(BBQData.CHANNEL_1_TIME).getDataSet());
     	 // System.out.println("2nd channel"+ Arrays.toString(data.getDataSet(FESAData.CHANNEL_1_TIME).getDataSet().getData()));
        }
     	  else
-        src.addDataSet(data.getDataSet(FESAData.CHANNEL_1_FRE).getDataSet());	  
+        src.addDataSet(data.getDataSet(BBQData.CHANNEL_1_FRE).getDataSet());	  
         break;
       case 2:
     	  if (type ==0)
     	  {
-        src.addDataSet(data.getDataSet(FESAData.CHANNEL_2_TIME).getDataSet());
+        src.addDataSet(data.getDataSet(BBQData.CHANNEL_2_TIME).getDataSet());
     	 // System.out.println("2nd channel"+ Arrays.toString(data.getDataSet(FESAData.CHANNEL_2_TIME).getDataSet().getData()));
     	  }
           else
           {
-        src.addDataSet(data.getDataSet(FESAData.CHANNEL_2_FRE).getDataSet());
+        src.addDataSet(data.getDataSet(BBQData.CHANNEL_2_FRE).getDataSet());
     	 // System.out.println("2nd channel frequency"+ Arrays.toString(data.getDataSet(FESAData.CHANNEL_2_FRE).getDataSet().getData()));
           }
     	  break;
       case 3:
-    	  if (type ==0)
-        src.addDataSet(data.getDataSet(FESAData.CHANNEL_3_TIME).getDataSet());
-    	  else
-        src.addDataSet(data.getDataSet(FESAData.CHANNEL_1_FRE).getDataSet());	  
+   // 	  if (type ==0)
+    //    src.addDataSet(data.getDataSet(FESAData.CHANNEL_3_TIME).getDataSet());
+    //	  else
+        src.addDataSet(data.getDataSet(BBQData.CHANNEL_1_FRE).getDataSet());	  
         break;
       case 4:
-    	  if (type ==0)
-        src.addDataSet(data.getDataSet(FESAData.CHANNEL_4_TIME).getDataSet());
-          else
-        src.addDataSet(data.getDataSet(FESAData.CHANNEL_1_FRE).getDataSet());	  
+    //	  if (type ==0)
+    //    src.addDataSet(data.getDataSet(FESAData.CHANNEL_4_TIME).getDataSet());
+    //      else
+        src.addDataSet(data.getDataSet(BBQData.CHANNEL_1_FRE).getDataSet());	  
         break;
     /*  case 2:
         src.addDataSet(data.getDataSet(FESAData.CHANNEL_2_TIME).getDataSet());
@@ -396,12 +443,138 @@ public class GraphPanel extends SDPanel implements ChartInteractionListener, Axi
    // System.out.println(sets[0].getX(20));
    
     //System.out.println(sets[0].getX(20));
-    if (sets != null && sets.length > 0)
+/*    if (sets != null && sets.length > 0)
     {
       panel.setReduction(((AbstractDataDoubleSet)sets[0]).getReduction());
     }
+    */  // Removed the reduction part from chartpanel-- R. Singh
+    
   }
 
+  private void setDataSets(BBQData data, ContourPanel panel, int index, int type)
+  {
+    Chart ch = panel.getChart();
+  //  System.out.println(ch.getRenderersCount());
+  //  System.out.println(ch.getYAxisCount());
+  /* DefaultDataSet3D src = ch.getDataSource();
+   if (src == null)
+    {
+     System.out.println("GraphPanel:: Updatedata First time");
+    }*/
+
+    DefaultDataSet3D src = new DefaultDataSet3D("Quad Signal");
+      switch (index)
+      {
+      case 1:
+    	  
+   	      z= data.getSpec(1);
+	      //zValues = Arrays.copyOfRange(z, 0, 300*512);
+   	      zValues = new double[300*512];
+	      for (int i = 0;i< 512;i++)
+	      {
+	    	  for (int j = 0;j< 300;j++)
+	    	  {
+	    	  zValues[i*300+j] = z[j*512+i];
+	    	  }
+	      }
+	      System.out.println(z[512]);
+	      System.out.println(zValues[1]);
+	      System.out.println(z[1024]);
+	      System.out.println(zValues[2]);
+	      System.out.println(zValues.length);
+
+	            xValues = new double[512];
+	            double temp = 0;
+	            double fftLength = 1024;
+	        for (int i = 0; i < xValues.length; i++) {    	
+	            xValues[i] = (temp/fftLength);
+	            temp++;
+	        }
+	        
+            yValues = new double[300];
+        for (int i = 0; i < yValues.length; i++) {
+            yValues[i] = i;
+        }
+   /*    z = data.getSpec(1);
+        System.out.println(z.length);
+     //   System.out.println("Length of z");
+     //   System.out.println(z.length);
+        zValues = Arrays.copyOfRange(z, 0, 300*512);
+	        System.out.println(zValues.length);
+
+        yValues = new double[300];
+        for (int i = 0; i < yValues.length; i++) {
+            yValues[i] = i;
+        }
+        double temp = 0;
+        double fftLength = 1024;
+        xValues = new double[512];
+        for (int i = 0; i <xValues.length; i++) {
+            xValues[i] =temp/fftLength ;
+            temp++;
+        }
+        */
+        src.set(yValues, xValues, zValues, false, false);
+        ch.setDataSet(src);
+        break;
+      case 2:
+      {
+    //    src.addDataSet(data.getDataSet(BBQData.CHANNEL_2_FRE).getDataSet());
+    	      z= data.getSpec(2);
+    	      zValues1 = new double[300*512];
+    	      //zValues1 = Arrays.copyOfRange(z, 0, 300*512);
+    	      for (int i = 0;i<512;i++)
+    	      {
+    	    	  for (int j = 0;j<300;j++)
+    	    	  {
+    	    	  zValues1[i*300+j] = z[j*512+i];
+    	    	  }
+    	      }
+
+    	            xValues1 = new double[512];
+    	            temp = 0;
+    	            fftLength = 1024;
+    	        for (int i = 0; i < xValues1.length; i++) {
+    	        	
+    	            xValues1[i] = temp/fftLength;
+    	            temp++;
+    	        }
+    	        
+	            yValues1 = new double[300];
+	        for (int i = 0; i < yValues1.length; i++) {
+	            yValues1[i] = i;
+	        }
+    	        src.set(yValues1, xValues1, zValues1, false, false);
+    	        ch.setDataSet(src);
+    	  break;
+      }
+   //   System.out.println(yValues[500]);
+   // updateTitles(ch);
+   // DataSet[] sets = src.getDataSets();
+      }
+      }
+
+  
+  
+  
+  private void setParDataSets(BBQData data, ChartPanel panel,int index)
+  {
+    Chart ch = panel.getChart();
+    DataSource src = ch.getDataSource();
+   if (src == null)
+    {
+     System.out.println("Partial Set");
+    }
+     src = new DefaultDataSource();
+      if (index == 2)
+        src.addDataSet(data.getDataSet(BBQData.CHANNEL_1_FRE_PAR).getDataSet());	  
+      else
+        src.addDataSet(data.getDataSet(BBQData.CHANNEL_2_FRE_PAR).getDataSet());
+      ch.setDataSource(src);
+    updateTitles(ch);  
+  }
+  
+  
   private void updateTitles(Chart chart)
   {
     DataSource src = chart.getDataSource();

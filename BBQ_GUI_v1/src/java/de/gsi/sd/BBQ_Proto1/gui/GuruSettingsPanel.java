@@ -1,6 +1,6 @@
 /*****************************************************************************
  *                                                                           *
- * FCT - Guru settings panel                                                 *
+ * BBQ - Guru settings panel                                                 *
  *                                                                           *
  * modified: 2012-06-14 Harald Braeuning                                     *
  *                                                                           *
@@ -12,8 +12,8 @@ import de.gsi.sd.common.controls.SDPanel;
 import de.gsi.sd.common.controls.Updatable;
 import de.gsi.sd.common.controls.localizable.LocalizableButton;
 import de.gsi.sd.common.controls.localizable.LocalizableLabel;
-import de.gsi.sd.BBQ_Proto1.data.FCTExpertSettings;
-import de.gsi.sd.BBQ_Proto1.data.FCTGuruSettings;
+import de.gsi.sd.BBQ_Proto1.data.BBQExpertSettings;
+import de.gsi.sd.BBQ_Proto1.data.BBQGuruSettings;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
@@ -56,7 +56,7 @@ public class GuruSettingsPanel extends SDPanel {
     initComponents(buttons);
   }
 
-  public void updateData(FCTGuruSettings settings)
+  public void updateData(BBQGuruSettings settings)
   {
     if (settings.isTriggerInputLemo())
       triggerInputLemo.setSelected(true);
@@ -66,8 +66,8 @@ public class GuruSettingsPanel extends SDPanel {
       triggerInputNegative.setSelected(true);
     else
       triggerInputPositive.setSelected(true);
-    triggerOutputLemo.setSelected((settings.getTriggerOutput() & FCTExpertSettings.TRIGGER_OUT_LEMO) != 0);
-    triggerOutputLvds.setSelected((settings.getTriggerOutput() & FCTExpertSettings.TRIGGER_OUT_LVDS) != 0);
+    triggerOutputLemo.setSelected((settings.getTriggerOutput() & BBQExpertSettings.TRIGGER_OUT_LEMO) != 0);
+    triggerOutputLvds.setSelected((settings.getTriggerOutput() & BBQExpertSettings.TRIGGER_OUT_LVDS) != 0);
     triggerThreshold.setText(String.valueOf(settings.getTriggerThreshold()));
     for (int i=0;i<settings.getTriggerOutputWidth().length;i++)
     {
@@ -78,17 +78,17 @@ public class GuruSettingsPanel extends SDPanel {
   @Override
   public void get(Object data)
   {
-    if (data instanceof FCTGuruSettings) get((FCTGuruSettings)data);
+    if (data instanceof BBQGuruSettings) get((BBQGuruSettings)data);
   }
 
-  private void get(FCTGuruSettings settings)
+  private void get(BBQGuruSettings settings)
   {
     settings.setTriggerThreshold(Double.parseDouble(triggerThreshold.getText()));
     settings.setTriggerInputLemo(triggerInputLemo.isSelected());
     settings.setTriggerInputNegative(triggerInputNegative.isSelected());
     int output = 0;
-    if (triggerOutputLemo.isSelected()) output |= FCTExpertSettings.TRIGGER_OUT_LEMO;
-    if (triggerOutputLvds.isSelected()) output |= FCTExpertSettings.TRIGGER_OUT_LVDS;
+    if (triggerOutputLemo.isSelected()) output |= BBQExpertSettings.TRIGGER_OUT_LEMO;
+    if (triggerOutputLvds.isSelected()) output |= BBQExpertSettings.TRIGGER_OUT_LVDS;
     settings.setTriggerOutput(output);
     long[] width = settings.getTriggerOutputWidth();
     for (int i=0;i<4;i++)
@@ -199,7 +199,7 @@ public class GuruSettingsPanel extends SDPanel {
         setButton.addActionListener(new ActionListener() {
           @Override
           public void actionPerformed(ActionEvent evt) {
-            fireEvent(FCTGUIEvent.ACTION_GURUSETTINGS_SET);
+            fireEvent(BBQGUIEvent.ACTION_GURUSETTINGS_SET);
           }
         });
       }
@@ -209,7 +209,7 @@ public class GuruSettingsPanel extends SDPanel {
         getButton.addActionListener(new ActionListener() {
           @Override
           public void actionPerformed(ActionEvent evt) {
-            fireEvent(FCTGUIEvent.ACTION_GURUSETTINGS_GET);
+            fireEvent(BBQGUIEvent.ACTION_GURUSETTINGS_GET);
           }
         });
       }

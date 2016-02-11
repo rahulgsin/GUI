@@ -11,7 +11,7 @@ package de.gsi.sd.BBQ_Proto1.gui;
 import de.gsi.sd.common.controls.SDPanel;
 import de.gsi.sd.common.controls.Updatable;
 import de.gsi.sd.common.controls.localizable.LocalizableButton;
-import de.gsi.sd.BBQ_Proto1.data.FCTDebugSettings;
+import de.gsi.sd.BBQ_Proto1.data.BBQDebugSettings;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
@@ -46,7 +46,7 @@ public class DebugSettingsPanel extends SDPanel {
     initComponents(buttons);
   }
 
-  public void updateData(FCTDebugSettings settings)
+  public void updateData(BBQDebugSettings settings)
   {
     debugOutput.setSelected(settings.isDebugOutput());
     echoConsole.setSelected(settings.isEchoConsole());
@@ -57,10 +57,10 @@ public class DebugSettingsPanel extends SDPanel {
   @Override
   public void get(Object data)
   {
-    if (data instanceof FCTDebugSettings) get((FCTDebugSettings)data);
+    if (data instanceof BBQDebugSettings) get((BBQDebugSettings)data);
   }
 
-  private void get(FCTDebugSettings settings)
+  private void get(BBQDebugSettings settings)
   {
     settings.setDebugOutput(debugOutput.isSelected());
     settings.setEchoConsole(echoConsole.isSelected());
@@ -121,7 +121,7 @@ public class DebugSettingsPanel extends SDPanel {
         setButton.addActionListener(new ActionListener() {
           @Override
           public void actionPerformed(ActionEvent evt) {
-            fireEvent(FCTGUIEvent.ACTION_DEBUGSETTINGS_SET);
+            fireEvent(BBQGUIEvent.ACTION_DEBUGSETTINGS_SET);
           }
         });
       }
@@ -131,7 +131,7 @@ public class DebugSettingsPanel extends SDPanel {
         getButton.addActionListener(new ActionListener() {
           @Override
           public void actionPerformed(ActionEvent evt) {
-            fireEvent(FCTGUIEvent.ACTION_DEBUGSETTINGS_GET);
+            fireEvent(BBQGUIEvent.ACTION_DEBUGSETTINGS_GET);
           }
         });
       }

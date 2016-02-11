@@ -8,6 +8,7 @@ public class FrequencyDomainDataSet extends AbstractDataDoubleSet {
   {
     super(name);
     xAxisTitle = "Frequency [MHz]";
+    //  xAxisTitle = "Fractional tune";
   }
 
   public FrequencyDomainDataSet(String name, AbstractDataDoubleSet set)

@@ -10,7 +10,7 @@ package de.gsi.sd.BBQ_Proto1.data.provider;
 
 import java.util.EventListener;
 
-import de.gsi.sd.BBQ_Proto1.data.FESAData;
+import de.gsi.sd.BBQ_Proto1.data.BBQData;
 
 /**
  * This interface must be implemented by all classes, which want to listen to
@@ -22,6 +22,6 @@ public interface JAPCDataProviderListener extends EventListener {
    * Method called by the JAPCDataProvider when new data is available
    * @param data new FESA data
    */
-  public void dataReceived(FESAData data);
+  public void dataReceived(BBQData data);
   
 }

@@ -12,10 +12,13 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.Properties;
 import java.util.Set;
+
 import de.gsi.sd.BBQ_Proto1.gui.MainPanel;
 import de.gsi.sd.common.language.Language;
 import de.gsi.sd.BBQ_Proto1.BBQ_GUIApplication;
+
 import org.apache.log4j.Logger;
+
 import cern.accsoft.gui.frame.ExternalFrame;
 import cern.accsoft.gui.frame.FrameManager;
 /**
@@ -42,9 +45,11 @@ public class BBQ_GUIApplication {
     MainPanel mainPanel = new MainPanel();
     /* Get the main application frame with the title "PrimerExample1" and
      * the just created main panel. */
-    ExternalFrame frame = manager.getMainFrame("BBQ GUI",mainPanel);
+    ExternalFrame frame = manager.getMainFrame("Tune Monitor",mainPanel);
+    
+    String device = System.getProperty("FECDevice","BbqS04");
     /* Create the application controller */
-    new Controller(frame,mainPanel);
+    new Controller(device,frame,mainPanel);
     /* Hide the logging console of the main frame */
     frame.setConsoleVisible(false);
     /* Show the application main fame */

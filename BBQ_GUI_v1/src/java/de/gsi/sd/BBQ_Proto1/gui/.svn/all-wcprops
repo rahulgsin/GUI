@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/gui
+END
+GuruSettingsPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/gui/GuruSettingsPanel.java
+END
+DebugSettingsPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/gui/DebugSettingsPanel.java
+END
+MainPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/gui/MainPanel.java
+END
+AnalysisPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/gui/AnalysisPanel.java
+END
+ExpertStatusPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/gui/ExpertStatusPanel.java
+END
+ChartPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/gui/ChartPanel.java
+END
+FCTZoomInteractor.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/gui/FCTZoomInteractor.java
+END
+DisplayPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/gui/DisplayPanel.java
+END
+TabbedControlsPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/gui/TabbedControlsPanel.java
+END
+SettingsPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/gui/SettingsPanel.java
+END
+SinglePageChartPrintable.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/gui/SinglePageChartPrintable.java
+END
+ExpertSettingsPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/gui/ExpertSettingsPanel.java
+END
+GUIStatusPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/gui/GUIStatusPanel.java
+END
+GraphPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/gui/GraphPanel.java
+END
+FCTGUIEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/gui/FCTGUIEvent.java
+END
+StatusPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/gui/StatusPanel.java
+END
+EventSelectorBox.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/gui/EventSelectorBox.java
+END
+MultiPageChartPrintable.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/gui/MultiPageChartPrintable.java
+END

@@ -11,7 +11,7 @@ package de.gsi.sd.BBQ_Proto1.data;
 import cern.japc.ValueType;
 import de.gsi.sd.common.japc.GenericProperty;
 
-public class FCTGuruSettings extends GenericProperty implements FCTConstants {
+public class BBQGuruSettings extends GenericProperty implements BBQConstants {
   
   static private final String FIELD_TRIGGERTHRESHOLD = "triggerThreshold";
   static private final String FIELD_TRIGGERINPUT = "triggerInput";

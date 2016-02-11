@@ -16,8 +16,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Set;
+import java.lang.Math;
+
 import cern.japc.Array2D;
-import de.gsi.sd.BBQ_Proto1.BBQ_GUIApplication;
 import de.gsi.sd.BBQ_Proto1.data.FESASettingsWindow;
 /*import de.gsi.sd.BBQ_Proto1.data.FCTData.FCTDataSetContainer;
 import de.gsi.sd.BBQ_Proto1.data.filter.FilterDescriptor;*/
@@ -28,8 +29,10 @@ import de.gsi.sd.BBQ_Proto1.data.filter.FilterDescriptor;*/
 public class FESAData {
 	  static public final String CHANNEL_1_TIME = "CH1_Time";
 	  static public final String CHANNEL_1_FRE = "CH1_Fre";
+	  static public final String CHANNEL_1_FRE_PAR = "CH1_Par_Fre";
 	  static public final String CHANNEL_2_TIME = "CH2_Time";
 	  static public final String CHANNEL_2_FRE = "CH2_Fre";
+	  static public final String CHANNEL_2_FRE_PAR = "CH2_Par_Fre";
 	  static public final String CHANNEL_3_TIME = "CH3_Time";
 	  static public final String CHANNEL_3_FRE = "CH3_Fre";
 	  static public final String CHANNEL_4_TIME = "CH4_Time";
@@ -37,10 +40,17 @@ public class FESAData {
 	  private int adcValueMode=0;
   /** acquired value */
  // private double[] time;
-  private Array2D time;  
-  private Array2D spectrum;
+ // private Array2D time;  
+ // private Array2D spectrum;
+  private double [] channel_time1;
+  private double [] channel_time2;
+  private double [] channel_spectrum1;
+  private double [] channel_spectrum1_log;
+  private double [] channel_spectrum2;
   private int samplingFrequency;
-  private int num_channels =2; // ONly two channels on this ADC
+  private int fftLength = 1024/2;
+  private int specNumber = 1;
+  private int num_channels =2; // Only two channels on this ADC used
   private HashMap<String,FESADataSetContainer> dataSetMap = new HashMap<String, FESADataSetContainer>();
   /**
    * Empty constructor
@@ -60,6 +70,8 @@ public class FESAData {
 	    dataSetMap.put(CHANNEL_2_TIME,new FESADataSetContainer(CHANNEL_2_TIME,dataSet2));
 	    dataSetMap.put(CHANNEL_3_TIME,new FESADataSetContainer(CHANNEL_3_TIME,dataSet3));
 	    dataSetMap.put(CHANNEL_4_TIME,new FESADataSetContainer(CHANNEL_4_TIME,dataSet4));
+	    
+	    
 	    dataSet1 = new FrequencyDomainDataSet(CHANNEL_1_FRE);
 	    dataSet1.setyAxisTitle(CHANNEL_1_FRE);
 	    dataSet2 = new FrequencyDomainDataSet(CHANNEL_2_FRE);
@@ -72,6 +84,13 @@ public class FESAData {
 	    dataSetMap.put(CHANNEL_2_FRE,new FESADataSetContainer(CHANNEL_2_FRE,dataSet2));
 	    dataSetMap.put(CHANNEL_3_FRE,new FESADataSetContainer(CHANNEL_3_FRE,dataSet3));
 	    dataSetMap.put(CHANNEL_4_FRE,new FESADataSetContainer(CHANNEL_4_FRE,dataSet4));
+	    
+	    AbstractDataDoubleSet dataSet5 = new TuneDomainDataSet(CHANNEL_1_FRE_PAR);
+	    dataSet5.setyAxisTitle(CHANNEL_1_FRE_PAR);
+	    AbstractDataDoubleSet dataSet6 = new TuneDomainDataSet(CHANNEL_2_FRE_PAR);
+	    dataSet6.setyAxisTitle(CHANNEL_2_FRE_PAR);
+	    dataSetMap.put(CHANNEL_1_FRE_PAR,new FESADataSetContainer(CHANNEL_1_FRE_PAR,dataSet5));
+	    dataSetMap.put(CHANNEL_2_FRE_PAR,new FESADataSetContainer(CHANNEL_2_FRE_PAR,dataSet6));
 	  /*  dataSet = new TimeDomainDataSet(ADC_CHANNEL_USER1);
 	    dataSet.setyAxisTitle(ADC_CHANNEL_USER1);
 	    dataSetMap.put(ADC_CHANNEL_USER1,new FCTDataSetContainer(ADC_CHANNEL_USER1,dataSet));
@@ -86,17 +105,17 @@ public class FESAData {
    */
   public void FESAStoreData(Array2D time, Array2D spectrum)
   {
-    this.time = time;
+   // this.time = time;
  //   System.out.println("Came to store");
  //   BBQ_GUIApplication.getLogger().info("Came to store");
  //   System.out.println(Arrays.toString(time.getDoubleRow(2)));
- //   this.spectrum = spectrum;
+  //  this.spectrum = spectrum;
     double[] temp_time = time.getDoubles();
     double[] temp_spectrum = spectrum.getDoubles();
    //System.out.println(Integer.toString(this.channel));
    //System.out.println("from FesaData and channel num");
     FESASettingsWindow s = new FESASettingsWindow();
-    int fftLength = s.getOffset();
+    //this.fftLength = s.getOffset();
     System.out.println(temp_time.length);
     System.out.println(temp_spectrum.length);
     double [] channel_time1 = new double[temp_time.length/num_channels];
@@ -105,6 +124,7 @@ public class FESAData {
    // double [] channel_time4 = new double[temp_time.length/num_channels];
     double [] channel_spectrum1 = new double[temp_spectrum.length/2*num_channels];
     double [] channel_spectrum2 = new double[temp_spectrum.length/2*num_channels];
+    double [] channel_spectrum1_log = new double[temp_spectrum.length/2*num_channels];
  // System.out.println("Spectrum length is", temp_spectrum.length/2);
     
     channel_time1 = Arrays.copyOfRange(temp_time, 0, (temp_time.length/num_channels)-1);
@@ -112,8 +132,18 @@ public class FESAData {
     channel_spectrum1 = Arrays.copyOfRange(temp_spectrum, 0*(temp_spectrum.length/(2*num_channels)), 0*(temp_spectrum.length/(2*num_channels))+(temp_spectrum.length/(2*num_channels))-1);
     channel_spectrum2 = Arrays.copyOfRange(temp_spectrum, 2*(temp_spectrum.length/(2*num_channels)) ,2*(temp_spectrum.length/(2*num_channels))+(temp_spectrum.length/(2*num_channels))-1);
     
-    
-  /**  int i=0;
+  this.channel_time1 = channel_time1;
+  this.channel_time2 = channel_time2;
+  this.channel_spectrum1 = channel_spectrum1;
+  this.channel_spectrum2 = channel_spectrum2;
+  
+  for(int i=1; i<channel_spectrum1.length; i++)
+  {
+	  channel_spectrum1_log[i]= Math.log(channel_spectrum1[i]);
+ }
+  
+  this.channel_spectrum1_log = channel_spectrum1_log;
+  /**  int i=0;_
     int j=0;
     do {
         channel_time1[j]=temp_time[i];
@@ -148,9 +178,12 @@ public class FESAData {
  //   setAdcData(channel_time4, 4);
     setAdcFreData(channel_spectrum1, 1);
     setAdcFreData(channel_spectrum2, 2);
+    setAdcFreData(channel_spectrum1, 1,this.specNumber);
+    setAdcFreData(channel_spectrum2, 2,this.specNumber);
   //  setAdcFreData(channel_spectrum, 3);
   //  setAdcFreData(channel_spectrum, 4);
     setSamplingFrequency(800000);
+    setSamplingTuneFrequency(1);
   }
   
   /**
@@ -162,15 +195,21 @@ public class FESAData {
 	  return this;
   }
   
-  public double[] getTime(int Row) 
+  public double getTime(int row) 
   {
-    return time.getDoubleRow(Row);
+    return channel_time1.length;
   }
 
-  public double[][] getSpec() 
+  public double getSpec() 
   {
-    return spectrum.getDoubleArray2D();
+    return channel_spectrum1.length;
   }
+  
+  public void setSpecNumber(int specNumber) 
+  {
+    this.specNumber = specNumber;
+  }
+ 
   
   public void setSamplingFrequency(int frequency) 
   {
@@ -183,10 +222,18 @@ public class FESAData {
     data3.getDataSet().setFrequency(frequency);
 	FESADataSetContainer data4 = dataSetMap.get(CHANNEL_4_TIME);
     data4.getDataSet().setFrequency(frequency);
-    data1 = dataSetMap.get(CHANNEL_1_FRE);
+	data1 = dataSetMap.get(CHANNEL_1_FRE);
     data1.getDataSet().setFrequency(frequency);
     data2 = dataSetMap.get(CHANNEL_2_FRE);
     data2.getDataSet().setFrequency(frequency);
+  }
+  
+  public void setSamplingTuneFrequency(int frequency) 
+  {
+    FESADataSetContainer data3 = dataSetMap.get(CHANNEL_1_FRE_PAR);
+    data3.getDataSet().setFrequency(frequency);
+    FESADataSetContainer data4 = dataSetMap.get(CHANNEL_2_FRE_PAR);
+    data4.getDataSet().setFrequency(frequency);
   }
   
   public int getSamplingFrequency() 
@@ -286,6 +333,8 @@ public class FESAData {
     	 FESADataSetContainer data3 = dataSetMap.get(CHANNEL_4_FRE);
     data3.getDataSet().setData(freData);
 	  }
+	  
+	  
   
    /* data = dataSetMap.get(ADC_CHANNEL_USER1);
     data.getDataSet().setData(adcData[2]);
@@ -295,6 +344,41 @@ public class FESAData {
     updateAxisTitles();
   }
  
+  public void setAdcFreData(double[] freData, int channel, int position) 
+  {
+	 // FESADataSetContainer data;
+if (channel==1)
+{
+    	 FESADataSetContainer data = dataSetMap.get(CHANNEL_1_FRE_PAR);
+    data.getDataSet().setData(Arrays.copyOfRange(freData, (position-1)*this.fftLength, position*this.fftLength-1));
+}
+else
+{
+    	 FESADataSetContainer data1 = dataSetMap.get(CHANNEL_2_FRE_PAR);
+    data1.getDataSet().setData(Arrays.copyOfRange(freData, (position-1)*fftLength, position*fftLength-1));
+   // System.out.println("Partial Data Initially set"+ Arrays.toString(data1.getDataSet().getData()));
+}
+	  
+	  
+  
+   /* data = dataSetMap.get(ADC_CHANNEL_USER1);
+    data.getDataSet().setData(adcData[2]);
+    data = dataSetMap.get(ADC_CHANNEL_USER2);
+    data.getDataSet().setData(adcData[3]);
+    for (FilterDescriptor fd : filters) executeFilter(fd);*/
+    updateAxisTitles();
+  }
+  
+  public void setPartialFreData(int position) 
+  {
+
+  	 FESADataSetContainer data = dataSetMap.get(CHANNEL_1_FRE_PAR);
+  data.getDataSet().setData(Arrays.copyOfRange(this.channel_spectrum1, (position-1)*fftLength, position*fftLength-1));
+  	 FESADataSetContainer data1 = dataSetMap.get(CHANNEL_2_FRE_PAR);
+  data1.getDataSet().setData(Arrays.copyOfRange(this.channel_spectrum2, (position-1)*fftLength, position*fftLength-1));
+  updateAxisTitles();
+  }
+  
   /**
    * Allocate memory for the ADC data array with size data points per channel
    * and copy the given array into it. The size of the data array passed
@@ -350,20 +434,20 @@ public class FESAData {
     FESADataSetContainer data = dataSetMap.get(CHANNEL_1_TIME);
     switch (adcValueMode)
     {
-    case FESAConstants.ADC_VALUEMODE_RAW:
+    case BBQConstants.ADC_VALUEMODE_RAW:
       data.getDataSet().setyAxisTitle(CHANNEL_1_TIME+" [arb.units]");
       break;
-    case FESAConstants.ADC_VALUEMODE_VOLTAGE:
+    case BBQConstants.ADC_VALUEMODE_VOLTAGE:
       data.getDataSet().setyAxisTitle(CHANNEL_1_TIME+" [V]");
       break;
     }
     data = dataSetMap.get(CHANNEL_1_FRE);
     switch (adcValueMode)
     {
-    case FCTConstants.ADC_VALUEMODE_RAW:
+    case BBQConstants.ADC_VALUEMODE_RAW:
       data.getDataSet().setyAxisTitle(CHANNEL_1_FRE+" [arb.units]");
       break;
-    case FCTConstants.ADC_VALUEMODE_VOLTAGE:
+    case BBQConstants.ADC_VALUEMODE_VOLTAGE:
       data.getDataSet().setyAxisTitle(CHANNEL_1_FRE+" [V]");
       break;
     }
@@ -574,6 +658,7 @@ public class FESAData {
 	      if (datasets == null || datasets.length == 0) return null;
 	      return datasets[0];
 	    }
+	    
 	    
 	    public AbstractDataDoubleSet[] getDataSets()
 	    {

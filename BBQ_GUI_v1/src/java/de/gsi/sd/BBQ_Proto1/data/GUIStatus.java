@@ -1,6 +1,6 @@
 package de.gsi.sd.BBQ_Proto1.data;
 
-public class GUIStatus implements FCTConstants {
+public class GUIStatus implements BBQConstants {
 
   private int fecDataReduction;
 

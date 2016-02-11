@@ -8,6 +8,7 @@ import cern.japc.factory.ParameterFactory;
 import cern.japc.factory.ParameterValueFactory;
 import cern.japc.spi.ParameterUrl;
 import cern.japc.spi.ParameterUrlImpl;
+
 import org.apache.log4j.Logger;
 
 
@@ -21,6 +22,11 @@ public class ControlProvider {
 	  static private final String PROPERTY_DISARM   = "Disarm";
 	  static private final String PROPERTY_TRIGGER  = "Trigger";
 	  
+	  /** Name of the property */
+	  static private final String PROPERTY_ACQUISITION = "DataAcquisition";
+	  /** Name of the data field in the property */
+	  static private final String FIELD_TIME = "timeData";
+	  static private final String FIELD_FRE = "freqData";
 
 	  static private Logger logger = Logger.getLogger(ControlProvider.class);
 
@@ -43,7 +49,7 @@ public class ControlProvider {
 	    }
 	    try
 	    {
-	      de.gsi.sd.common.japc.ControlProvider.powerOn(device);
+	//      de.gsi.sd.common.japc.ControlProvider.powerOn(device);
 	    } 
 	    catch (Exception e) 
 	    {
@@ -77,14 +83,14 @@ public class ControlProvider {
 	      logger.error("No device specfied!");
 	      return;
 	    }
-	    ParameterUrl url = new ParameterUrlImpl(device,PROPERTY_START);
+	    ParameterUrl url = new ParameterUrlImpl(device,PROPERTY_ACQUISITION);
 	    Selector selector = ParameterValueFactory.newSelector(null);
 	    try
 	    {
 	      Parameter p = japcParameterFactory.newParameter(url);
 	      MapParameterValue map = ParameterValueFactory.newParameterValue();
 	      p.setValue(selector,map);
-	      logger.info("Set property "+PROPERTY_START);
+	      logger.info("Set property "+PROPERTY_ACQUISITION);
 	    } 
 	    catch (Exception e) 
 	    {

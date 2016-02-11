@@ -9,7 +9,7 @@
 package de.gsi.sd.BBQ_Proto1.gui.dialogs;
 
 import de.gsi.sd.common.controls.localizable.LocalizableButton;
-import de.gsi.sd.BBQ_Proto1.data.FCTGuruSettings;
+import de.gsi.sd.BBQ_Proto1.data.BBQGuruSettings;
 import de.gsi.sd.BBQ_Proto1.gui.GuruSettingsPanel;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -27,7 +27,7 @@ public class GuruSettingsDialog extends JDialog {
   boolean accepted;
   GuruSettingsPanel settingsPanel;
   
-  public GuruSettingsDialog(JFrame frame, FCTGuruSettings settings)
+  public GuruSettingsDialog(JFrame frame, BBQGuruSettings settings)
   {
     super(frame,"FCT Guru Settings",true);
     initComponents();
@@ -41,7 +41,7 @@ public class GuruSettingsDialog extends JDialog {
     return accepted;
   }
 
-  public void getSettings(FCTGuruSettings settings)
+  public void getSettings(BBQGuruSettings settings)
   {
     settingsPanel.get(settings);
   }

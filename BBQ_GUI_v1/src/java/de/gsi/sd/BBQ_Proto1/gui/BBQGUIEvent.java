@@ -11,9 +11,10 @@ package de.gsi.sd.BBQ_Proto1.gui;
 import de.gsi.sd.common.controls.GUIEvent;
 
 @SuppressWarnings("serial")
-public class FCTGUIEvent extends GUIEvent {
+public class BBQGUIEvent extends GUIEvent {
 
   static public final int ACTION_SUBSCRIBE            = USER + 1; 
+  static public final int ACTION_UNSUBSCRIBE          = USER + 2; 
   static public final int ACTION_SETTINGS_SET         = USER + 3;
   static public final int ACTION_SETTINGS_GET         = USER + 4;
   static public final int ACTION_EXPERTSETTINGS_SET   = USER + 5;
@@ -51,12 +52,12 @@ public class FCTGUIEvent extends GUIEvent {
   static public final int ACTION_FILTER_REMOVE        = USER + 251;
   static public final int ACTION_FILTER_EDIT          = USER + 252;
 
-  public FCTGUIEvent(Object source, int cmd) 
+  public BBQGUIEvent(Object source, int cmd) 
   {
     super(source,cmd);
   }
 
-  public FCTGUIEvent(Object source, int cmd, Object data) 
+  public BBQGUIEvent(Object source, int cmd, Object data) 
   {
     super(source,cmd,data);
   }

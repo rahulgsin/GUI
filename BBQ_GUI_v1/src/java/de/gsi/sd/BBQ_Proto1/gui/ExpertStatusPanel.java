@@ -13,7 +13,7 @@ import de.gsi.sd.common.controls.SDPanel;
 import de.gsi.sd.common.controls.Updatable;
 import de.gsi.sd.common.controls.localizable.LocalizableLabel;
 import de.gsi.sd.common.controls.localizable.LocalizablePanel;
-import de.gsi.sd.BBQ_Proto1.data.FCTStatus;
+import de.gsi.sd.BBQ_Proto1.data.BBQStatus;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -50,7 +50,7 @@ public class ExpertStatusPanel extends SDPanel {
     initComponents();
   }
 
-  public void updateStatus(FCTStatus status)
+  public void updateStatus(BBQStatus status)
   {
 //    temperatureInfoLabel.setText(String.format("%.1f",status.getTemperature()));
     stoppedIndicator.setOn(status.isStopped());

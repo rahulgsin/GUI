@@ -10,7 +10,7 @@ package de.gsi.sd.BBQ_Proto1.data;
 
 import de.gsi.sd.common.japc.StatusProperty;
 
-public class FCTStatus extends StatusProperty implements FCTConstants {
+public class BBQStatus extends StatusProperty implements BBQConstants {
 
   static private final String CYCLE_COUNTER         = "cycleCounter";
   static private final String LOST_CYCLE_COUNTER    = "lostCycleCounter";

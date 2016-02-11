@@ -40,8 +40,8 @@ public class TabbedControlsPanel extends SDPanel {
       tabPane.addTab("ExpertSettings",panel);
     }
     {
-      JPanel panel = new DisplayPanel();
-      tabPane.addTab("Display",panel);
+//      JPanel panel = new DisplayPanel();
+//      tabPane.addTab("Display",panel);
     }
     {
 //      JPanel panel = new ExpertStatusPanel(language);

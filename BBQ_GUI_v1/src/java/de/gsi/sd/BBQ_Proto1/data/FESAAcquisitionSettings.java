@@ -8,6 +8,8 @@
 
 package de.gsi.sd.BBQ_Proto1.data;
 
+import cern.japc.ValueType;
+
 /**import de.gsi.sd.BBQ_Proto1.BBQ_GUIApplication;*/
 
 /**
@@ -18,6 +20,12 @@ public class FESAAcquisitionSettings {
 	  /** ADC mode and settings */
 	  private byte acquisitionmode;
 	  private short [] acquisitionsettings;
+	  private int acqMode;
+	  private double sampleLengthModel;
+	  private double preDelay;
+	  private long [] delay;
+	  private int [] events;
+	  
 	  
 
 /**
@@ -26,7 +34,9 @@ public class FESAAcquisitionSettings {
  */
 	  public FESAAcquisitionSettings()
 	  {
-		  acquisitionsettings = new short[5];
+		  acquisitionsettings = new short[10];
+		  delay = new long[2];
+		  events = new int[2];
 	  }
 	  
 public byte getMode() 
@@ -43,7 +53,54 @@ public void setMode(Byte acqmode)
   this.acquisitionmode = acqmode;
 }
 
-	  
+public int getAcqMode() 
+{
+  return acqMode;
+}
+
+public void setAcqMode(int acqmode) 
+{
+  this.acqMode= acqmode;
+}
+
+public double getSampleTime() 
+{
+  return sampleLengthModel;
+}
+
+public void setSampleTime(double sampleTime) 
+{
+  this.sampleLengthModel= sampleTime;
+}
+
+public double getPreDelay() 
+{
+  return preDelay;
+}
+
+public void setPreDelay(double predelay) 
+{
+  this.preDelay= predelay;
+}
+public long[] getTriggerDelays() 
+{
+  return delay;
+}
+
+public void setTriggerDelays( long [] delay) 
+{
+  this.delay= delay;
+}  
+
+public int[] getTriggerEvents() 
+{
+  return events;
+}
+
+public void setTriggerEvents( int [] event) 
+{
+  this.events = event;
+} 
 public double getAcquisitionSettings(int index) 
 {
   return acquisitionsettings[index];
@@ -63,4 +120,5 @@ public void setAcquisitionSettings(short acqsettings,int index)
 {
   this.acquisitionsettings[index] = acqsettings;
 }
+
 }

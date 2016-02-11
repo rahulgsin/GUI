@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/gui/filter
+END
+MovingAverageFilterPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/gui/filter/MovingAverageFilterPanel.java
+END
+FFTFilterPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/gui/filter/FFTFilterPanel.java
+END

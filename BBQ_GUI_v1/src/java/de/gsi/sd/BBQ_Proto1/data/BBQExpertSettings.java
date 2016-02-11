@@ -12,7 +12,7 @@ import cern.japc.ValueType;
 import de.gsi.sd.common.japc.GenericProperty;
 import java.util.Arrays;
 
-public class FCTExpertSettings extends GenericProperty implements FCTConstants {
+public class BBQExpertSettings extends GenericProperty implements BBQConstants {
   
   static private final String FIELD_ADCRANGE = "adcRange";
   static private final String FIELD_ADCVALUEMODE = "adcValueMode";
@@ -22,7 +22,7 @@ public class FCTExpertSettings extends GenericProperty implements FCTConstants {
   static private final String FIELD_READBASELINE = "readBaseline";
 
   @Deprecated
-  public FCTExpertSettings clone()
+  public BBQExpertSettings clone()
   {
     return null;
   }
@@ -30,8 +30,8 @@ public class FCTExpertSettings extends GenericProperty implements FCTConstants {
   @Override
   public boolean equals(Object o)
   {
-    if (!(o instanceof FCTExpertSettings)) return false;
-    FCTExpertSettings s = (FCTExpertSettings)o;
+    if (!(o instanceof BBQExpertSettings)) return false;
+    BBQExpertSettings s = (BBQExpertSettings)o;
     if (getFileMode() != s.getFileMode()) return false;
     if (!getFilePath().equals(s.getFilePath())) return false;
     if (getSamplingFrequency() != s.getSamplingFrequency()) return false;

@@ -9,7 +9,7 @@
 package de.gsi.sd.BBQ_Proto1.gui.dialogs;
 
 import de.gsi.sd.common.controls.localizable.LocalizableButton;
-import de.gsi.sd.BBQ_Proto1.data.FCTExpertSettings;
+import de.gsi.sd.BBQ_Proto1.data.BBQExpertSettings;
 import de.gsi.sd.BBQ_Proto1.gui.ExpertSettingsPanel;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -27,7 +27,7 @@ public class ExpertSettingsDialog extends JDialog {
   boolean accepted;
   ExpertSettingsPanel settingsPanel;
   
-  public ExpertSettingsDialog(JFrame frame, FCTExpertSettings settings)
+  public ExpertSettingsDialog(JFrame frame, BBQExpertSettings settings)
   {
     super(frame,"FCT Expert Settings",true);
     initComponents();
@@ -41,7 +41,7 @@ public class ExpertSettingsDialog extends JDialog {
     return accepted;
   }
 
-  public void getSettings(FCTExpertSettings settings)
+  public void getSettings(BBQExpertSettings settings)
   {
     settingsPanel.get(settings);
   }

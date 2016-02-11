@@ -12,7 +12,7 @@ import de.gsi.sd.common.controls.SDPanel;
 import de.gsi.sd.common.controls.Updatable;
 import de.gsi.sd.common.controls.localizable.LocalizableLabel;
 import de.gsi.sd.common.oper.VirtAccInfo;
-import de.gsi.sd.BBQ_Proto1.data.FCTStatus;
+import de.gsi.sd.BBQ_Proto1.data.BBQStatus;
 import de.gsi.sd.BBQ_Proto1.data.FESAData;
 
 import java.awt.Color;
@@ -57,7 +57,7 @@ public class StatusPanel extends SDPanel {
     operInfoLabel.setText(info);
   }
   
-  public void updateStatus(FCTStatus status)
+  public void updateStatus(BBQStatus status)
   {
     statusInfoLabel.setText(String.format("%10s",status.getStatusString()));
     statusHighlight = !statusHighlight;

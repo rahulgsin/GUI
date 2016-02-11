@@ -1,6 +1,6 @@
 /*****************************************************************************
  *                                                                           *
- * FCT - Display control panel                                               *
+ * BBQ - Display control panel                                               *
  *                                                                           *
  * modified: 2012-06-14 Harald Braeuning                                     *
  *                                                                           *
@@ -115,7 +115,7 @@ public class DisplayPanel extends SDPanel {
           @Override
           public void actionPerformed(ActionEvent e) {
             DataRange range = new DataRange(Double.parseDouble(xmin.getText()),Double.parseDouble(xmax.getText()));
-            fireEvent(FCTGUIEvent.ACTION_DISPLAY_SETXRANGE,range);
+            fireEvent(BBQGUIEvent.ACTION_DISPLAY_SETXRANGE,range);
           }
         });
         row++;
@@ -125,7 +125,7 @@ public class DisplayPanel extends SDPanel {
           @Override
           public void actionPerformed(ActionEvent e) {
             DataRange range = new DataRange(Double.parseDouble(xmin.getText()),Double.parseDouble(xmax.getText()));
-            fireEvent(FCTGUIEvent.ACTION_DISPLAY_SETXRANGE,range);
+            fireEvent(BBQGUIEvent.ACTION_DISPLAY_SETXRANGE,range);
           }
         });
         row++;
@@ -135,7 +135,7 @@ public class DisplayPanel extends SDPanel {
           @Override
           public void actionPerformed(ActionEvent e) {
             boolean s = ((JCheckBox)e.getSource()).isSelected();
-            fireEvent(FCTGUIEvent.ACTION_DISPLAY_AUTOXRANGE,s);
+            fireEvent(BBQGUIEvent.ACTION_DISPLAY_AUTOXRANGE,s);
           }
         });
         row++;
@@ -145,7 +145,7 @@ public class DisplayPanel extends SDPanel {
           @Override
           public void actionPerformed(ActionEvent e) {
             boolean s = ((JCheckBox)e.getSource()).isSelected();
-            fireEvent(FCTGUIEvent.ACTION_DISPLAY_SYNC,s);
+            fireEvent(BBQGUIEvent.ACTION_DISPLAY_SYNC,s);
           }
         });
         row++;
@@ -158,7 +158,7 @@ public class DisplayPanel extends SDPanel {
           @Override
           public void actionPerformed(ActionEvent e) {
             DataRange range = new DataRange(Double.parseDouble(ymin.getText()),Double.parseDouble(ymax.getText()));
-            fireEvent(FCTGUIEvent.ACTION_DISPLAY_SETYRANGE,range);
+            fireEvent(BBQGUIEvent.ACTION_DISPLAY_SETYRANGE,range);
           }
         });
         row++;
@@ -168,7 +168,7 @@ public class DisplayPanel extends SDPanel {
           @Override
           public void actionPerformed(ActionEvent e) {
             DataRange range = new DataRange(Double.parseDouble(ymin.getText()),Double.parseDouble(ymax.getText()));
-            fireEvent(FCTGUIEvent.ACTION_DISPLAY_SETYRANGE,range);
+            fireEvent(BBQGUIEvent.ACTION_DISPLAY_SETYRANGE,range);
           }
         });
         row++;
@@ -178,7 +178,7 @@ public class DisplayPanel extends SDPanel {
           @Override
           public void actionPerformed(ActionEvent e) {
             boolean s = ((JCheckBox)e.getSource()).isSelected();
-            fireEvent(FCTGUIEvent.ACTION_DISPLAY_AUTOYRANGE,s);
+            fireEvent(BBQGUIEvent.ACTION_DISPLAY_AUTOYRANGE,s);
           }
         });
         row++;
@@ -189,7 +189,7 @@ public class DisplayPanel extends SDPanel {
         button.addActionListener(new ActionListener() {
           @Override
           public void actionPerformed(ActionEvent e) {
-            fireEvent(FCTGUIEvent.ACTION_DISPLAY_CLEAR);
+            fireEvent(BBQGUIEvent.ACTION_DISPLAY_CLEAR);
           }
         });
         row++;
@@ -222,7 +222,7 @@ public class DisplayPanel extends SDPanel {
         button.addActionListener(new ActionListener() {
           @Override
           public void actionPerformed(ActionEvent e) {
-            fireEvent(FCTGUIEvent.ACTION_FILTER_ADD);
+            fireEvent(BBQGUIEvent.ACTION_FILTER_ADD);
           }
         });
         row++;
@@ -234,7 +234,7 @@ public class DisplayPanel extends SDPanel {
           @Override
           public void actionPerformed(ActionEvent e) {
             int item = filterList.getSelectedIndex();
-            if (item >= 0) fireEvent(FCTGUIEvent.ACTION_FILTER_REMOVE,new Integer(item));
+            if (item >= 0) fireEvent(BBQGUIEvent.ACTION_FILTER_REMOVE,new Integer(item));
           }
         });
         row++;
@@ -246,7 +246,7 @@ public class DisplayPanel extends SDPanel {
           @Override
           public void actionPerformed(ActionEvent e) {
             int item = filterList.getSelectedIndex();
-            if (item >= 0) fireEvent(FCTGUIEvent.ACTION_FILTER_EDIT,new Integer(item));
+            if (item >= 0) fireEvent(BBQGUIEvent.ACTION_FILTER_EDIT,new Integer(item));
           }
         });
         row++;
@@ -274,7 +274,7 @@ public class DisplayPanel extends SDPanel {
     if (e.getClickCount() == 2)
     {
       int index = dataSetList.locationToIndex(e.getPoint());
-      if (index >= 0) fireEvent(FCTGUIEvent.ACTION_DISPLAY_GRAPH,dataSetList.getModel().getElementAt(index).toString());
+      if (index >= 0) fireEvent(BBQGUIEvent.ACTION_DISPLAY_GRAPH,dataSetList.getModel().getElementAt(index).toString());
     }
   }
 
@@ -287,6 +287,6 @@ public class DisplayPanel extends SDPanel {
     int[] a = new int[2];
     a[0] = rowSpinnerModel.getNumber().intValue();
     a[1] = colSpinnerModel.getNumber().intValue();
-    fireEvent(FCTGUIEvent.ACTION_DISPLAY_LAYOUT,a);
+    fireEvent(BBQGUIEvent.ACTION_DISPLAY_LAYOUT,a);
   }
 }

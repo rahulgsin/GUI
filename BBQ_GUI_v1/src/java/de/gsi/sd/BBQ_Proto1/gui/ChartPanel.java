@@ -28,7 +28,6 @@ import javax.swing.JTextField;
 public class ChartPanel extends SDPanel implements ChartInteractionListener, AxisListener {
 
   private Chart chart;
-  private JTextField reductionField;
   
   static private final int FOCUS_BORDER_WIDTH = 2;
   
@@ -43,10 +42,6 @@ public class ChartPanel extends SDPanel implements ChartInteractionListener, Axi
     return chart;
   }
   
-  public void setReduction(int reduction)
-  {
-    reductionField.setText(String.valueOf(reduction));
-  }
   
   @Override
   public void interactionPerformed(ChartInteractionEvent event) 
@@ -67,14 +62,6 @@ public class ChartPanel extends SDPanel implements ChartInteractionListener, Axi
           if (r > reduction) reduction = r;
         }
       }
-      for (DataSet set : sets)
-      {
-        if (set instanceof AbstractDataSet)
-        {
-          ((AbstractDataSet)set).setReduction(reduction);
-        }
-      }
-      setReduction(reduction);
     }
   }
 
@@ -106,22 +93,7 @@ public class ChartPanel extends SDPanel implements ChartInteractionListener, Axi
       chart.getXAxis().addAxisListener(this);
       chart.getYAxis().setAutoRange(true);
     }
-    {
-      JPanel panel = new JPanel(new GridBagLayout());
-      add(panel,BorderLayout.EAST);
-      Insets insets = new Insets(2,2,2,2);
-      int row = 0;
-      {
-        panel.add(new LocalizableLabel("Label.Reduction"),new GridBagConstraints(0,row,1,1,0,0,GridBagConstraints.WEST,GridBagConstraints.NONE,insets,0,0));
-        reductionField = new JTextField(5);
-        reductionField.setEditable(false);
-        panel.add(reductionField,new GridBagConstraints(1,row,1,1,0,0,GridBagConstraints.WEST,GridBagConstraints.NONE,insets,0,0));
-        row++;
-      }
-      {
-        panel.add(new JPanel(),new GridBagConstraints(1,row,1,1,1.0,1.0,GridBagConstraints.WEST,GridBagConstraints.BOTH,insets,0,0));
-      }
-    }
+ 
   }
 
   @Override
@@ -140,14 +112,6 @@ public class ChartPanel extends SDPanel implements ChartInteractionListener, Axi
           if (r > reduction) reduction = r;
         }
       }
-      for (DataSet set : sets)
-      {
-        if (set instanceof AbstractDataSet)
-        {
-          ((AbstractDataSet)set).setReduction(reduction);
-        }
-      }
-      setReduction(reduction);
     }
   }
   

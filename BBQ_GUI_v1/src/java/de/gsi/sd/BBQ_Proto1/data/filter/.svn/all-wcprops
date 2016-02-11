@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/data/filter
+END
+StackFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/data/filter/StackFilter.java
+END
+FFTFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/data/filter/FFTFilter.java
+END
+DataFilterOptions.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/data/filter/DataFilterOptions.java
+END
+MomentFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/data/filter/MomentFilter.java
+END
+MovingAverageFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/data/filter/MovingAverageFilter.java
+END
+FilterDescriptor.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/data/filter/FilterDescriptor.java
+END
+DataFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/sd/!svn/ver/906/fct/trunk/src/main/java/de/gsi/sd/fct/data/filter/DataFilter.java
+END

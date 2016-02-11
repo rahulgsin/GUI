@@ -11,7 +11,7 @@ package de.gsi.sd.BBQ_Proto1.data;
 import cern.japc.ValueType;
 import de.gsi.sd.common.japc.GenericProperty;
 
-public class FCTSettings extends GenericProperty implements FCTConstants {
+public class BBQSettings extends GenericProperty implements BBQConstants {
   
   static private final String FIELD_ACQMODE = "acqMode";
   static private final String FIELD_SAMPLETIME = "sampleTime";
@@ -24,7 +24,7 @@ public class FCTSettings extends GenericProperty implements FCTConstants {
 
   
   @Deprecated
-  public FCTSettings clone()
+  public BBQSettings clone()
   {
     return null;
   }
@@ -32,8 +32,8 @@ public class FCTSettings extends GenericProperty implements FCTConstants {
   @Override
   public boolean equals(Object o)
   {
-    if (!(o instanceof FCTSettings)) return false;
-    FCTSettings s = (FCTSettings)o;
+    if (!(o instanceof BBQSettings)) return false;
+    BBQSettings s = (BBQSettings)o;
     if (isFileOut() != s.isFileOut()) return false;
     if (getAcqMode() != s.getAcqMode()) return false;
     if (getHwGain() != s.getHwGain()) return false;

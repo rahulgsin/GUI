@@ -11,7 +11,7 @@ package de.gsi.sd.BBQ_Proto1.data;
 import cern.japc.ValueType;
 import de.gsi.sd.common.japc.GenericProperty;
 
-public class FCTDebugSettings extends GenericProperty implements FCTConstants {
+public class BBQDebugSettings extends GenericProperty implements BBQConstants {
   
   static private final String FIELD_DEBUGOUTPUT = "debugOutput";
   static private final String FIELD_ECHOCONSOLE = "echoConsole";

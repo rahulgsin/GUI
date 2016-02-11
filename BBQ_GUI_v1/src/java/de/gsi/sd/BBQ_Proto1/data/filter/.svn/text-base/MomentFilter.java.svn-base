@@ -1,0 +1,89 @@
+/*****************************************************************************
+ *                                                                           *
+ * FCT - Moments filter                                                      *
+ *                                                                           *
+ * modified: 2010-12-03 Harald Braeuning                                     *
+ *                                                                           *
+ ****************************************************************************/
+
+package de.gsi.sd.fct.data.filter;
+
+import de.gsi.sd.fct.data.AbstractDataSet;
+import de.gsi.sd.fct.data.DefaultDataSet;
+import de.gsi.sd.fct.data.FCTData;
+import de.gsi.sd.fct.data.FCTData.FCTDataSetContainer;
+
+public class MomentFilter implements DataFilter {
+
+  static public final String ID = "Moments Filter"; 
+
+  public String getName()
+  {
+    return ID;
+  }
+
+  @Override
+  public boolean execute(FCTData data, DataFilterOptions options) 
+  {
+    FCTDataSetContainer src = data.getDataSet(options.getSource());
+    if (src == null) return false;
+    String name = options.getDestination();
+    AbstractDataSet[] sets = new DefaultDataSet[4];
+    sets[0] = new DefaultDataSet(name+"_Mean");
+    FCTDataSetContainer c0 =  new FCTDataSetContainer(name+"_Mean",sets[0]);
+    data.addDataSet(c0.getName(),c0);
+    sets[1] = new DefaultDataSet(name+"_Variance");
+    FCTDataSetContainer c1 =  new FCTDataSetContainer(name+"_Variance",sets[1]);
+    data.addDataSet(c1.getName(),c1);
+    sets[2] = new DefaultDataSet(name+"_Skewness");
+    FCTDataSetContainer c2 =  new FCTDataSetContainer(name+"_Skewness",sets[2]);
+    data.addDataSet(c2.getName(),c2);
+    sets[3] = new DefaultDataSet(name+"_Kurtosis");
+    FCTDataSetContainer c3 =  new FCTDataSetContainer(name+"_Kurtosis",sets[3]);
+    data.addDataSet(c3.getName(),c3);
+    return execute(src,sets);
+  }
+
+
+  private boolean execute(FCTDataSetContainer src, AbstractDataSet[] dest) 
+  {
+    AbstractDataSet[] sets = src.getDataSets();
+    float[] m1 = new float[sets.length];
+    float[] m2 = new float[sets.length];
+    float[] m3 = new float[sets.length];
+    float[] m4 = new float[sets.length];
+    double sum;
+    for (int i=0;i<sets.length;i++)
+    {
+      sum = 0;
+      m1[i] = 0;
+      m2[i] = 0;
+      m3[i] = 0;
+      m4[i] = 0;
+      float[] data = sets[i].getData();
+      for (int j=0;j<data.length;j++)
+      {
+        m1[i] += sets[i].getXValue(j) * data[j];
+        sum += data[j];
+      }
+      m1[i] /= sum;
+      for (int j=0;j<data.length;j++)
+      {
+        double d = (sets[i].getXValue(j) - m1[i]);
+        double v = d * d * data[j] / sum;
+        m2[i] += v; 
+        m3[i] += v * d; 
+        m4[i] += v * d * d; 
+      }
+      m3[i] /= m2[i] * Math.sqrt(m2[i]);
+      m4[i] /= m2[i] * m2[i];
+    }
+    dest[0].setData(m1);
+    dest[1].setData(m2);
+    dest[2].setData(m3);
+    dest[3].setData(m4);
+    return true;
+  }
+
+
+}

@@ -1,0 +1,18 @@
+/*****************************************************************************
+ *                                                                           *
+ * FCT - Data filter interface                                               *
+ *                                                                           *
+ * modified: 2010-12-02 Harald Braeuning                                     *
+ *                                                                           *
+ ****************************************************************************/
+
+package de.gsi.sd.fct.data.filter;
+
+import de.gsi.sd.fct.data.FCTData;
+
+public interface DataFilter {
+
+  public String getName();
+  public boolean execute(FCTData data, DataFilterOptions options);
+  
+}

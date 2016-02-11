@@ -83,7 +83,7 @@ public class AnalysisPanel extends SDPanel {
         statButton.addActionListener(new ActionListener() {
           @Override
           public void actionPerformed(ActionEvent evt) {
-            fireEvent(FCTGUIEvent.ACTION_ANALYSIS_STATISTICS);
+            fireEvent(BBQGUIEvent.ACTION_ANALYSIS_STATISTICS);
           }
         });
       }

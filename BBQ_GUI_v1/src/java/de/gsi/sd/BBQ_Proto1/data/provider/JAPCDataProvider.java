@@ -26,9 +26,14 @@ import cern.japc.factory.ParameterValueFactory;
 import cern.japc.spi.ParameterUrl;
 import cern.japc.spi.ParameterUrlImpl;
 import de.gsi.sd.BBQ_Proto1.BBQ_GUIApplication;
-import de.gsi.sd.BBQ_Proto1.data.FESAData;
+import de.gsi.sd.BBQ_Proto1.Controller;
+import de.gsi.sd.BBQ_Proto1.data.BBQData;
 import de.gsi.sd.BBQ_Proto1.gui.MainPanel;
+import de.gsi.sd.common.japc.AbstractProvider;
 //import de.gsi.sd.BBQ_Proto1.data.FCTData;
+import de.gsi.sd.common.japc.ProviderEvent;
+import de.gsi.sd.common.japc.ProviderListener;
+import de.gsi.sd.BBQ_Proto1.gui.GraphPanel;
 
 import java.util.Arrays;
 
@@ -39,8 +44,10 @@ import java.util.Arrays;
  * listeners (JAPCDataProviderListener) will be notified when new data is
  * received.
  */
-public class JAPCDataProvider  {
-	 static public final int OUTPUT_ASCII = 0;
+public class JAPCDataProvider extends AbstractProvider {
+
+
+	static public final int OUTPUT_ASCII = 0;
 	  
 	  static public final int TIMEOUT = 100;
 	  static public final int MAX_SAMPLELENGTH = 15000000;
@@ -73,6 +80,7 @@ public class JAPCDataProvider  {
 	  static protected final String FIELD_GAIN = "hwGain";
 	  static protected final String FIELD_BASELINE = "adcBaseLine";
   /** The name of the FESA device the class is subscribed to */
+	  private boolean subscribe = false;
   private String deviceName = "";
   /** The list of all registered listeners */
   private EventListenerList listenerList = new EventListenerList();
@@ -87,7 +95,12 @@ public class JAPCDataProvider  {
   /** Name of the data field in the property */
   static private final String FIELD_TIME = "timeData";
   static private final String FIELD_FRE = "freqData";
-  FESAData data = new FESAData();
+  BBQData data = new BBQData();
+  
+  
+ public JAPCDataProvider(String device, String property, String cycleName) {
+		super(device, property, cycleName);
+	}
   /**
    * Get the FESA device name, to which this provider is subscribed. 
    * @return the FESA device name
@@ -107,6 +120,11 @@ public class JAPCDataProvider  {
     BBQ_GUIApplication.getLogger().info("Added to listener list");
   } 
 
+  public void addListener(ProviderListener l) 
+  {
+    listenerList.add(ProviderListener.class,l);
+    BBQ_GUIApplication.getLogger().info("Added to new listener list");
+  } 
   /**
    * Remove a data provider listener from the list of registered listeners
    * @param l the data provider listener
@@ -117,6 +135,11 @@ public class JAPCDataProvider  {
     BBQ_GUIApplication.getLogger().info("Removed from listener list");
   }
 
+  public void removeListener(ProviderListener l) 
+  {
+    listenerList.remove(ProviderListener.class,l);
+    BBQ_GUIApplication.getLogger().info("Removed from new listener list");
+  } 
   /**
    * Check if the data provider is subscribed to a FESA device
    * @return true is the data provider is subscribed
@@ -181,6 +204,7 @@ public class JAPCDataProvider  {
     }
     /* stop monitoring on the subscription */
     dataSubscriptionHandle.stopMonitoring();
+    System.out.println("JAPC Data Provider:: Subscription Stopped");
     /* invalidate the subscription handle */
     BBQ_GUIApplication.getLogger().info("Stopped subscription on parameter "+dataSubscriptionHandle.getParameter().getName());
     dataSubscriptionHandle = null;
@@ -193,13 +217,13 @@ public class JAPCDataProvider  {
    * all registered listeners of the new data. 
    * @param deviceName the FESA device name
    */
-  public void getData(String deviceName) 
+  public BBQData getData(String deviceName) 
   {
     /* Check for device name */
     if (deviceName == null || deviceName.isEmpty()) 
     {
     	BBQ_GUIApplication.getLogger().error("No device specified!");
-      return;
+      return null;
     }
     /* Get a URL for a parameter reading the acquisition property */
     ParameterUrl url = new ParameterUrlImpl(deviceName, PROPERTY_ACQUISITION);
@@ -212,14 +236,15 @@ public class JAPCDataProvider  {
       /* Get the data from the FESA class */
       AcquiredParameterValue acquiredValue = p.getValue(selector);
       /* Parse the acquired data into the FESAData class */
-      FESAData data = getData(acquiredValue);
+      BBQData data = getData(acquiredValue);
       /* Notify listeners if new data is available */
-      if (data != null) fireEvent(data);
+ //     if (data != null) fireEvent(data);
     }
     catch (Exception e) 
     {
     	BBQ_GUIApplication.getLogger().error("Failed to get data from device " + deviceName, e);
     }
+    return data;
   }
 
   /**
@@ -229,7 +254,7 @@ public class JAPCDataProvider  {
    * @param acquiredValue acquired parameter value
    * @return the FESA data object
    */
-  synchronized private FESAData getData(AcquiredParameterValue acquiredValue)
+  synchronized private BBQData getData(AcquiredParameterValue acquiredValue)
   {
     /* Get the actual parameter value, i.e. data */
     ParameterValue value = acquiredValue.getValue();
@@ -251,6 +276,7 @@ public class JAPCDataProvider  {
      // System.out.println(Arrays.toString(data_time.getDoubleRow(10)));
       // System.out.println(Arrays.toString(data_fre.getDoubles()));
       data.FESAStoreData(data_time,data_fre);
+   //   GraphPanel graphPanel = (GraphPanel)mainPanel.findPanel(GraphPanel.class);
       return data;
     }
     /* If the property has only one field the parameter value will be of
@@ -268,20 +294,36 @@ public class JAPCDataProvider  {
     /* unhandled parameter value types: no FESA data */
     return null;
   }
+  
+  public void subscribe()
+  {
+	this.subscribe = true;
+  }
 
+  public boolean isSubscribed()
+  {
 
+	    return this.subscribe;
+  }
+  
+  
   /**
    * Notify all registered listeners about new data
    * @param data the new FESA data
    */
-  synchronized private void fireEvent(FESAData data)
+  synchronized private void fireEvent(BBQData data) 
   {
     Object[] listeners = listenerList.getListenerList();
-    for (int i = listeners.length-2; i>=0; i-=2) 
+    for (int i = listeners.length-1; i>=0; i-=2) 
     {
       if (listeners[i] == JAPCDataProviderListener.class) 
       {
         ((JAPCDataProviderListener)listeners[i+1]).dataReceived(data);
+      }
+      if (listeners[i] == Controller.class) 
+      {
+  //      ((Controller)listeners[i+1]).setData(data);
+    	  BBQ_GUIApplication.getLogger().info("JAPCDataProvider :: Event Fired");
       }
     }
   }
@@ -309,13 +351,38 @@ public class JAPCDataProvider  {
      * @param parameterName name of the parameter (property) whose data is received
      * @param value the acquired parameter data
      */
-    public void valueReceived(String parameterName, AcquiredParameterValue value)
+ /**   protected void handleValueReceived(String parameterName, AcquiredParameterValue value)
     {
      BBQ_GUIApplication.getLogger().info("Data is coming");
-      FESAData data = getData(value);
-      if (data != null) fireEvent(data);
+      getData(value);
+      if (data != null)// fireEvent(data);
+      fireEvent(new ProviderEvent(this,ProviderEvent.TYPE_GENERIC,data));
+    } **/
+
+	@Override
+	public void valueReceived(String parameterName, AcquiredParameterValue value) {
+	BBQ_GUIApplication.getLogger().info("JAPCDataProvider :: Requested Data from FESA class");
+	BBQData data = getData(value);
+	      if (data != null)// fireEvent(data);
+    {
+    	BBQ_GUIApplication.getLogger().info("JAPCDataProvider Value received :: Sending Data to controller");
+    fireEvent(new ProviderEvent(this,ProviderEvent.TYPE_GENERIC,data));
+    fireEvent(data);
     }
+	}
   }
+  
+
+// @Override
+public void handleValueReceived(String parameterName, AcquiredParameterValue value) {
+    BBQ_GUIApplication.getLogger().info("JAPCDataProvider :: Data from FESA class");
+    BBQData data= getData(value);
+    if (data != null)// fireEvent(data);
+    {
+    	BBQ_GUIApplication.getLogger().info("JAPCDataProvider :: Sending Data to controller");
+    fireEvent(new ProviderEvent(this,ProviderEvent.TYPE_GENERIC,data));
+    }
+}
 
 
 

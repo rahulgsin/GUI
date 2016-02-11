@@ -1,0 +1,132 @@
+package de.gsi.sd.fct.data.filter;
+
+import java.util.Arrays;
+
+import de.gsi.sd.fct.data.AbstractDataSet;
+import de.gsi.sd.fct.data.FCTData;
+import de.gsi.sd.fct.data.FCTData.FCTDataSetContainer;
+import de.gsi.sd.fct.data.TimeDomainDataSet;
+
+public class StackFilter implements DataFilter {
+
+  static public final String ID = "Stack";
+  
+  private float hfMin;
+  private float hfMax;
+  private int hfIndex1;
+  private int hfIndex2;
+  private int hfPeriod;
+  private int hfCount;
+  private float fctMin;
+  private float fctMax;
+  private int fctOffset;
+
+  static private final int BUNCH_COUNT = 4;
+  
+  @Override
+  public String getName() 
+  {
+    return ID;
+  }
+
+  @Override
+  public boolean execute(FCTData data, DataFilterOptions options) 
+  {
+    AbstractDataSet hf = data.getDataSet(FCTData.ADC_CHANNEL_HF).getDataSet();
+    if (hf == null) return false;
+    analyseHF(hf);
+    AbstractDataSet fct = data.getDataSet(FCTData.ADC_CHANNEL_FCT).getDataSet();
+    if (fct == null) return false;
+    analyseFCT(fct);
+    int n = (hfCount - 1) / BUNCH_COUNT;
+    TimeDomainDataSet[][] stack = new TimeDomainDataSet[BUNCH_COUNT][];
+    for (int i=0;i<BUNCH_COUNT;i++)
+    {
+      stack[i] = new TimeDomainDataSet[n];
+    }
+    stack(fct,hf,stack);
+    String destName = options.getDestination();
+    if (destName == null || destName.isEmpty()) destName = "Bunch";
+    for (int i=0;i<BUNCH_COUNT;i++)
+    {
+      String name = String.format("%s_%d",destName,i);
+      FCTDataSetContainer c = new FCTDataSetContainer(name,stack[i]);
+      data.addDataSet(name,c);
+    }
+    return true;
+  }
+
+  private void analyseHF(AbstractDataSet hf)
+  {
+    float[] data = hf.getData();
+    hfMin = Float.POSITIVE_INFINITY;
+    hfMax = Float.NEGATIVE_INFINITY;
+    for (int i=0;i<data.length;i++)
+    {
+      if (data[i] < hfMin) hfMin = data[i];
+      if (data[i] > hfMax) hfMax = data[i];
+    }
+    double threshold = (hfMax + hfMin) / 2;
+    hfIndex1 = -1;
+    hfIndex2 = -1;
+    hfCount = 0;
+    for (int i=0;i<data.length-1;i++)
+    {
+      if (data[i] > threshold && data[i+1] < threshold)
+      {
+        if (hfIndex1 < 0)
+          hfIndex1 = i;
+        else if (hfIndex2 < 0)
+          hfIndex2 = i;
+        hfCount++;
+      }
+    }
+    hfPeriod = hfIndex2 - hfIndex1;
+  }
+
+  private void analyseFCT(AbstractDataSet fct)
+  {
+    float[] data = fct.getData();
+    fctMin = Float.POSITIVE_INFINITY;
+    fctMax = Float.NEGATIVE_INFINITY;
+    for (int i=0;i<data.length;i++)
+    {
+      if (data[i] < fctMin) fctMin = data[i];
+      if (data[i] > fctMax) fctMax = data[i];
+    }
+    float max = fctMin;
+    for (int i=hfIndex1;i<hfIndex2;i++)
+    {
+      if (data[i] > max)
+      {
+        max = data[i];
+        fctOffset = i - hfIndex1;
+      }
+    }
+  }
+ 
+  private void stack(AbstractDataSet fct, AbstractDataSet hf, AbstractDataSet[][] stack)
+  {
+    System.out.println("Offset: "+fctOffset+"  Period: "+hfPeriod);
+    float[] fctData = fct.getData();
+    float[] hfData = hf.getData();
+    float threshold = (hfMax + hfMin) / 2;
+    int n = 0;
+    int m = 0;
+    for (int i=0;i<hfData.length-1;i++)
+    {
+      if (hfData[i] > threshold && hfData[i+1] < threshold)
+      {
+        int start = i + fctOffset - hfPeriod / 2;
+        if (start < 0) continue;
+        float[] pulse = Arrays.copyOfRange(fctData,start,start+hfPeriod);
+        stack[n][m] = new TimeDomainDataSet(String.format("FCT%d_%d",n,m),fct);
+        stack[n][m].setData(pulse);
+        n = (n + 1) % BUNCH_COUNT;
+        if (n == 0) m++;
+        if (m == stack[0].length) break;
+      }
+    }
+  }
+  
+}

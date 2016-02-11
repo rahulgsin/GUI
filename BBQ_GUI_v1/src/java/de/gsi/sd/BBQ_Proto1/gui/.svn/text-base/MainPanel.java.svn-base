@@ -1,0 +1,186 @@
+/*****************************************************************************
+ *                                                                           *
+ * FCT - Application main panel                                              *
+ *                                                                           *
+ * modified: 2012-06-19 Harald Braeuning                                     *
+ *                                                                           *
+ ****************************************************************************/
+
+package de.gsi.sd.fct.gui;
+
+import de.gsi.sd.common.controls.AbstractMainPanel;
+import de.gsi.sd.common.controls.PrintPages;
+import de.gsi.sd.common.controls.Updatable;
+import de.gsi.sd.common.controls.localizable.LocalizableButton;
+import de.gsi.sd.common.language.Language;
+import de.gsi.sd.fct.data.FCTStatus;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import org.apache.log4j.Logger;
+
+@SuppressWarnings("serial")
+@Updatable
+public class MainPanel extends AbstractMainPanel {
+
+  private StatusPanel statusPanel;
+  private GraphPanel dataPanel;
+  private TabbedControlsPanel tabPanel;
+  private JPanel buttonPanel;
+  private JPanel controlsPanel;
+  private JButton subscribeButton;
+  private JButton startButton;
+
+  @SuppressWarnings("unused")
+  static private Logger logger = Logger.getLogger(MainPanel.class);
+
+
+  public MainPanel() 
+  {
+    super();
+    initGUI();
+  }
+
+   public void updateStatus(FCTStatus status)
+  {
+    setRunning(!status.isStopped());
+  }
+
+
+
+  @Override
+  public PrintPages getPrintPages()
+  {
+    return dataPanel.getPrintPages();
+  }
+  
+  @Override
+  public boolean export(File file, String format)
+  {
+    return dataPanel.export(file,format);
+  }
+  
+  public boolean isControlsVisible()
+  {
+    return controlsPanel.isVisible();
+  }
+  
+  public void setControlsVisible(boolean flag)
+  {
+    controlsPanel.setVisible(flag);
+  }
+  
+  public boolean isStatusVisible()
+  {
+    return statusPanel.isVisible();
+  }
+  
+  public void setStatusVisible(boolean flag)
+  {
+    statusPanel.setVisible(flag);
+  }
+  
+  public void setSubscribed(boolean flag)
+  {
+    if (flag)
+    {
+      subscribeButton.setText("Button.Unsubscribe");
+    }
+    else
+    {
+      subscribeButton.setText("Button.Subscribe");
+    }
+  }
+
+  public void setRunning(boolean flag)
+  {
+    if (flag)
+    {
+      startButton.setText("Button.Stop");
+    }
+    else
+    {
+      startButton.setText("Button.Start");
+    }
+  }
+
+
+
+  private void initGUI() 
+  {
+    Language language = Language.getInstance();
+    setLayout(new BorderLayout());
+    setPreferredSize(new Dimension(1024,800));
+    {
+      JPanel panel = new JPanel(new GridBagLayout());
+      {
+        statusPanel = new StatusPanel();
+        panel.add(statusPanel,new GridBagConstraints(0,1,1,1,1.0,1.0,GridBagConstraints.WEST,GridBagConstraints.HORIZONTAL,new Insets(0,0,0,0),0,0));
+      }
+      this.add(panel,BorderLayout.NORTH);
+    }
+    {
+      dataPanel = new GraphPanel();
+      add(dataPanel,BorderLayout.CENTER);
+    }
+    {
+      controlsPanel = new JPanel(new GridBagLayout());
+      add(controlsPanel,BorderLayout.WEST);
+      int row = 0;
+      {
+        tabPanel = new TabbedControlsPanel();
+        controlsPanel.add(tabPanel,new GridBagConstraints(0,row,1,1,1.0,1.0,GridBagConstraints.NORTHWEST,GridBagConstraints.BOTH,new Insets(5,5,5,5),0,0));
+        row++;
+      }
+      {
+        JPanel statusPanel = new ExpertStatusPanel();
+        controlsPanel.add(statusPanel,new GridBagConstraints(0,row,1,1,1.0,1.0,GridBagConstraints.NORTHWEST,GridBagConstraints.BOTH,new Insets(5,5,5,5),0,0));
+        row++;
+      }
+      {
+        controlsPanel.add(new GUIStatusPanel(),new GridBagConstraints(0,row,1,1,1.0,1.0,GridBagConstraints.NORTHWEST,GridBagConstraints.BOTH,new Insets(5,5,5,5),0,0));
+        row++;
+      }
+      {
+        JPanel fillerPanel = new JPanel(new GridBagLayout());
+        controlsPanel.add(fillerPanel,new GridBagConstraints(0,row,1,1,0.0,1.0,GridBagConstraints.NORTH,GridBagConstraints.BOTH,new Insets(5,5,5,5),0,0));
+        row++;
+      }
+      {
+        buttonPanel = new JPanel(new GridLayout(1,0));
+        controlsPanel.add(buttonPanel,new GridBagConstraints(0,row,1,1,1.0,0.0,GridBagConstraints.SOUTHWEST,GridBagConstraints.HORIZONTAL,new Insets(5,5,5,5),0,0));
+        {
+          startButton = new LocalizableButton("Button.Start");
+          buttonPanel.add(startButton);
+          startButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+              fireEvent(FCTGUIEvent.ACTION_MEASUREMENT);
+            }
+          });
+        }
+        {
+          subscribeButton = new LocalizableButton("Button.Subscribe");
+          buttonPanel.add(subscribeButton);
+          subscribeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+              fireEvent(FCTGUIEvent.ACTION_SUBSCRIBE);
+            }
+          });
+        }
+        row++;
+      }
+    }
+  }
+
+
+}

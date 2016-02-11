@@ -1,6 +1,6 @@
 /*****************************************************************************
  *                                                                           *
- * FCT - Simple data statistics                                              *
+ * BBQ - Simple data statistics                                              *
  *                                                                           *
  * modified: 2010-03-02 Harald Braeuning                                     *
  *                                                                           *
@@ -15,15 +15,15 @@ public class SimpleStatistics {
   public double xMax = 0.0;
   public int indexMin = 0;
   public int indexMax = 0;
-  public double[] sum = new double[FCTConstants.ADC_COUNT];
-  public double[] sum2 = new double[FCTConstants.ADC_COUNT];
-  public double[] average = new double[FCTConstants.ADC_COUNT];
-  public double[] sigma = new double[FCTConstants.ADC_COUNT];
-  public long[] counts = new long[FCTConstants.ADC_COUNT];
+  public double[] sum = new double[BBQConstants.ADC_COUNT];
+  public double[] sum2 = new double[BBQConstants.ADC_COUNT];
+  public double[] average = new double[BBQConstants.ADC_COUNT];
+  public double[] sigma = new double[BBQConstants.ADC_COUNT];
+  public long[] counts = new long[BBQConstants.ADC_COUNT];
 
   public SimpleStatistics()
   {
-    for (int i=0;i<FCTConstants.ADC_COUNT;i++)
+    for (int i=0;i<BBQConstants.ADC_COUNT;i++)
     {
       sum[i] = 0.0;
       sum2[i] = 0.0;
@@ -39,13 +39,13 @@ public class SimpleStatistics {
     sb.append(String.format("data range : %f - %f\n",xMin,xMax)); 
     sb.append(String.format("index range: %d - %d \n",indexMin,indexMax)); 
     sb.append("sum     ");
-    for (int i=0;i<FCTConstants.ADC_COUNT;i++) 
+    for (int i=0;i<BBQConstants.ADC_COUNT;i++) 
     {
       if (i > 0) sb.append("        ");
       sb.append(String.format("ch %d: %12.7g\n",i,sum[i]));
     }
     sb.append("average ");
-    for (int i=0;i<FCTConstants.ADC_COUNT;i++) 
+    for (int i=0;i<BBQConstants.ADC_COUNT;i++) 
     {
       if (i > 0) sb.append("        ");
       sb.append(String.format("ch %d: %12.7g  sigma %12.7g\n",i,average[i],sigma[i]));
@@ -75,7 +75,7 @@ public class SimpleStatistics {
   
   public void update()
   {
-    for (int i=0;i<FCTConstants.ADC_COUNT;i++)
+    for (int i=0;i<BBQConstants.ADC_COUNT;i++)
     {
       if (counts[i] != 0)
       {

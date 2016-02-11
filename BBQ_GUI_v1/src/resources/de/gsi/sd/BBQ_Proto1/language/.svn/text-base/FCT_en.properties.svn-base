@@ -1,0 +1,135 @@
+
+Menu.File=File
+Menu.Save=Save...
+Menu.Open=Open...
+Menu.Print=Print...
+Menu.Export=Export...
+Menu.Connect=Connect
+Menu.Quit=Quit
+Menu.Language=Language
+Menu.Help=Help
+Menu.About=About...
+Menu.Data=Data
+Menu.Settings=Settings...
+Menu.ExpertSettings=Expert settings...
+Menu.GuruSettings=Guru settings...
+Menu.Controls=Controls
+Menu.View=View
+
+Button.Ok=Ok
+Button.Cancel=Cancel
+Button.Subscribe=Subscribe
+Button.Unsubscribe=Unsubscribe
+Button.Set=Set
+Button.Get=Get
+Button.Start=Start Meas.
+Button.Stop=Stop Meas.
+Button.Arm=Arm
+Button.Disarm=Disarm
+Button.Trigger=Trigger
+Button.Reset=Reset
+Button.PowerOff=Power off
+Button.PowerOn=Power on
+Button.Statistics=Statistics
+Button.Clear=Clear
+Button.Sync=Synchronize X
+Button.Autoscale=Autoscale
+Button.AddFilter=Add...
+Button.RemoveFilter=Remove
+Button.EditFilter=Edit...
+
+Label.Status=Status: 
+Label.Cycle=Cycles:
+Label.CycleIgnored=ignored:
+Label.CycleLost=lost:
+Label.VirtAcc=Virt. Acc.:
+Label.Time=Time:
+Label.Temperature=ADC Temp.:
+Label.TunnelPower=Tunnel Power:
+Label.ControlLoop=Control Loop:
+Label.LinkTX=Link TX:
+Label.LinkRX=Link RX:
+Label.States=States
+Label.Stopped=Stopped:
+Label.Wait=Wait:
+Label.Acquire=Acquire:
+Label.Readout=Readout:
+Label.NoEvent=No events:
+Label.Armed=Armed:
+Label.Busy=Busy:
+Label.EndAddressThreshold=End Address Threshold:
+
+Label.Device=Device:
+Label.Control=Control
+Label.StartEvent=Start Event:
+Label.StopEvent=Stop Event:
+
+Label.Frequency=Frequency:
+Label.SampleLength=Sample length:
+Label.PreDelay=pre delay:
+Label.SampleTime=Sampling time:
+Label.Range=Input Range / V
+Label.Offset=Offset
+Label.ValueMode=y Axis Scaling
+Label.FCT=FCT
+Label.HF=HF
+Label.User1=User 1
+Label.User2=User 2
+Label.AcqMode=Mode:
+
+Label.Threshold=Threshold:
+Label.Input=Input:
+Label.Output=Output:
+
+Label.Gain=Gain:
+Label.GlobalAttenuation=Global attenuation:
+Label.GainCorrection=20db Gain correction:
+
+Label.FileMode=Format:
+Label.FilePath=Path:
+Label.FilePrefix=Prefix:
+Label.FileOut=write to file
+Label.InProgress=in progress
+Label.SamplesRemain= remaining:
+
+Label.CTRWidth=CTR output width:
+
+Label.FECReduction=Reduction by FEC:
+Label.AllData=All Data
+
+Label.Reduction=Reduction:
+Label.Rows=Rows:
+Label.Cols=Columns:
+Label.XRange=X Range:
+Label.YRange=Y Range:
+
+Label.Filter=Filter:
+Label.SourceDataSet=Source data set:
+Label.DestDataSet=Destination data set:
+
+Label.PowerOffDevice=Power off device?
+
+Chart.XSamples=Sample
+Chart.XSeconds=Time / s
+Chart.XMilliSeconds=Time / ms
+Chart.XMicroSeconds=Time / \u00b5s
+Chart.Y=Signal
+
+Title.Status=Status
+Title.Graphs=Graphs
+Title.Filters=Filters
+Title.Configuration=Configuration
+Title.VirtAcc=Virt.Acc.
+Title.Events=Events
+Title.Acquisition=Acquisition
+Title.Hardware=Hardware
+Title.Output=Output
+Title.FileOutput=Status: File Output
+Title.EventSource=Status: Event Source
+Title.HardwareLink=Status: Hardware Link
+Title.GUIStatus=GUI Status
+Title.ADC=ADC
+
+Format.FirstN=only first %d samples
+Format.EveryN=only every %d sample
+

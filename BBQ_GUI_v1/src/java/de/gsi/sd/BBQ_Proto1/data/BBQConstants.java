@@ -1,8 +1,8 @@
 package de.gsi.sd.BBQ_Proto1.data;
 
-public interface FCTConstants {
+public interface BBQConstants {
 
-  static public final int ADC_COUNT = 4;
+  static public final int ADC_COUNT = 2;
 
   static public final int ADC_VALUEMODE_RAW       = 0;
   static public final int ADC_VALUEMODE_VOLTAGE   = 1;
@@ -35,7 +35,7 @@ public interface FCTConstants {
   static public final int ADC_BUSY         = 0x00020000;
   static public final int ADC_END_ADDRESS  = 0x00040000;
   
-  static public final String[] ADCLABELS        = { "Label.FCT", "Label.HF", "Label.User1", "Label.User2" };
+  static public final String[] ADCLABELS        = { "Label.Channel 1", "Label.Channel 2", "Label.User1", "Label.User2" };
   static public final String[] FREQUENCY        = { "50 MHz", "100 MHz", "250MHz", "500MHz" };
   static public final double[] FREQUENCY_VALUES = { 50e6, 100e6, 250e6, 500e6 };
   static public final String[] ADCRANGE         = { "+-0.5V", "+-1.0V", "+-2.0V", "+-4.0V" };
